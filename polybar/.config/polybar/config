@@ -1,0 +1,202 @@
+#                 __      __              
+#    ____  ____  / /_  __/ /_  ____ ______
+#   / __ \/ __ \/ / / / / __ \/ __ `/ ___/
+#  / /_/ / /_/ / / /_/ / /_/ / /_/ / /    
+# / .___/\____/_/\__, /_.___/\__,_/_/     
+#/_/            /____/                    
+
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+
+[bar/top]
+width = 1360
+height = 30
+offset-x = 0
+offset-y = 0
+bottom = false
+spacing = 0
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+#override-redirect = true
+#wm-restack = i3
+
+background = #20212b
+# #141021
+foreground = #f8f8f2
+# #c4b7c5
+
+fixed-center = true
+
+font-1 = MaterialIcons:size=12:antialia=false:weight=bold;2
+font-0 = IosevkaNerdFont:size=10:weight=bold:antialia=false;0
+modules-left = i3
+modules-center = date weather
+modules-right = wireless-network battery pavolume powermenu
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+
+[module/i3]
+type = internal/i3
+label-active-font = 2
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-scroll = false
+
+format = <label-state>
+format-padding-right = 2
+
+label-unfocused-foreground = #282a36
+label-unfocused-padding = 1
+
+label-focused-foreground = #f8f8f2
+# #c16772
+label-focused-padding = 1
+
+label-urgent-foreground = #ff5555
+# #e4b226
+label-urgent-padding = 1
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5; 
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+[module/date]
+type = internal/date
+
+interval = 1
+
+date = %a %b %d,
+time = %H:%M:%S
+
+date-alt = %A, %d %B %Y
+time-alt = %H:%M:%S
+
+format = <label>
+format-padding = 2
+
+label =  %date% %time%
+
+[module/pavolume]
+type = custom/script
+
+interval = 1
+
+format-padding = 2
+label-active = %token%
+label-active-font = 2
+
+
+exec = ~/scripts/pavolume.sh
+
+click-left = ~/scripts/pavolume.sh --togmute
+scroll-up = ~/scripts/pavolume.sh --up
+scroll-down = ~/scripts/pavolume.sh --down
+
+
+[module/powermenu]
+type = custom/menu
+
+label-open = 
+
+label-close = cancel
+
+label-close-background = #20212b
+label-close-foreground = #f8f8f2
+label-open-padding-left = 2
+label-open-padding-right = 3
+label-close-padding = 3
+
+menu-0-0 = lock
+menu-0-0-exec = ~/scripts/i3lock.sh
+menu-0-0-background = #20212b
+menu-0-0-foreground = #50fa7b
+menu-0-0-padding-right = 3
+
+menu-0-1 = reboot
+menu-0-1-exec = menu-open-1
+menu-0-1-background = #20212b
+menu-0-1-foreground = #50fa7b
+menu-0-1-padding-right = 3
+
+menu-0-2 = power off
+menu-0-2-exec = menu-open-2
+menu-0-2-background = #20212b
+menu-0-2-foreground = #50fa7b
+menu-0-2-padding-right = 3
+
+menu-0-3 = sleep
+menu-0-3-exec = ~/scripts/sleep.sh
+menu-0-3-background = #20212b
+menu-0-3-foreground = #50fa7b
+menu-0-3-padding-right = 3
+
+
+menu-1-0 = reboot?
+menu-1-0-exec = reboot
+menu-1-0-background = #20212b
+menu-1-0-foreground = #50fa7b
+menu-1-0-padding-right = 3
+
+menu-2-0 = power off?
+menu-2-0-exec = poweroff
+menu-2-0-background = #20212b
+menu-2-0-foreground = #50fa7b
+menu-2-0-padding-right = 3
+
+
+[module/weather]
+type = custom/script
+
+interval = 120
+
+format-padding = 2
+
+exec = ~/scripts/weather.py
+
+
+[module/wireless-network]
+type = internal/network
+
+interface = enp2s0
+
+format-connected = <label-connected>
+format-connected-padding = 1
+
+format-disconnected = <label-disconnected>
+format-disconnected-padding = 1
+
+label-active-font = 2
+label-connected =  
+
+label-disconnected =  None
+
+[module/pomodoro]
+type = custom/script
+; Use pomodoro glyphs in Nerd fonts
+exec = pymodoro --break-prefix " " --pomodoro-prefix " " --pomodoro  --empty  --break  --length 5
+; Use default symbols
+; exec = pymodoro -i 5e
+label = %output%
+tail = true
+interval = 0
+; Start or reset the timer
+click-left = if [ -e ~/.pomodoro_session ]; then rm ~/.pomodoro_session; else echo "25 5" > ~/.pomodoro_session; fi
+; Increase pomodoro time
+click-right = echo "$((`cut .pomodoro_session -d ' ' -f 1`+5)) 5" > .pomodoro_session
+; Reduce pomodoro time
+click-middle = echo "$((`cut .pomodoro_session -d ' ' -f 1`-5)) 5" > .pomodoro_session

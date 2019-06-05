@@ -1,0 +1,42 @@
+[global_config]
+  always_on_top = True
+  borderless = True
+  dbus = False
+  enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  inactive_color_offset = 1.0
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#282a36"
+    background_darkness = 0.8
+    cursor_color = "#aaaaaa"
+    font = Fira Mono Medium 10.58984375
+    foreground_color = "#f8f8f2"
+    icon_bell = False
+    palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"
+    rewrap_on_resize = False
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+  [[irc]]
+    background_color = "#282a36"
+    background_darkness = 0.81
+    cursor_color = "#aaaaaa"
+    font = Iosevka 7.599609375
+    foreground_color = "#f8f8f2"
+    icon_bell = False
+    palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"
+    rewrap_on_resize = False
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
