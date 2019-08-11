@@ -41,11 +41,12 @@
 #mainbox {
     background-color: inherit;
     border:  0;
-    padding: 0;
 }
 #textbox {
     text-color: @foreground;
+    padding: 2px;
 }
+
 #element {
     border:  0;
     padding: 1px ;
@@ -94,7 +95,7 @@
     text-color:       @selected-normal-foreground;
 }
 #inputbar {
-    spacing:    0;
+    spacing:    4;
     text-color: @normal-foreground;
     background-color: inherit;
     padding:    1px ;
@@ -104,11 +105,11 @@
     text-color: @normal-background;
 }
 #entry {
-    spacing:    0;
+    spacing:    1;
     text-color: @normal-foreground;
 }
 #prompt {
-    spacing:    0;
+    spacing:    1px ;
     text-color: @normal-foreground;
 }
 

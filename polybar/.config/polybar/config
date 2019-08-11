@@ -36,7 +36,7 @@ font-1 = MaterialIcons:size=12:antialia=false:weight=bold;2
 font-0 = IosevkaNerdFont:size=10:weight=bold:antialia=false;0
 modules-left = i3
 modules-center = date weather
-modules-right = wireless-network battery pavolume powermenu
+modules-right = wireless-network battery pavolume mpd powermenu
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -57,7 +57,6 @@ label-unfocused-foreground = #282a36
 label-unfocused-padding = 1
 
 label-focused-foreground = #f8f8f2
-# #c16772
 label-focused-padding = 1
 
 label-urgent-foreground = #ff5555
@@ -106,7 +105,6 @@ exec = ~/scripts/pavolume.sh
 click-left = ~/scripts/pavolume.sh --togmute
 scroll-up = ~/scripts/pavolume.sh --up
 scroll-down = ~/scripts/pavolume.sh --down
-
 
 [module/powermenu]
 type = custom/menu
@@ -185,18 +183,27 @@ label-connected = 
 
 label-disconnected =  None
 
-[module/pomodoro]
-type = custom/script
-; Use pomodoro glyphs in Nerd fonts
-exec = pymodoro --break-prefix " " --pomodoro-prefix " " --pomodoro  --empty  --break  --length 5
-; Use default symbols
-; exec = pymodoro -i 5e
-label = %output%
-tail = true
-interval = 0
-; Start or reset the timer
-click-left = if [ -e ~/.pomodoro_session ]; then rm ~/.pomodoro_session; else echo "25 5" > ~/.pomodoro_session; fi
-; Increase pomodoro time
-click-right = echo "$((`cut .pomodoro_session -d ' ' -f 1`+5)) 5" > .pomodoro_session
-; Reduce pomodoro time
-click-middle = echo "$((`cut .pomodoro_session -d ' ' -f 1`-5)) 5" > .pomodoro_session
+
+[module/mpd]
+
+type = internal/mpd
+
+host = 127.0.0.1
+port = 6600
+
+interval = 2
+
+icon-play = ⏵
+icon-pause = ⏸
+icon-stop = ⏹
+
+
+format-online = <icon-play> <icon-pause> <bar-progress>
+format-playing = ${self.format-online}
+format-paused = ${self.format-online}
+format-stopped = ${self.format-online}
+
+bar-progress-width = 20
+bar-progress-indicator = ·
+bar-progress-fill = ━
+bar-progress-empty = ┈
