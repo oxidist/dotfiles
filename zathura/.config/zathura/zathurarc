@@ -13,3 +13,4 @@ set recolor-reverse-video "true"
 # set recolor-keephue "true"
 
 map <C-Tab> toggle_statusbar
+set guioptions ""

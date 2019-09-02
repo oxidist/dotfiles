@@ -6,7 +6,7 @@
 
 
 [global]
-    font = "PragmataPro Bold 8"
+    font = "tewi 8"
     markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes

@@ -5,10 +5,7 @@
 ""  |___/_/_/ /_/ /_/ 
 
 call plug#begin('~/.vim/plugged')
-"  Plug 'scrooloose/nerdtree'
   Plug 'dracula/vim', {'as': 'dracula'}
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
   Plug 'mhinz/vim-startify'
   Plug 'ryanoasis/vim-devicons'
   Plug 'vim-syntastic/syntastic'
@@ -18,43 +15,31 @@ call plug#begin('~/.vim/plugged')
   Plug 'lervag/vimtex'
   Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
   Plug '907th/vim-auto-save'
-  Plug 'neovimhaskell/haskell-vim'
-"  Plug 'Twinside/vim-HaskellConceal'
+  Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
+""  Plug 'dag/vim2hs', {'for': 'haskell'}
+  Plug 'Twinside/vim-HaskellConceal', {'for': 'haskell'}
   Plug 'kien/rainbow_parentheses.vim'
-  Plug 'dag/vim2hs'
+  Plug 'morhetz/gruvbox'
 call plug#end()
 
 
 syntax on
 set termguicolors
 colorscheme dracula
-set background=dark
-set cursorline
 set number
-
-let g:airline_powerline_fonts = 1
-let g:airline_theme='dracula'
-let g:airline_skip_empty_sections = 1
-let g:airline#extensions#tabline#enabled = 1
-
-
-map <C-\> :NERDTreeToggle<CR>
-map <C-/> :NERDComUncommentLine
-autocmd StdinReadPre * let s:std_in=1
-let NERDTreeIgnore = ['\.DS_Store$']
-let g:NERDTreeWinSize=40
-let g:NERDTreeAutoDeleteBuffer=1
+set cursorline
+set background=dark
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_error_symbol = "\u2718"
-let g:syntastic_warning_symbol = "\u2206"
-let g:syntastic_style_warning_symbol = "≈"
-let g:syntastic_style_error_symbol = "✠"
+let g:syntastic_error_symbol = "✕"
+let g:syntastic_warning_symbol = "!"
+let g:syntastic_style_warning_symbol = "!"
+let g:syntastic_style_error_symbol = "✕"
 
-highlight SyntasticErrorSign guifg=#ff5555 guibg=#44475a
-highlight SyntasticWarningSign guifg=#f1fa8c guibg=#44475a
+highlight SyntasticErrorSign guifg=#ff5555
+highlight SyntasticWarningSign guifg=#f1fa8c
 
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
@@ -64,8 +49,6 @@ let g:syntastic_enable_highlighting = 1
 
 let g:syntastic_haskell_checkers=['hlint']
 
-let g:haskell_conceal=0
-let g:haskell_conceal_enumerations=0
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
     " Use filetype detection and file-based automatic indenting.
