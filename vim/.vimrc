@@ -27,6 +27,7 @@ call plug#end()
 syntax on
 set termguicolors
 colorscheme dracula
+let g:dracula_italic = 0
 set number
 set cursorline
 set background=dark

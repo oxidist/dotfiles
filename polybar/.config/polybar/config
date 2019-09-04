@@ -36,7 +36,7 @@ font-1 = MaterialIcons:size=12:antialia=false:weight=bold;2
 font-0 = IosevkaNerdFont:size=10:weight=bold:antialia=true;0
 modules-left = i3
 modules-center = date weather
-modules-right = wireless-network battery pavolume mpd powermenu
+modules-right = wireless-network pavolume mpd powermenu
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -193,9 +193,9 @@ port = 6600
 
 interval = 2
 
-icon-play = ⏵
-icon-pause = ⏸
-icon-stop = ⏹
+icon-play = ▶
+icon-pause = ||
+icon-stop = ■
 
 
 format-online = <icon-play> <icon-pause> <bar-progress>
