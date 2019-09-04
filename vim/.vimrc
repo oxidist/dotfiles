@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Twinside/vim-HaskellConceal', {'for': 'haskell'}
   Plug 'kien/rainbow_parentheses.vim'
   Plug 'morhetz/gruvbox'
+  Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 
