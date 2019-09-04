@@ -7,7 +7,6 @@
 call plug#begin('~/.vim/plugged')
   Plug 'dracula/vim', {'as': 'dracula'}
   Plug 'mhinz/vim-startify'
-  Plug 'ryanoasis/vim-devicons'
   Plug 'vim-syntastic/syntastic'
   Plug 'Raimondi/delimitMate'
   Plug 'alx741/vim-hindent'

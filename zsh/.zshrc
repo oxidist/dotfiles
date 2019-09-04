@@ -14,7 +14,7 @@ export VISUAL=vim
 export TERM=xterm-256color
 export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
-export FZF_DEFAULT_OPTS='--preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || highlight -O ansi -l {} 2> /dev/null | head -500" --height 50% --layout=reverse --border'
+export FZF_DEFAULT_OPTS='--preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || highlight -O ansi -l {} 2> /dev/null | head -500" --height 70% --layout=reverse --border'
 # Syntax highlighting and tab completion
 source /home/oxide/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 autoload -Uz compinit
@@ -35,10 +35,10 @@ man() {
 # Aliases for a few useful commands
 #alias yaourt="yaourt --color --pager"
 alias x="ranger"
-alias h="htop"
+alias g="gotop"
 alias w="weechat"
 alias neofetch="neofetch --source=wallpaper --backend=w3m"
-
+alias ghc="stack ghc"
 
 # Set name of the theme to load.
 ZSH_THEME="lambda-gitster"
