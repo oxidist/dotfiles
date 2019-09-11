@@ -15,7 +15,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
   Plug '907th/vim-auto-save'
   Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-""  Plug 'dag/vim2hs', {'for': 'haskell'}
   Plug 'Twinside/vim-HaskellConceal', {'for': 'haskell'}
   Plug 'kien/rainbow_parentheses.vim'
   Plug 'morhetz/gruvbox'
@@ -74,6 +73,13 @@ nmap <leader>h :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
 
 let g:vim_markdown_folding_disabled = 1
 
@@ -86,3 +92,5 @@ let g:tex_conceal="abdmg"
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 autocmd FileType tex let g:auto_save = 1
 autocmd FileType tex let g:auto_save_silent = 1
+
+
