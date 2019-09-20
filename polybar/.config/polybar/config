@@ -12,8 +12,8 @@ margin-bottom = 0
 
 
 [bar/top]
-width = 1360
-height = 30
+width = 1366
+height = 27
 offset-x = 0
 offset-y = 0
 bottom = false
@@ -22,21 +22,18 @@ padding-left = 0
 padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
-#override-redirect = true
-#wm-restack = i3
 
 background = #20212b
-# #141021
 foreground = #f8f8f2
-# #c4b7c5
 
 fixed-center = true
 
-font-1 = MaterialIcons:size=12:antialia=false:weight=bold;2
-font-0 = IosevkaNerdFont:size=10:weight=bold:antialia=true;0
+font-2 = MaterialIcons:size=9:antialia=false:weight=bold;2
+font-1 = IosevkaNerdFont:size=9:weight=bold:antialia=true;0
+font-0 = xos4 Terminus:size=10:style=Regular:antialia=true;0
 modules-left = i3
 modules-center = date weather
-modules-right = wireless-network pavolume mpd powermenu
+modules-right = wireless-network pavolume powermenu
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -60,19 +57,18 @@ label-focused-foreground = #f8f8f2
 label-focused-padding = 1
 
 label-urgent-foreground = #ff5555
-# #e4b226
 label-urgent-padding = 1
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5; 
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
+ws-icon-0 = 1;1
+ws-icon-1 = 1;2
+ws-icon-2 = 1;3
+ws-icon-3 = 1;4
+ws-icon-4 = 1;5
+ws-icon-5 = 1;6
+ws-icon-6 = 1;7
+ws-icon-7 = 1;8
+ws-icon-8 = 1;9
+ws-icon-9 = 1;10
 
 [module/date]
 type = internal/date
@@ -182,28 +178,3 @@ label-active-font = 2
 label-connected =  
 
 label-disconnected =  None
-
-
-[module/mpd]
-
-type = internal/mpd
-
-host = 127.0.0.1
-port = 6600
-
-interval = 2
-
-icon-play = ▶
-icon-pause = ||
-icon-stop = ■
-
-
-format-online = <icon-play> <icon-pause> <bar-progress>
-format-playing = ${self.format-online}
-format-paused = ${self.format-online}
-format-stopped = ${self.format-online}
-
-bar-progress-width = 20
-bar-progress-indicator = ·
-bar-progress-fill = ━
-bar-progress-empty = ┈
