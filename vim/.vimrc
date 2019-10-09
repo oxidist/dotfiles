@@ -1,8 +1,8 @@
-"           _         
-""   _   __(_)___ ___ 
+"           _
+""   _   __(_)___ ___
 ""  | | / / / __ `__ \
 ""  | |/ / / / / / / /
-""  |___/_/_/ /_/ /_/ 
+""  |___/_/_/ /_/ /_/
 
 call plug#begin('~/.vim/plugged')
   Plug 'dracula/vim', {'as': 'dracula'}
@@ -10,25 +10,33 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-syntastic/syntastic'
   Plug 'Raimondi/delimitMate'
   Plug 'alx741/vim-hindent'
-  Plug 'SirVer/UltiSnips'
   Plug 'lervag/vimtex'
+  Plug 'SirVer/UltiSnips'
   Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
   Plug '907th/vim-auto-save'
   Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
   Plug 'Twinside/vim-HaskellConceal', {'for': 'haskell'}
-  Plug 'kien/rainbow_parentheses.vim'
-  Plug 'morhetz/gruvbox'
   Plug 'ycm-core/YouCompleteMe'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'itchyny/lightline.vim' 
+  Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 
 syntax on
 set termguicolors
-colorscheme dracula
-let g:dracula_italic = 0
+set background=dark
+"let g:gruvbox_material_disable_italic_comment=0
+"let g:gruvbox_material_background='soft'
+"color gruvbox-material
+let g:dracula_italic=1
+color dracula
 set number
 set cursorline
-set background=dark
+set noshowmode
+set laststatus=2
+
+let g:lightline = {'colorscheme': 'dracula'}
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -83,11 +91,22 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 let g:vim_markdown_folding_disabled = 1
 
+let g:polyglot_disabled = ['latex']
+
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
 set conceallevel=2
-let g:tex_conceal="abdmg"
+let g:tex_conceal="abdgm"
 
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 autocmd FileType tex let g:auto_save = 1
@@ -111,7 +130,7 @@ endfunction
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-e>"
-" this mapping Enter key to <C-y> to chose the current highlight item 
+" this mapping Enter key to <C-y> to chose the current highlight item
 " and close the selection list, same as other IDEs.
 " CONFLICT with some plugins like tpope/Endwise
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

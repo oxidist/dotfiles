@@ -6,7 +6,7 @@
 
 
 # Enviroment variables
-export ZSH=/home/oxide/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export TERMINAL=terminator
 export PAGER=less
@@ -16,7 +16,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export FZF_DEFAULT_OPTS='--preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || highlight -O ansi -l {} 2> /dev/null | head -500" --height 70% --layout=reverse --border'
 # Syntax highlighting and tab completion
-source /home/oxide/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 autoload -Uz compinit
 
 # Colored man pages using less as pager
@@ -33,7 +33,7 @@ man() {
 }
 
 # Aliases for a few useful commands
-#alias yaourt="yaourt --color --pager"
+alias yaourt="yaourt --color --pager"
 alias x="ranger"
 alias g="gotop"
 alias w="weechat"
@@ -47,7 +47,7 @@ local user_symbol="$"
 if [[ $(print -P "%#") =~ "#" ]]; then
     user_symbol = "#"
 fi
-# # Plugins to load
+# Plugins to load
 plugins=(git fzf)
 source $ZSH/oh-my-zsh.sh
 
