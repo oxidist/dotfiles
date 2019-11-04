@@ -113,6 +113,17 @@ headfont=\sffamily\bfseries\color{Emerald}, %{ForestGreen!70!black},
 	linecolor=RedViolet!10!gray!10,
 	backgroundcolor=RedViolet!10!gray!10,
 }
+\mdfdefinestyle{proof}{%
+	skipabove=8pt,
+	linewidth=1pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=Black!60,
+	backgroundcolor=RedViolet!10!gray!10,
+}
+\surroundwithmdframed[style=proof]{proof}
 \declaretheoremstyle[
 	headfont=\sffamily\bfseries,
 	bodyfont=\normalfont\small,
