@@ -28,9 +28,8 @@ foreground = #f8f8f2
 
 fixed-center = true
 
-font-2 = MaterialIcons:size=8:antialia=false:weight=bold;2
-font-1 = IosevkaNerdFont:size=8:weight=bold:antialia=true;0
-font-0 = IosevkaNerdFont:size=8:weight=bold:antialia=true;0
+font-1 = MaterialIcons:size=8:antialia=false:weight=bold;1
+font-0 = IosevkaNerdFont:size=8:weight:bold:antialisa=true;0
 modules-left = i3
 modules-center = date weather
 modules-right = wireless-network pavolume powermenu

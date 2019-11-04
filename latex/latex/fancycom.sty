@@ -1,0 +1,168 @@
+%LaTeX package providing some shorthands and quick commands, tailored to certain unspecified fields of maths.
+%Not checked for conflicts with other packages.
+%Mostly for personal use.
+%Will not always be backwards compatible, although every effort will be made so that this is so.
+%Written by Adam Walsh
+%Version 1.0 (will not upgrade version numbers for minor command editions)
+
+\ProvidesPackage{fancycom}[2018/02/03 v1.0 Fancy maths common commands package]
+
+\RequirePackage{amsfonts}
+\RequirePackage{amsthm}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+
+\RequirePackage{cancel}
+
+\RequirePackage{mathtools}
+
+\RequirePackage{textcomp}
+\RequirePackage{xparse}
+
+\RequirePackage{mathrsfs}
+%\RequirePackage[mathscr]{euscript}
+
+\RequirePackage{tikz-cd}
+
+%Textual shortcuts/aids
+    \newcommand{\mbb}[1]{\mathbb{#1}} %Emblacken your symbols!
+    \newcommand{\mbf}[1]{\mathbf{#1}} %Embolden your symbols!
+    \newcommand{\mfk}[1]{\mathfrak{#1}} %Enfraken your symbols!
+    \newcommand{\bsl}{\backslash} %Backslash
+    \newcommand{\cndall}{\,\,\,\forall} %forall given as condition
+    \newcommand{\st}{\,\mid\,}  %Such that symbol. : is also used.
+    \newcommand{\what}[1]{& \qquad &\begin{sloppy}\textit{\small\mbox{#1}\small}\end{sloppy}} %Little comment for an align block. Memento of 2007.
+
+%Basic symbol extensions
+    \def\bbN{\mathbb{N}}
+    \def\bbC{\mathbb{C}}
+    \def\bbR{\mathbb{R}}
+    \def\bbQ{\mathbb{Q}}
+    \def\bbZ{\mathbb{Z}}
+
+
+    \def\bA{\mathbb{A}}
+    \def\bF{\mathbb{F}}
+    \def\bN{\mathbb{N}}
+    \def\bR{\mathbb{R}}
+    \def\bZ{\mathbb{Z}}
+    \def\bQ{\mathbb{Q}}
+    \def\bC{\mathbb{C}}
+    \def\bO{\mathbb{O}}
+    \def\bP{\mathbb{P}}
+    \def\bS{\mathbb{S}}
+    \def\fR{\mathfrk{R}}
+    \def\fZ{\mathfrk{Z}}
+    \def\fQ{\mathfrk{Q}}
+    \def\fC{\mathfrk{C}}
+    \def\fO{\mathfrk{O}}
+    \def\sC{\mathscr{C}}
+    \def\sD{\mathscr{D}}
+    \def\sP{\mathscr{P}}
+    \def\sF{\mathscr{F}}
+    \def\sH{\mathscr{H}}
+    \def\sM{\mathscr{M}}
+    \def\sT{\mathscr{T}}
+    \def\cA{\mathcal{A}}
+    \def\cB{\mathcal{B}}
+    \def\cO{\mathcal{O}}
+    \def\cF{\mathcal{F}}
+    \def\cG{\mathcal{G}}
+    \def\cC{\mathcal{C}}
+    \def\cD{\mathcal{D}}
+    \def\cT{\mathcal{T}}
+    \def\cP{\mathcal{P}}
+    \def\cS{\mathcal{S}}
+    
+    \def\bfz{\mathbf{0}}
+    
+    \def\fkp{\mathfrak{p}}
+    \def\fkq{\mathfrak{q}}
+    \def\fkm{\mathfrak{m}}
+
+
+%Symbol abbreviations
+    \def\lm{\lambda}
+    \def\eps{\epsilon}
+    \def\veps{\varepsilon}
+    \def\vphi{\varphi}
+    
+    \def\rmd{\mathrm{d}}
+    
+    \def\ot{\otimes}
+    \def\ptl{\partial}
+    \def\bdry{\partial}
+
+    \def\nin{\not\in}
+    
+    \newcommand{\isom}{\cong} %Isomorphism
+    \newcommand{\ceq}{\coloneqq} %Defined to be equal to
+    \newcommand{\eqc}{\eqqcolon} %Equal to be defined to
+    \newcommand{\ra}{\rangle} %Right angle bracket
+    \newcommand{\la}{\langle} %Left angle bracket
+    \newcommand{\wto}{\rightharpoonup} %Weak convergence, or just an arrow with the bottom half missing
+    \renewcommand{\to}{\longrightarrow} %A long right arrow, for functions and such
+    \newcommand{\lmto}{\longmapsto} %A right arrow with a vertical tail, for mapping definitions
+    \newcommand{\llim}{\lim\limits} %limit set up so that it always writes the limits underneath
+
+    \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+    \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+
+%Function constructors
+    \newcommand{\func}[3]{#1\colon#2\to #3} %Generic function definition without mapping
+    \newcommand{\mfunc}[3]{#1\colon#2\mapsto #3} %Generic function definition with only mapping
+    \newcommand{\afunc}[3]{#1\colon#2&\to #3} %Generic function with alignment on arrow
+    \newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto #5} %Generic function definition with mapping
+    \newcommand{\vafunc}[5]{\afunc{#1}{#2}{#3}\\#4&\longmapsto #5} %Generic function over two lines aligned on arrow
+
+
+%For theorems and proofs
+
+    \newtheorem{Theorem}{Theorem}
+    \newtheorem{Proposition}{Theorem}
+    \newtheorem{Conjecture}[Theorem]{Conjecture}
+    \newtheorem{Lemma}[Theorem]{Lemma}
+    \newtheorem{Corollary}[Theorem]{Corollary}
+
+\theoremstyle{remark}
+    \newtheorem{Example}{Example}
+    \newtheorem{Note}{Note}
+    \newtheorem{Question}{Question}
+    \newtheorem{Remark}{Remark}
+
+\theoremstyle{definition}
+    \newtheorem{Result}[Theorem]{Result}
+    \newtheorem{Definition}[Theorem]{Definition}
+    %Shorthands
+    \DeclareDocumentCommand\sdef{m}{\begin{Definition}#1\end{Definition}}
+    \DeclareDocumentCommand\sex{m}{\begin{Example}#1\end{Example}}
+    \DeclareDocumentCommand\snote{m}{\begin{Note}#1\end{Note}}
+    \DeclareDocumentCommand\slem{m}{\begin{Lemma}#1\end{Lemma}}
+    \DeclareDocumentCommand\sresult{m}{\begin{Result}#1\end{Result}}
+    \DeclareDocumentCommand\sres{m}{\begin{Result}#1\end{Result}}
+    \DeclareDocumentCommand\sques{m}{\begin{Question}#1\end{Question}}
+    \DeclareDocumentCommand\srem{m}{\begin{Remark}#1\end{Remark}}
+
+
+
+%Mathematical Operators
+    \DeclareMathOperator{\Ell}{Ell} %Elliptic genera
+    \DeclareMathOperator{\id}{id}
+    \DeclareMathOperator{\Id}{id}
+    \DeclareMathOperator{\Set}{Set}
+    \DeclareMathOperator{\Hom}{Hom}
+    \DeclareMathOperator{\Top}{Top}
+    \DeclareMathOperator{\Mod}{\mathbf{Mod}}
+    \DeclareMathOperator{\Comm}{\mathbf{Comm}}
+    \DeclareMathOperator{\Grp}{\mathbf{Grp}}
+    \DeclareMathOperator{\GL}{GL}
+    \DeclareMathOperator{\Obj}{Obj}
+    \DeclareMathOperator{\Spec}{Spec}
+    \DeclareMathOperator{\Specm}{Specm}
+    \DeclareMathOperator{\Min}{min}
+    \DeclareMathOperator{\Ker}{Ker}
+    \DeclareMathOperator{\im}{Im}
+    \DeclareMathOperator{\CoIm}{CoIm}
+    \DeclareMathOperator{\CoKer}{CoKer}
+    \DeclareMathOperator{\Der}{Der}
+    \DeclareMathOperator{\End}{End}

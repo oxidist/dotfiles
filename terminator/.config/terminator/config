@@ -22,7 +22,7 @@
     background_color = "#282a36"
     background_darkness = 0.7
     cursor_color = "#aaaaaa"
-    font = Iosevka Medium 10
+    font = Iosevka Medium 10.19921875
     foreground_color = "#f8f8f2"
     icon_bell = False
     palette = "#44475a:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#94a3a5:#000000:#ff5555:#50fa7b:#f1fa8c:#8be9fd:#bd93f9:#ff79c6:#ffffff"

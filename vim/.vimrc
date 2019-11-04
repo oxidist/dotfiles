@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'itchyny/lightline.vim' 
   Plug 'sainnhe/gruvbox-material'
+  Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
@@ -35,6 +36,8 @@ set number
 set cursorline
 set noshowmode
 set laststatus=2
+
+let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
 
 let g:lightline = {'colorscheme': 'dracula'}
 
