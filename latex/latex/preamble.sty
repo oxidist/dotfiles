@@ -1,10 +1,9 @@
+\usepackage[svgnames, dvipsnames]{xcolor}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
-\usepackage[dvipsnames, svgnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{mathrsfs}
 \usepackage[shortlabels]{enumitem}
-\usepackage[obeyFinal,textsize=scriptsize,shadow]{todonotes}
 \usepackage{mathtools}
 \usepackage{microtype}
 %%% Colored sections
@@ -18,7 +17,7 @@
 
 %%% Title
 \addtokomafont{subtitle}{\Large}
-\setkomafont{author}{\Large\scshape}
+\setkomafont{author}{\Large}
 \setkomafont{date}{\Large\normalsize}
 
 %%% Page setup
@@ -132,38 +131,38 @@ headfont=\sffamily\bfseries\color{Emerald}, %{ForestGreen!70!black},
 	mdframed={style=mdblackbox}
 ]{thmblackbox}
 
-\declaretheorem[style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
-\declaretheorem[style=thmpurbox,name=Theorem,numberwithin=section]{altthm}
-\declaretheorem[style=thmbluebox,name=Lemma,sibling=theorem]{lemma}
-\declaretheorem[style=thmbluebox,name=Proposition,sibling=theorem]{proposition}
+% numbered environments
+\declaretheorem[style=thmpurbox,name=Theorem,numberwithin=section]{theorem}
+\declaretheorem[style=thmgreenbox,name=Definition,sibling=theorem]{definition}
+\declaretheorem[style=thmpurbox,name=Lemma,sibling=theorem]{lemma}
+\declaretheorem[style=thmpurbox,name=Proposition,sibling=theorem]{proposition}
 \declaretheorem[style=thmbluebox,name=Corollary,sibling=theorem]{corollary}
-\declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem*}
-\declaretheorem[style=thmbluebox,name=Lemma,numbered=no]{lemma*}
-\declaretheorem[style=thmbluebox,name=Proposition,numbered=no]{proposition*}
-\declaretheorem[style=thmbluebox,name=Corollary,numbered=no]{corollary*}
 \declaretheorem[style=thmgreenbox,name=Algorithm,sibling=theorem]{algorithm}
-\declaretheorem[style=thmgreenbox,name=Algorithm,numbered=no]{algorithm*}
-\declaretheorem[style=thmgreenbox,name=Definition,sibling=theorem]{altdef}
-\declaretheorem[style=thmgreenbox,name=Claim,sibling=theorem]{claim}
-\declaretheorem[style=thmgreenbox,name=Claim,numbered=no]{claim*}
+\declaretheorem[style=thmpurbox,name=Claim,sibling=theorem]{claim}
 \declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
-\declaretheorem[style=thmredbox,name=Example,numbered=no]{example*}
 \declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
+\declaretheorem[style=thmgreenbox,name=Exercise]{exercise}
+\declaretheorem[style=thmgreenbox,name=Problem,sibling=exercise]{problem}
+% unnumbered envs
+\declaretheorem[style=thmgreenbox,name=Definition,numbered=no]{definition*}
+\declaretheorem[style=thmpurbox,name=Theorem,numbered=no]{theorem*}
+\declaretheorem[style=thmpurbox,name=Lemma,numbered=no]{lemma*}
+\declaretheorem[style=thmpurbox,name=Proposition,numbered=no]{proposition*}
+\declaretheorem[style=thmbluebox,name=Corollary,numbered=no]{corollary*}
+\declaretheorem[style=thmgreenbox,name=Algorithm,numbered=no]{algorithm*}
+\declaretheorem[style=thmpurbox,name=Claim,numbered=no]{claim*}
+\declaretheorem[style=thmredbox,name=Example,numbered=no]{example*}
 \declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
+\declaretheorem[style=thmgreenbox,name=Exercise, numbered=no]{exercise*}
+\declaretheorem[style=thmgreenbox,name=Problem,numbered=no]{problem*}
 
-%\theoremstyle{definition}
+\theoremstyle{definition}
 \newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem{definition}[theorem]{Definition}
 \newtheorem{fact}[theorem]{Fact}
 \newtheorem{answer}[theorem]{Answer}
 \newtheorem{ques}[theorem]{Question}
-\newtheorem{exercise}[theorem]{Exercise}
-\newtheorem{problem}[theorem]{Problem}
 \newtheorem*{conjecture*}{Conjecture}
-\newtheorem*{definition*}{Definition}
 \newtheorem*{fact*}{Fact}
 \newtheorem*{answer*}{Answer}
 \newtheorem*{ques*}{Question}
-\newtheorem*{exercise*}{Exercise}
-\newtheorem*{problem*}{Problem}
 
