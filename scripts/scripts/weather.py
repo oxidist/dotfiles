@@ -40,10 +40,10 @@ class WeatherGetter():
 
         icon = psbl.get(status)
 
-        if self.unit is "C":
+        if self.unit == "C":
             tmp = pyowm.utils.temputils.kelvin_to_celsius(temp_in_kelvin["temp"])
 
-        elif self.unit is "F":
+        elif self.unit == "F":
             tmp = pyowm.utils.temputils.kelvin_to_fahrenheit(temp_in_kelvin["temp"])
 
         return "{}{}, {}°{}".format(icon, status, tmp, self.unit)
