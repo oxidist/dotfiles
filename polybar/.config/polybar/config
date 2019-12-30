@@ -32,7 +32,7 @@ font-1 = MaterialIcons:size=8:antialia=false:weight=bold;1
 font-0 = IosevkaNerdFont:size=8:weight:bold:antialisa=true;0
 modules-left = i3
 modules-center = date weather
-modules-right = wireless-network pavolume powermenu
+modules-right = info-redshift-temp network pavolume powermenu
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -162,7 +162,7 @@ format-padding = 2
 exec = ~/scripts/weather.py
 
 
-[module/wireless-network]
+[module/network]
 type = internal/network
 
 interface = enp2s0
@@ -177,3 +177,9 @@ label-active-font = 2
 label-connected =  
 
 label-disconnected =  None
+
+[module/info-redshift-temp]
+format-padding = 3
+type = custom/script
+exec = ~/scripts/info-redshift-temp.sh
+interval=5

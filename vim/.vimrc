@@ -1,4 +1,4 @@
-"           _
+""          _
 ""   _   __(_)___ ___
 ""  | | / / / __ `__ \
 ""  | |/ / / / / / / /
@@ -21,15 +21,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'itchyny/lightline.vim' 
   Plug 'sainnhe/gruvbox-material'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'mengelbrecht/lightline-bufferline'
 call plug#end()
 
 
 syntax on
 set termguicolors
 set background=dark
-"let g:gruvbox_material_disable_italic_comment=0
-"let g:gruvbox_material_background='soft'
-"color gruvbox-material
 let g:dracula_italic=1
 color dracula
 set number
@@ -40,6 +38,9 @@ set laststatus=2
 let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
 
 let g:lightline = {'colorscheme': 'dracula'}
+let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type   = {'buffers': 'tabsel'}
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
