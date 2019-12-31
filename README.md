@@ -4,7 +4,7 @@ These dotfiles contain my configurations for:
 - [i3-gaps](https://github.com/Airblader/i3)
 - [vim](https://www.vim.org/)
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [polybar]()https://github.com/polybar/polybar
+- [polybar](https://github.com/polybar/polybar)
 - [rofi](https://github.com/davatorium/rofi)
 - [zathura](https://pwmt.org/projects/zathura/)
 - [terminator](https://wiki.archlinux.org/index.php/Terminator)
