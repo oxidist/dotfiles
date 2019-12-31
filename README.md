@@ -1,4 +1,4 @@
-# Dotfiles
+# dotfiles
 
 These dotfiles are managed by GNU Stow and contain my configurations for:
 - [i3-gaps](https://github.com/Airblader/i3)
