@@ -16,12 +16,13 @@ These dotfiles are managed by GNU Stow and contain my configurations for:
 plus some miscellaneous scripts and my LaTeX preamble.
 
 All the due credit goes to the people from whom I stole and modified the dotfiles for my own use.
+## Screenshots
 
-## Fake busy
+### Fake busy
 ![](screen.png)
 
-## LaTeX workflow
+### LaTeX workflow
 ![](texing.png)
 
-## Clean
+### Clean
 ![](clean.png)
