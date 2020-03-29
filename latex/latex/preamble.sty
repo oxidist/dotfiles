@@ -29,20 +29,22 @@
 \addtolength{\textheight}{3.14cm}
 \setlength{\footskip}{0.5in}
 \setlength{\headsep}{10pt}
-\ihead{\footnotesize\textbf{\@author} (\@date)}
+\ohead{\footnotesize\textbf{\@author} (\@date)}
 \automark{section}
 \chead{}
-\ohead{\footnotesize\textbf{\@title}}
+\ihead{\footnotesize\textbf{\@title}}
 \cfoot{\pagemark}
 
 \usepackage{thmtools}
 \usepackage[framemethod=TikZ]{mdframed}
 \mdfdefinestyle{mdbluebox}{%
-	linewidth=1pt, skipabove=12pt, innerbottommargin=9pt,
+	linewidth=1.5pt, skipabove=12pt, innerbottommargin=9pt,
 	skipbelow=2pt,
-	linecolor=TealBlue!7,
+	linecolor=DodgerBlue!70,
+  rightline=false,topline=false,bottomline=false,
+  leftline=true
 	nobreak=true,
-	backgroundcolor=TealBlue!7,
+%	backgroundcolor=TealBlue!7,
 }
 \mdfdefinestyle{mdpurbox}{%
 	linewidth=1.5pt,
@@ -119,13 +121,13 @@
 }
 \mdfdefinestyle{proof}{%
 	skipabove=8pt,
-	linewidth=1pt,
+	linewidth=1.5pt,
 	rightline=false,
 	leftline=true,
 	topline=false,
 	bottomline=false,
 	linecolor=Black!60,
-	backgroundcolor=RedViolet!10!gray!10,
+	%backgroundcolor=RedViolet!10!gray!10,
 }
 \surroundwithmdframed[style=proof]{proof}
 \declaretheoremstyle[
