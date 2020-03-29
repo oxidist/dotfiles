@@ -1,6 +1,6 @@
-# Dotfiles
+# dotfiles
 
-These dotfiles contain my configurations for:
+These dotfiles are managed by GNU Stow and contain my configurations for:
 - [i3-gaps](https://github.com/Airblader/i3)
 - [vim](https://www.vim.org/)
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
@@ -16,12 +16,13 @@ These dotfiles contain my configurations for:
 plus some miscellaneous scripts and my LaTeX preamble.
 
 All the due credit goes to the people from whom I stole and modified the dotfiles for my own use.
+## Screenshots
 
-## Fake busy
+### Fake busy
 ![](screen.png)
 
-## LaTeX workflow
+### LaTeX workflow
 ![](texing.png)
 
-## Clean
+### Clean
 ![](clean.png)

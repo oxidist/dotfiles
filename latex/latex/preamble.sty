@@ -6,6 +6,8 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{mathtools}
 \usepackage{microtype}
+\newcommand{\vocab}[1]{\textbf{\color{JungleGreen!80!MidnightBlue} #1}}
+
 %%% Colored sections
 \renewcommand*{\sectionformat}%
 	{\color{purple}\S\thesection\enskip}
@@ -17,85 +19,90 @@
 
 %%% Title
 \addtokomafont{subtitle}{\Large}
+\setkomafont{title}{\bfseries\Large}
 \setkomafont{author}{\Large}
-\setkomafont{date}{\Large\normalsize}
-
+\setkomafont{date}{\normalsize}
+\setkomafont{section}{\large\bfseries\rmfamily}
 %%% Page setup
 \usepackage[headsepline]{scrlayer-scrpage}
 \renewcommand{\headfont}{}
 \addtolength{\textheight}{3.14cm}
 \setlength{\footskip}{0.5in}
 \setlength{\headsep}{10pt}
-\ihead{\footnotesize\textbf{\@author} (\@date)}
+\ohead{\footnotesize\textbf{\@author} (\@date)}
 \automark{section}
 \chead{}
-\ohead{\footnotesize\textbf{\@title}}
+\ihead{\footnotesize\textbf{\@title}}
 \cfoot{\pagemark}
 
 \usepackage{thmtools}
 \usepackage[framemethod=TikZ]{mdframed}
 \mdfdefinestyle{mdbluebox}{%
-	roundcorner = 0pt,
-	linewidth=1pt, skipabove=12pt, innerbottommargin=9pt,
+	linewidth=1.5pt, skipabove=12pt, innerbottommargin=9pt,
 	skipbelow=2pt,
-	linecolor=TealBlue!7,
+	linecolor=DodgerBlue!70,
+  rightline=false,topline=false,bottomline=false,
+  leftline=true
 	nobreak=true,
-	backgroundcolor=TealBlue!7,
+%	backgroundcolor=TealBlue!7,
 }
 \mdfdefinestyle{mdpurbox}{%
-	roundcorner = 0pt,
-	linewidth=1pt,
+	linewidth=1.5pt,
 	skipabove=12pt,
 	innerbottommargin=9pt,
 	skipbelow=2pt,
-	linecolor=DarkOrchid!5,
+  rightline=false,topline=false,bottomline=false,
+  leftline=true,
+	linecolor=MidnightBlue!70,
 	nobreak=true,
-	backgroundcolor=DarkOrchid!5,
+	%backgroundcolor=DarkOrchid!5,
 }
 \declaretheoremstyle[
-  headfont=\sffamily\bfseries\color{MidnightBlue},
+  headfont=\bfseries\color{MidnightBlue},
   mdframed={style=mdpurbox},
   headpunct={\\[3pt]},
   postheadspace={0pt}
 ]{thmpurbox}
 \declaretheoremstyle[
-	headfont=\sffamily\bfseries\color{DodgerBlue},
+	headfont=\bfseries\color{DodgerBlue},
 	mdframed={style=mdbluebox},
 	headpunct={\\[3pt]},
 	postheadspace={0pt}
 ]{thmbluebox}
 
 \mdfdefinestyle{mdredbox}{%
-	linewidth=0.5pt,
+	linewidth=1.5pt,
 	skipabove=12pt,
 	frametitleaboveskip=5pt,
 	frametitlebelowskip=0pt,
-	skipbelow=2pt,
-	frametitlefont=\bfseries,
+  skipbelow=2pt,
+	rightline=false, topline=false, bottomline=false,
+  leftline=true
+  frametitlefont=\bfseries,
 	innertopmargin=4pt,
 	innerbottommargin=8pt,
 	nobreak=true,
-  backgroundcolor=Salmon!10,
-	linecolor=Salmon!10,
+  %backgroundcolor=Salmon!10,
+	linecolor=Salmon!70,
 }
 \declaretheoremstyle[
-  headfont=\sffamily\bfseries\color{Brown},
+  headfont=\bfseries\color{Brown},
 	mdframed={style=mdredbox},
 	headpunct={\\[3pt]},
 	postheadspace={0pt},
 ]{thmredbox}
 \mdfdefinestyle{mdgreenbox}{%
 	skipabove=8pt,
-	linewidth=2pt,
+	linewidth=1.5pt,
 	rightline=false,
 	leftline=true,
 	topline=false,
 	bottomline=false,
-	linecolor=JungleGreen!5,
-	backgroundcolor=JungleGreen!5,
+	linecolor=JungleGreen!95,
+	%backgroundcolor=JungleGreen!5,
 }
 \declaretheoremstyle[
-headfont=\sffamily\bfseries\color{Emerald}, %{ForestGreen!70!black},
+  headfont=\bfseries\color{Emerald}, %{ForestGreen!70!black},
 	bodyfont=\normalfont,
 	spaceabove=2pt,
 	spacebelow=1pt,
@@ -104,27 +111,27 @@ headfont=\sffamily\bfseries\color{Emerald}, %{ForestGreen!70!black},
 ]{thmgreenbox}
 \mdfdefinestyle{mdblackbox}{%
 	skipabove=8pt,
-	linewidth=3pt,
+	linewidth=1.5pt,
 	rightline=false,
 	leftline=true,
 	topline=false,
 	bottomline=false,
-	linecolor=RedViolet!10!gray!10,
-	backgroundcolor=RedViolet!10!gray!10,
+	linecolor=Black!90,
+	%backgroundcolor=RedViolet!10!gray!10,
 }
 \mdfdefinestyle{proof}{%
 	skipabove=8pt,
-	linewidth=1pt,
+	linewidth=1.5pt,
 	rightline=false,
 	leftline=true,
 	topline=false,
 	bottomline=false,
 	linecolor=Black!60,
-	backgroundcolor=RedViolet!10!gray!10,
+	%backgroundcolor=RedViolet!10!gray!10,
 }
 \surroundwithmdframed[style=proof]{proof}
 \declaretheoremstyle[
-	headfont=\sffamily\bfseries,
+	headfont=\bfseries,
 	bodyfont=\normalfont\small,
 	spaceabove=0pt,
 	spacebelow=0pt,
@@ -141,8 +148,9 @@ headfont=\sffamily\bfseries\color{Emerald}, %{ForestGreen!70!black},
 \declaretheorem[style=thmpurbox,name=Claim,sibling=theorem]{claim}
 \declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
 \declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
-\declaretheorem[style=thmgreenbox,name=Exercise]{exercise}
+\declaretheorem[style=thmblackbox,name=Exercise]{exercise}
 \declaretheorem[style=thmgreenbox,name=Problem,sibling=exercise]{problem}
+\declaretheorem[style=thmpurbox,name=Question,sibling=theorem]{ques}
 % unnumbered envs
 \declaretheorem[style=thmgreenbox,name=Definition,numbered=no]{definition*}
 \declaretheorem[style=thmpurbox,name=Theorem,numbered=no]{theorem*}
@@ -160,7 +168,7 @@ headfont=\sffamily\bfseries\color{Emerald}, %{ForestGreen!70!black},
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{fact}[theorem]{Fact}
 \newtheorem{answer}[theorem]{Answer}
-\newtheorem{ques}[theorem]{Question}
+%\newtheorem{ques}[theorem]{Question}
 \newtheorem*{conjecture*}{Conjecture}
 \newtheorem*{fact*}{Fact}
 \newtheorem*{answer*}{Answer}
