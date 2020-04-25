@@ -39,7 +39,7 @@ alias g="gotop"
 alias w="weechat"
 alias neofetch="neofetch --source=wallpaper --backend=w3m"
 alias ghc="stack ghc"
-
+alias zoomer="/home/oxide/Downloads/zoom/opt/zoom/ZoomLauncher & jobs"
 # Set name of the theme to load.
 ZSH_THEME="lambda-gitster"
 

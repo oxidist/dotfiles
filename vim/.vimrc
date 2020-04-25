@@ -97,13 +97,13 @@ let g:vim_markdown_folding_disabled = 1
 
 let g:polyglot_disabled = ['latex']
 
-let g:tex_flavor='latex'
+let g:tex_flavor='xelatex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 let g:vimtex_compiler_latexmk = {
+    \ 'executable': 'latexmk',
     \ 'options' : [
-    \   '-pdf',
-    \   '-shell-escape',
+    \   '-xelatex',
     \   '-file-line-error',
     \   '-synctex=1',
     \   '-interaction=nonstopmode',
