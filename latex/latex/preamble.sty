@@ -1,39 +1,37 @@
 \usepackage[svgnames, dvipsnames]{xcolor}
-\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amsmath,amsthm,amssymb}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{mathrsfs}
 \usepackage[shortlabels]{enumitem}
 \usepackage{mathtools}
+\newcommand{\vocab}[1]{\textit{#1}}
+\usepackage{fontspec}
 \usepackage{microtype}
-\newcommand{\vocab}[1]{\textbf{\color{JungleGreen!80!MidnightBlue} #1}}
 
-%%% Colored sections
-\renewcommand*{\sectionformat}%
-	{\color{purple}\S\thesection\enskip}
-	\renewcommand*{\subsectionformat}%
-	{\color{purple}\S\thesubsection\enskip}
-	\renewcommand*{\subsubsectionformat}%
-	{\color{purple}\S\thesubsubsection\enskip}
-	\KOMAoptions{numbers=noenddot}
+%%% Sections
+
+\renewcommand*{\subsectionformat}%
+  {\scshape\upshape\thesubsection\enskip}
 
 %%% Title
 \addtokomafont{subtitle}{\Large}
-\setkomafont{title}{\bfseries\Large}
-\setkomafont{author}{\Large}
+\setkomafont{title}{\large}
+\setkomafont{author}{\large}
 \setkomafont{date}{\normalsize}
-\setkomafont{section}{\large\bfseries\rmfamily}
+\setkomafont{section}{\mdseries\scshape\Large\rmfamily}
+\setkomafont{subsection}{\mdseries\itshape\large\rmfamily}
 %%% Page setup
 \usepackage[headsepline]{scrlayer-scrpage}
 \renewcommand{\headfont}{}
 \addtolength{\textheight}{3.14cm}
 \setlength{\footskip}{0.5in}
-\setlength{\headsep}{10pt}
-\ohead{\footnotesize\textbf{\@author} (\@date)}
+\setlength{\headsep}{12pt}
 \automark{section}
+\ohead{\footnotesize\pagemark}
 \chead{}
-\ihead{\footnotesize\textbf{\@title}}
-\cfoot{\pagemark}
+\ihead{\footnotesize\@title}
+\cfoot{}
 
 \usepackage{thmtools}
 \usepackage[framemethod=TikZ]{mdframed}
@@ -77,7 +75,7 @@
 	frametitlebelowskip=0pt,
   skipbelow=2pt,
 	rightline=false, topline=false, bottomline=false,
-  leftline=true
+  leftline=true,
   frametitlefont=\bfseries,
 	innertopmargin=4pt,
 	innerbottommargin=8pt,
