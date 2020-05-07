@@ -1,7 +1,7 @@
 \usepackage[svgnames, dvipsnames]{xcolor}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[]{hyperref}
 \usepackage{mathrsfs}
 \usepackage[shortlabels]{enumitem}
 \usepackage{mathtools}
@@ -9,7 +9,17 @@
 \usepackage{fontspec}
 \usepackage{microtype}
 
+\newfontfamily\sscfont{Minion Pro}[SmallCapsFeatures={LetterSpace=14, WordSpace=2}]
 %%% Sections
+\RedeclareSectionCommands[
+  beforeskip=\baselineskip,
+  afterskip=1.4\baselineskip
+  ]{section}
+
+%%% Hack for spaced small caps in sections
+\let\oldsec\section 
+\renewcommand{\section}[1]{\oldsec{\sscfont{#1}}}
+
 
 \renewcommand*{\subsectionformat}%
   {\scshape\upshape\thesubsection\enskip}
@@ -19,7 +29,7 @@
 \setkomafont{title}{\large}
 \setkomafont{author}{\large}
 \setkomafont{date}{\normalsize}
-\setkomafont{section}{\mdseries\scshape\Large\rmfamily}
+\setkomafont{section}{\scshape\mdseries\Large\rmfamily}
 \setkomafont{subsection}{\mdseries\itshape\large\rmfamily}
 %%% Page setup
 \usepackage[headsepline]{scrlayer-scrpage}
