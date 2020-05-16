@@ -84,7 +84,7 @@ time-alt = %H:%M:%S
 format = <label>
 format-padding = 2
 
-label =  %date% %time%
+label = %date% %time%
 
 [module/pavolume]
 type = custom/script
