@@ -33,7 +33,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 # Start rofi
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Tab exec $HOME/scripts/rofi_surfraw
 
 bindsym $mod+l exec $HOME/scripts/i3lock.sh
 
