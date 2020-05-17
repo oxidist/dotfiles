@@ -1,19 +1,8 @@
 # dotfiles
 
 These dotfiles are managed by GNU Stow and contain my configurations for:
-- [i3-gaps](https://github.com/Airblader/i3)
-- [vim](https://www.vim.org/)
-- [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [polybar](https://github.com/polybar/polybar)
-- [rofi](https://github.com/davatorium/rofi)
-- [zathura](https://pwmt.org/projects/zathura/)
-- [terminator](https://wiki.archlinux.org/index.php/Terminator)
-- [ranger](https://github.com/ranger/ranger)
-- [weechat](https://weechat.org/)
-- [dunst](https://github.com/dunst-project/dunst)
-- [compton](https://github.com/chjj/compton)
+[i3-gaps](https://github.com/Airblader/i3), [vim](https://www.vim.org/), [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh), [polybar](https://github.com/polybar/polybar), [rofi](https://github.com/davatorium/rofi), [zathura](https://pwmt.org/projects/zathura/), [terminator](https://wiki.archlinux.org/index.php/Terminator), [ranger](https://github.com/ranger/ranger), [weechat](https://weechat.org/), [dunst](https://github.com/dunst-project/dunst), [compton](https://github.com/chjj/compton), and more.
 
-plus some miscellaneous scripts and my LaTeX preamble.
 
 Because I forget how to use GNU Stow every time I need to use it again, I am placing [this](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/) for my future self.
 
