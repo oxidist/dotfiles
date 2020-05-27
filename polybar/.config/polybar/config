@@ -30,7 +30,7 @@ fixed-center = true
 
 font-2 = PragmataProLiga:size=11:antialia=true;2
 font-1 = MaterialIcons:size=8:antialia=false:weight=bold;1
-font-0 = IosevkaNerdFont:size=8:weight:bold:antialisa=true;0
+font-0 = IosevkaOxide:size=8:weight:bold:antialisa=true;0
 modules-left = i3
 modules-center = date weather
 modules-right = info-redshift-temp network pavolume powermenu
@@ -174,13 +174,13 @@ format-connected-padding = 1
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 1
 
-label-active-font = 2
-label-connected =  
+label-active-font = 1
+label-connected = 
 
-label-disconnected =  None
+label-disconnected =  None 
 
 [module/info-redshift-temp]
-format-padding = 3
+format-padding = 2
 type = custom/script
 exec = ~/scripts/info-redshift-temp.sh
 interval=5

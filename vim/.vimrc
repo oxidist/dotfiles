@@ -35,6 +35,9 @@ set cursorline
 set noshowmode
 set laststatus=2
 
+inoremap jk <ESC>
+let mapleader = " "
+
 let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
 
 let g:lightline = {'colorscheme': 'dracula'}
