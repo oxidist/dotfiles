@@ -34,13 +34,14 @@ man() {
 }
 
 # Aliases for a few useful commands
-alias yaourt="yaourt --color --pager"
 alias x="ranger"
 alias g="gotop"
 alias w="weechat"
 alias neofetch="neofetch --source=wallpaper --backend=w3m"
 alias zoomer="/home/oxide/Downloads/zoom/opt/zoom/ZoomLauncher & jobs"
+alias svim="sudoedit"
 # Set name of the theme to load.
+
 ZSH_THEME="lambda-gitster"
 
 local user_symbol="$"

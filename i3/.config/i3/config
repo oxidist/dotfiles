@@ -15,13 +15,13 @@ new_window pixel
 
 # i3-gaps
 gaps outer 00
-gaps inner 00
+gaps inner 08
 
-# remove all borders
+# d̶o̶c̶t̶o̶r̶s̶ windows without borders
 for_window [class="^.*"] border pixel 0
 
-bindsym $mod+Shift+d gaps inner all set 0; gaps outer all set 0
-bindsym $mod+Shift+s gaps inner all set 10; gaps outer all set 0
+#bindsym $mod+Shift+d gaps inner all set 0; gaps outer all set 0
+#bindsym $mod+Shift+s gaps inner all set 8; gaps outer all set 0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -34,6 +34,11 @@ bindsym $mod+Shift+q kill
 # Start rofi
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Tab exec $HOME/scripts/rofi_surfraw
+# Google
+bindsym $mod+Shift+x exec surfraw google $(xclip -o)
+bindsym $mod+Shift+w exec surfraw wikipedia $(xclip -o)
+bindsym $mod+Shift+s exec surfraw scholar $(xclip -o)
+bindsym $mod+Shift+d exec surfraw jisho $(xclip -o)
 
 bindsym $mod+l exec $HOME/scripts/i3lock.sh
 
@@ -157,7 +162,7 @@ client.placeholder          $elegant 	 $damn       $silver     $white
 # polybar
 exec_always --no-startup-id . $HOME/.config/polybar/launch.sh &
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale ~/Pictures/nasabig.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/twilight.jpg
 
 exec --no-startup-id dunst
 exec --no-startup-id notify-send "Welcome back, Oxide."

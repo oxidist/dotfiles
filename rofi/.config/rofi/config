@@ -1,1 +1,2 @@
 rofi.font: PragmataPro Liga Bold 10
+rofi.theme: ~/.config/rofi/srcery.rasi
