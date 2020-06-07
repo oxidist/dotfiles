@@ -5,7 +5,6 @@
 ""  |___/_/_/ /_/ /_/
 
 call plug#begin('~/.vim/plugged')
-  Plug 'dracula/vim', {'as': 'dracula'}
   Plug 'mhinz/vim-startify'
   Plug 'vim-syntastic/syntastic'
   Plug 'Raimondi/delimitMate'
@@ -15,21 +14,22 @@ call plug#begin('~/.vim/plugged')
   Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
   Plug '907th/vim-auto-save'
   Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-  Plug 'Twinside/vim-HaskellConceal', {'for': 'haskell'}
   Plug 'ycm-core/YouCompleteMe'
   Plug 'sheerun/vim-polyglot'
   Plug 'itchyny/lightline.vim'
+  Plug 'mengelbrecht/lightline-bufferline'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'srcery-colors/srcery-vim'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'mengelbrecht/lightline-bufferline'
 call plug#end()
 
 
 syntax on
+colorscheme srcery
 set termguicolors
+set t_Co=256
 set background=dark
 ""let g:dracula_italic=1
-colorscheme srcery
 set number
 set cursorline
 set noshowmode
@@ -38,13 +38,38 @@ set laststatus=2
 inoremap jk <ESC>
 let mapleader = " "
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
 
-let g:lightline = {'colorscheme': 'srcery'}
-let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
-let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-let g:lightline.component_type   = {'buffers': 'tabsel'}
-
+let g:lightline = {
+      \ 'colorscheme': 'srcery', 
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['close'] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
+      \ },
+      \ 'component': {
+      \   'lineinfo': ' %3l:%-2v',
+      \ },
+      \ 'component_function': {
+      \   'readonly': 'LightlineReadonly',
+      \   'fugitive': 'LightlineFugitive'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+set showtabline=2
+let g:lightline#bufferline#filename_modifier = ':t'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
