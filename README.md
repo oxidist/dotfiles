@@ -7,7 +7,7 @@ These dotfiles are managed by GNU Stow and contain my configurations for:
 Because I forget how to use GNU Stow every time I need to use it again, I am placing [this](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/) for my future self.
 
 Most of the due credit goes to the people from whom I copied from and modified the dotfiles for my own use.
-## Screenshots
+## Screenshots (may be out-of-date)
 
 ### Fake busy
 ![](screen.png)
