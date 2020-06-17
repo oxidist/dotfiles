@@ -25,15 +25,16 @@ call plug#end()
 
 
 syntax on
-colorscheme srcery
 set termguicolors
-set t_Co=256
+colorscheme srcery
 set background=dark
 ""let g:dracula_italic=1
 set number
 set cursorline
 set noshowmode
 set laststatus=2
+" for arbtt
+set title
 
 inoremap jk <ESC>
 let mapleader = " "

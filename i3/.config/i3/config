@@ -158,18 +158,23 @@ client.focused_inactive     $elegant 	 $elegant    $silver     $damn
 client.urgent               $damn 	   $cyan	     $silver     $damn
 client.placeholder          $elegant 	 $damn       $silver     $white
 
+# time tracking
+exec_always --no-startup-id /home/oxide/.local/bin/arbtt-capture &
 
 # polybar
 exec_always --no-startup-id . $HOME/.config/polybar/launch.sh &
 # Wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Pictures/twilight.jpg
 
+
 exec --no-startup-id dunst
 exec --no-startup-id notify-send "Welcome back, Oxide."
 
+# screenshots
 exec --no-startup-id flameshot
 bindsym Print exec "flameshot gui"
 
+# for redshift
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 exec --no-startup-id i3-msg 'exec firefox; workspace $ws2; exec emacs; workspace $ws4; exec discord'

@@ -40,6 +40,7 @@ alias w="weechat"
 alias neofetch="neofetch --source=wallpaper --backend=w3m"
 alias zoomer="/home/oxide/Downloads/zoom/opt/zoom/ZoomLauncher & jobs"
 alias svim="sudoedit"
+alias t="todo.sh"
 # Set name of the theme to load.
 
 ZSH_THEME="lambda-gitster"
