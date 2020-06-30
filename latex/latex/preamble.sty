@@ -29,7 +29,7 @@
 \setkomafont{title}{\scshape\large}
 \setkomafont{author}{\large}
 \setkomafont{date}{\normalsize}
-\setkomafont{section}{\sscfont\scshape\mdseries\Large}
+\setkomafont{section}{\sscfont\scshape\mdseries\Large\MakeLowercase}
 \setkomafont{subsection}{\mdseries\itshape\large\rmfamily}
 %%% Page setup
 \usepackage[headsepline]{scrlayer-scrpage}
@@ -40,7 +40,7 @@
 \automark{section}
 \ohead{\footnotesize\pagemark}
 \chead{}
-\ihead{\footnotesize\scshape\@title}
+\ihead{\footnotesize\@title}
 \cfoot{\pagemark}
 
 \usepackage{thmtools}
