@@ -1,4 +1,4 @@
-\usepackage[svgnames, dvipsnames]{xcolor}
+\usepackage[x11names, svgnames, dvipsnames]{xcolor}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{graphicx}
 \usepackage[]{hyperref}
@@ -17,12 +17,8 @@
 %%% Sections
 \RedeclareSectionCommands[
   beforeskip=\baselineskip,
-  afterskip=1.4\baselineskip
+  afterskip=1.4\baselineskip,
   ]{section}
-
-%%% Hack for spaced small caps in sections
-\let\oldsec\section 
-\renewcommand{\section}[1]{\oldsec{\sscfont{#1}}}
 
 
 \renewcommand*{\subsectionformat}%
@@ -30,10 +26,10 @@
 
 %%% Title
 \addtokomafont{subtitle}{\Large}
-\setkomafont{title}{\large}
+\setkomafont{title}{\scshape\large}
 \setkomafont{author}{\large}
 \setkomafont{date}{\normalsize}
-\setkomafont{section}{\scshape\mdseries\Large\rmfamily}
+\setkomafont{section}{\sscfont\scshape\mdseries\Large}
 \setkomafont{subsection}{\mdseries\itshape\large\rmfamily}
 %%% Page setup
 \usepackage[headsepline]{scrlayer-scrpage}
@@ -44,7 +40,7 @@
 \automark{section}
 \ohead{\footnotesize\pagemark}
 \chead{}
-\ihead{\footnotesize\@title}
+\ihead{\footnotesize\scshape\@title}
 \cfoot{\pagemark}
 
 \usepackage{thmtools}
@@ -113,9 +109,8 @@
 \declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
 \declaretheorem[style=thmgreenbox,name=Exercise, numbered=no]{exercise*}
 \declaretheorem[style=thmgreenbox,name=Problem,numbered=no]{problem*}
+\declaretheorem[style=thmpurbox,name=Question, numbered=no]{ques*}
 
 
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem*{conjecture*}{Conjecture}
-\newtheorem*{ques*}{Question}
-

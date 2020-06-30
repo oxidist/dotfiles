@@ -177,8 +177,8 @@ bindsym Print exec "flameshot gui"
 # for redshift
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
-exec --no-startup-id i3-msg 'exec firefox; workspace $ws2; exec emacs; workspace $ws4; exec discord'
+exec --no-startup-id i3-msg 'exec firefox; workspace $ws2; exec emacs; workspace $ws4; exec discord; workspace $ws1'
 
 assign [class="Firefox"] $ws1
-assign [class="Discord"] $ws4
+assign [class="discord"] $ws4
 assign [class="Emacs"] $ws2

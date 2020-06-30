@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
   Plug '907th/vim-auto-save'
   Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-  Plug 'ycm-core/YouCompleteMe'
+""  Plug 'ycm-core/YouCompleteMe'
   Plug 'sheerun/vim-polyglot'
   Plug 'itchyny/lightline.vim'
   Plug 'mengelbrecht/lightline-bufferline'
@@ -132,7 +132,8 @@ let g:vimtex_quickfix_mode=0
 let g:vimtex_compiler_latexmk = {
     \ 'executable': 'latexmk',
     \ 'options' : [
-    \   '-xelatex',
+    \   '-shell-escape',
+    \   '--xelatex',
     \   '-file-line-error',
     \   '-synctex=1',
     \   '-interaction=nonstopmode',
