@@ -1,214 +1,114 @@
-/*
- * Rofi color theme
- * Based on srcery color scheme for Vim
- * https://github.com/roosta/vim-srcery
- *
- * File: srcery.rasi
- * Desc: Srcery theme for Rofi
- * Author: Daniel Berg <mail@roosta.sh>
- * Modified: 2018-05-11
- */
-
+// -*-CSS-*-
 * {
-  spacing:       2;
-
-  black:         #1C1B19;
-  brightblack:   #2D2C29;
-
-  red:           #EF2F27;
-  brightred:     #F75341;
-
-  green:         #519F50;
-  brightgreen:   #98BC37;
-
-  yellow:        #FBB829;
-  brightyellow:  #FED06E;
-
-  blue:          #2C78BF;
-  brightblue:    #68A8E4;
-
-  magenta:       #E02C6D;
-  brightmagenta: #FF5C8F;
-
-  cyan:          #0AAEB3;
-  brightcyan:    #53FDE9;
-
-  white:         #918175;
-  brightwhite:   #FCE8C3;
-
-  orange:        #D75F00;
-  brightorange:  #FF8700;
-
-  xgrey1:        #262626;
-  xgrey2:        #303030;
-  xgrey3:        #3A3A3A;
-  xgrey4:        #444444;
-  xgrey5:        #4E4E4E;
-
-  highlight:     bold #E02C6D;
-
-  selected-normal-foreground:  @black;
-  selected-normal-background:  @brightwhite;
-
-  normal-foreground:           @brightwhite;
-  normal-background:           @brightblack;
-
-  alternate-normal-background: @xgrey1;
-  alternate-normal-foreground: @brightwhite;
-
-  urgent-foreground:           @black;
-  urgent-background:           @orange;
-
-  selected-urgent-foreground:  @black;
-  selected-urgent-background:  @brightorange;
-
-  alternate-urgent-background: @urgent-background;
-  alternate-urgent-foreground: @urgent-foreground;
-
-  active-foreground:           @yellow;
-  active-background:           @brightblack;
-
-  selected-active-foreground:  @black;
-  selected-active-background:  @yellow;
-
-  alternate-active-background: @yellow;
-  alternate-active-foreground: @black;
-
-  border-color:                @selected-normal-background; // @magenta;
-  separatorcolor:              @border-color;
-  background-color:            @normal-background;
+    background: 	rgba ( 40, 42, 54, 100 % );
+    current-line: 	rgba ( 68, 71, 90, 100 % );
+    selection: 	rgba ( 68, 71, 90, 100 % );
+    foreground: 	rgba ( 248, 248, 242, 100 % );
+    comment: 	rgba ( 98, 114, 164, 100 % );
+    cyan: 	rgba ( 139, 233, 253, 100 % );
+    green: 	rgba ( 80, 250, 123, 100 % );
+    orange: 	rgba ( 255, 184, 108, 100 % );
+    pink: 	rgba ( 255, 121, 198, 100 % );
+    purple: 	rgba ( 189, 147, 249, 100 % );
+    red: 	rgba ( 255, 85, 85, 100 % );
+    yellow: 	rgba ( 241, 250, 140, 100 % );
+}
+* {
+    selected-normal-background:     @cyan;
+    normal-background:              @background;
+    normal-foreground:              @foreground;
+    alternate-normal-background:    @normal-background;
+    alternate-normal-foreground:    @foreground;
+    selected-normal-foreground:     @normal-background;
+    urgent-foreground:              @red;
+    urgent-background:              @normal-background;
+    alternate-urgent-background:    @urgent-background;
+    alternate-urgent-foreground:    @urgent-foreground;
+    selected-active-foreground:     @foreground;
+    selected-urgent-background:     @normal-background;
+    alternate-active-background:    @normal-background;
+    alternate-active-foreground:    @selected-active-foreground;
+    alternate-active-background:    @selected-active-background;
+    border-color:                   @selected-normal-background;
+    separatorcolor:                 @border-color;
+    spacing: 2;
+    background-color: @normal-background;
+}
+#window {
+    border:           3;
+    padding:          9;
+}
+#mainbox {
+    background-color: inherit;
+    border:  0;
+}
+#textbox {
+    text-color: @foreground;
+    padding: 2px;
 }
 
-window {
-  border:     2;
-  foreground: @magenta;
-  padding:    4;
-  background: @black;
+#element {
+    border:  0;
+    padding: 1px ;
 }
-
-mainbox {
-  border:  0;
-  padding: 0;
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
 }
-
-message {
-  border:  2px 0px 0px ;
-  padding: 2px 0px 0px ;
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
 }
-
-textbox {
-  text-color: @brightwhite;
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
 }
-
-listview {
-  fixed-height: 1;
-  border:       2px dash 0px 0px ;
-  border-color: @separatorcolor;
-  spacing:      2px ;
-  scrollbar:    false;
-  padding:      2px 0px 0px ;
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
 }
-
-element {
-  border:  0;
-  padding: 1px;
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
 }
-
-element normal.normal {
-  background-color: @normal-background;
-  text-color:       @normal-foreground;
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
 }
-
-element normal.urgent {
-  background-color: @urgent-background;
-  text-color:       @urgent-foreground;
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
 }
-
-element normal.active {
-  background-color: @active-background;
-  text-color:       @active-foreground;
+#element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
 }
-
-element selected.normal {
-  background-color: @selected-normal-background;
-  text-color:       @selected-normal-foreground;
+#element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
 }
-
-element selected.urgent {
-  background-color: @selected-urgent-background;
-  text-color:       @selected-urgent-foreground;
+#scrollbar {
+    border:       0;
 }
-
-element selected.active {
-  background-color: @selected-active-background;
-  text-color:       @selected-active-foreground;
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
 }
-
-element alternate.normal {
-  background-color: @alternate-normal-background;
-  text-color:       @alternate-normal-foreground;
+#inputbar {
+    spacing:    4;
+    text-color: @normal-foreground;
+    background-color: inherit;
+    padding:    1px ;
 }
-
-element alternate.urgent {
-  background-color: @alternate-urgent-background;
-  text-color:       @alternate-urgent-foreground;
+#case-indicator {
+    spacing:    0;
+    text-color: @normal-background;
 }
-
-element alternate.active {
-  background-color: @alternate-active-background;
-  text-color:       @alternate-active-foreground;
+#entry {
+    spacing:    1;
+    text-color: @normal-foreground;
 }
-
-scrollbar {
-  width:        4px ;
-  border:       0;
-  handle-color: @normal-foreground;
-  handle-width: 8px ;
-  padding:      0;
+#prompt {
+    spacing:    1px ;
+    text-color: @normal-foreground;
 }
-
-sidebar {
-  border:       2px dash 0px 0px ;
-  border-color: @separatorcolor;
-}
-
-button {
-  text-color: @brightwhite;
-}
-
-button selected {
-  background-color: @magenta;
-  text-color:       @brightwhite;
-}
-
-inputbar {
-  spacing:    0px ;
-  text-color: @normal-foreground;
-  padding:    1px ;
-  children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
-}
-
-case-indicator {
-  spacing:    0;
-  text-color: @normal-foreground;
-}
-
-entry {
-  spacing:    0;
-  text-color: @normal-foreground;
-}
-
-prompt {
-  spacing:    0;
-  text-color: @normal-foreground;
-}
-
-textbox-prompt-colon {
-  expand:     false;
-  str:        ":";
-  margin:     0px 0.3000em 0.0000em 0.0000em ;
-  text-color: inherit;
-}
-
-// vim:ft=css:ts=2:sw=2:fdm=marker
-

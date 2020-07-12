@@ -1,9 +1,9 @@
-#                  __      __              
-#     ____  ____  / /_  __/ /_  ____ ______
-#    / __ \/ __ \/ / / / / __ \/ __ `/ ___/
-#   / /_/ / /_/ / / /_/ / /_/ / /_/ / /    
-#  / .___/\____/_/\__, /_.___/\__,_/_/     
-# /_/            /____/                    
+#                 __      __              
+#    ____  ____  / /_  __/ /_  ____ ______
+#   / __ \/ __ \/ / / / / __ \/ __ `/ ___/
+#  / /_/ / /_/ / / /_/ / /_/ / /_/ / /    
+# / .___/\____/_/\__, /_.___/\__,_/_/     
+#/_/            /____/                    
 
 
 [global/wm]
@@ -23,14 +23,14 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-background = #1C1B19
-foreground = #FCE8C3
+background = #20212b
+foreground = #f8f8f2
 
 fixed-center = true
 
 font-2 = PragmataProLiga:size=11:antialia=true;2
 font-1 = MaterialIcons:size=8:antialia=false:weight=bold;1
-font-0 = IosevkaOxide:size=8:weight:bold:antialisa=true;0
+font-0 = IosevkaOxide:size=8:weight:bold:antialia=true;0
 modules-left = i3
 modules-center = date weather
 modules-right = info-redshift-temp network pavolume powermenu
@@ -50,13 +50,13 @@ enable-scroll = false
 format = <label-state>
 format-padding-right = 2
 
-label-unfocused-foreground = #918175
+label-unfocused-foreground = #6272a4
 label-unfocused-padding = 1
 
-label-focused-foreground = #FCE8C3
+label-focused-foreground = #f8f8f2
 label-focused-padding = 1
 
-label-urgent-foreground = #EF2F27
+label-urgent-foreground = #ff5555
 label-urgent-padding = 1
 
 ws-icon-0 = 1;1
@@ -110,7 +110,7 @@ label-open = 
 label-close = cancel
 
 label-close-background = #20212b
-label-close-foreground = #FCE8C3
+label-close-foreground = #f8f8f2
 label-open-padding-left = 2
 label-open-padding-right = 3
 label-close-padding = 3

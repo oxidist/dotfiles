@@ -13,7 +13,7 @@ margin-bottom = 0
 
 [bar/top]
 width = 1366
-height = 25
+height = 22
 offset-x = 0
 offset-y = 0
 bottom = false

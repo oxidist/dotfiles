@@ -14,21 +14,22 @@ call plug#begin('~/.vim/plugged')
   Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
   Plug '907th/vim-auto-save'
   Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-""  Plug 'ycm-core/YouCompleteMe'
+  Plug 'ycm-core/YouCompleteMe'
   Plug 'sheerun/vim-polyglot'
   Plug 'itchyny/lightline.vim'
   Plug 'mengelbrecht/lightline-bufferline'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'srcery-colors/srcery-vim'
-  Plug 'ryanoasis/vim-devicons'
+  Plug 'dracula/vim', {'as':'dracula'}
 call plug#end()
 
 
 syntax on
 set termguicolors
-colorscheme srcery
+colorscheme dracula
 set background=dark
-""let g:dracula_italic=1
+set t_Co=256
+let g:dracula_italic=1
 set number
 set cursorline
 set noshowmode
@@ -45,7 +46,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
 
 let g:lightline = {
-      \ 'colorscheme': 'srcery', 
+      \ 'colorscheme': 'dracula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
       \ },
