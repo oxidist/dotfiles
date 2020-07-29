@@ -5,17 +5,6 @@
 # /___/____/_/ /_/
 
 
-# Enviroment variables
-export ZSH=$HOME/.oh-my-zsh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-export TERMINAL=terminator
-export PAGER=less
-export VISUAL=vim
-export TERM=xterm-256color
-export PATH=$HOME/.cabal/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH 
-
-export FZF_DEFAULT_OPTS='--preview "[[ $(file --mime {}) =~ binary ]] && echo {} is a binary file || highlight -O ansi -l {} 2> /dev/null | head -500" --height 70% --layout=reverse --border'
 # Syntax highlighting and tab completion
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 autoload -Uz compinit

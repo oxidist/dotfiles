@@ -36,8 +36,10 @@ values."
      markdown
      html
      vimscript
+     rust
      python
-     haskell
+     (haskell :variables haskell-completion-backend 'lsp)
+     lsp
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -47,8 +49,8 @@ values."
      auto-completion
      ;; better-defaults
      emacs-lisp
-     git
-     ;; markdown
+     ;; git
+     markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -61,11 +63,11 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(auctex proof-general)
+   dotspacemacs-additional-packages '(auctex proof-general racer lsp-mode lsp-ui lsp-haskell)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(company-tern vi-tilde-fringe exec-path-from-shell)
+   dotspacemacs-excluded-packages '(vi-tilde-fringe) ;; exec-path-from-shell)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -139,11 +141,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Pragmata Pro Liga"
+   dotspacemacs-default-font '("PragmataPro Liga"
                                :size 14
                                :weight regular
                                :width normal
-                               :powerline-scale 1.4)
+                               :powerline-scale 1.5)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -238,17 +240,19 @@ values."
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-active-transparency 100
+   dotspacemacs-active-transparency 90
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-inactive-transparency 80
+   dotspacemacs-inactive-transparency 90
    ;; If non nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
    ;; If non nil show the color guide hint for transient state keys. (default t)
    dotspacemacs-show-transient-state-color-guide t
    ;; If non nil unicode symbols are displayed in the mode line. (default t)
    dotspacemacs-mode-line-unicode-symbols t
+   ;; theme
+   dotspacemacs-mode-line-theme 'spacemacs
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
@@ -266,7 +270,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   ;; dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -319,297 +323,26 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; vim style completions
+  (company-tng-configure-default)
+
   (golden-ratio-mode +1)
   (global-display-line-numbers-mode)
 
+  ;; for arbtt
   (setq frame-title-format "%f")
 
   (setq powerline-default-separator 'arrow)
-
   (setq prettify-symbols-unprettify-at-point 'right-edge)
-  (defconst pragmatapro-prettify-symbols-alist
-    (mapcar (lambda (s)
-              `(,(car s)
-                .
-                ,(vconcat
-                  (apply 'vconcat
-                        (make-list
-                          (- (length (car s)) 1)
-                          (vector (decode-char 'ucs #X0020) '(Br . Bl))))
-                  (vector (decode-char 'ucs (cadr s))))))
-            '(("[ERROR]"    #XE2C0)
-              ("[DEBUG]"    #XE2C1)
-              ("[INFO]"     #XE2C2)
-              ("[WARN]"     #XE2C3)
-              ("[WARNING]"  #XE2C4)
-              ("[ERR]"      #XE2C5)
-              ("[FATAL]"    #XE2C6)
-              ("[TRACE]"    #XE2C7)
-              ("[FIXME]"    #XE2C8)
-              ("[TODO]"     #XE2C9)
-              ("[BUG]"      #XE2CA)
-              ("[NOTE]"     #XE2CB)
-              ("[HACK]"     #XE2CC)
-              ("[MARK]"     #XE2CD)
-              ("# ERROR"    #XE2F0)
-              ("# DEBUG"    #XE2F1)
-              ("# INFO"     #XE2F2)
-              ("# WARN"     #XE2F3)
-              ("# WARNING"  #XE2F4)
-              ("# ERR"      #XE2F5)
-              ("# FATAL"    #XE2F6)
-              ("# TRACE"    #XE2F7)
-              ("# FIXME"    #XE2F8)
-              ("# TODO"     #XE2F9)
-              ("# BUG"      #XE2FA)
-              ("# NOTE"     #XE2FB)
-              ("# HACK"     #XE2FC)
-              ("# MARK"     #XE2FD)
-              ("// ERROR"   #XE2E0)
-              ("// DEBUG"   #XE2E1)
-              ("// INFO"    #XE2E2)
-              ("// WARN"    #XE2E3)
-              ("// WARNING" #XE2E4)
-              ("// ERR"     #XE2E5)
-              ("// FATAL"   #XE2E6)
-              ("// TRACE"   #XE2E7)
-              ("// FIXME"   #XE2E8)
-              ("// TODO"    #XE2E9)
-              ("// BUG"     #XE2EA)
-              ("// NOTE"    #XE2EB)
-              ("// HACK"    #XE2EC)
-              ("// MARK"    #XE2ED)
-              ("!!"         #XE900)
-              ("!="         #XE901)
-              ("!=="        #XE902)
-              ("!!!"        #XE903)
-              ("!≡"         #XE904)
-              ("!≡≡"        #XE905)
-              ("!>"         #XE906)
-              ("!=<"        #XE907)
-              ("#("         #XE920)
-              ("#_"         #XE921)
-              ("#{"         #XE922)
-              ("#?"         #XE923)
-              ("#>"         #XE924)
-              ("##"         #XE925)
-              ("#_("        #XE926)
-              ("%="         #XE930)
-              ("%>"         #XE931)
-              ("%>%"        #XE932)
-              ("%<%"        #XE933)
-              ("&%"         #XE940)
-              ("&&"         #XE941)
-              ("&*"         #XE942)
-              ("&+"         #XE943)
-              ("&-"         #XE944)
-              ("&/"         #XE945)
-              ("&="         #XE946)
-              ("&&&"        #XE947)
-              ("&>"         #XE948)
-              ("$>"         #XE955)
-              ("***"        #XE960)
-              ("*="         #XE961)
-              ("*/"         #XE962)
-              ("*>"         #XE963)
-              ("++"         #XE970)
-              ("+++"        #XE971)
-              ("+="         #XE972)
-              ("+>"         #XE973)
-              ("++="        #XE974)
-              ("--"         #XE980)
-              ("-<"         #XE981)
-              ("-<<"        #XE982)
-              ("-="         #XE983)
-              ("->"         #XE984)
-              ("->>"        #XE985)
-              ("---"        #XE986)
-              ("-->"        #XE987)
-              ("-+-"        #XE988)
-              ("-\\/"       #XE989)
-              ("-|>"        #XE98A)
-              ("-<|"        #XE98B)
-              (".."         #XE990)
-              ("..."        #XE991)
-              ("..<"        #XE992)
-              (".>"         #XE993)
-              (".~"         #XE994)
-              (".="         #XE995)
-              ("/*"         #XE9A0)
-              ("//"         #XE9A1)
-              ("/>"         #XE9A2)
-              ("/="         #XE9A3)
-              ("/=="        #XE9A4)
-              ("///"        #XE9A5)
-              ("/**"        #XE9A6)
-              (":::"        #XE9AF)
-              ("::"         #XE9B0)
-              (":="         #XE9B1)
-              (":≡"         #XE9B2)
-              (":>"         #XE9B3)
-              (":=>"        #XE9B4)
-              (":("         #XE9B5)
-              (":-("        #XE9B6)
-              (":)"         #XE9B7)
-              (":-)"        #XE9B8)
-              (":/"         #XE9B9)
-              (":\\"        #XE9BA)
-              (":3"         #XE9BB)
-              (":D"         #XE9BC)
-              (":P"         #XE9BD)
-              (":>:"        #XE9BE)
-              (":<:"        #XE9BF)
-              ("<$>"        #XE9C0)
-              ("<*"         #XE9C1)
-              ("<*>"        #XE9C2)
-              ("<+>"        #XE9C3)
-              ("<-"         #XE9C4)
-              ("<<"         #XE9C5)
-              ("<<<"        #XE9C6)
-              ("<<="        #XE9C7)
-              ("<="         #XE9C8)
-              ("<=>"        #XE9C9)
-              ("<>"         #XE9CA)
-              ("<|>"        #XE9CB)
-              ("<<-"        #XE9CC)
-              ("<|"         #XE9CD)
-              ("<=<"        #XE9CE)
-              ("<~"         #XE9CF)
-              ("<~~"        #XE9D0)
-              ("<<~"        #XE9D1)
-              ("<$"         #XE9D2)
-              ("<+"         #XE9D3)
-              ("<!>"        #XE9D4)
-              ("<@>"        #XE9D5)
-              ("<#>"        #XE9D6)
-              ("<%>"        #XE9D7)
-              ("<^>"        #XE9D8)
-              ("<&>"        #XE9D9)
-              ("<?>"        #XE9DA)
-              ("<.>"        #XE9DB)
-              ("</>"        #XE9DC)
-              ("<\\>"       #XE9DD)
-              ("<\">"       #XE9DE)
-              ("<:>"        #XE9DF)
-              ("<~>"        #XE9E0)
-              ("<**>"       #XE9E1)
-              ("<<^"        #XE9E2)
-              ("<!"         #XE9E3)
-              ("<@"         #XE9E4)
-              ("<#"         #XE9E5)
-              ("<%"         #XE9E6)
-              ("<^"         #XE9E7)
-              ("<&"         #XE9E8)
-              ("<?"         #XE9E9)
-              ("<."         #XE9EA)
-              ("</"         #XE9EB)
-              ("<\\"        #XE9EC)
-              ("<\""        #XE9ED)
-              ("<:"         #XE9EE)
-              ("<->"        #XE9EF)
-              ("<!--"       #XE9F0)
-              ("<--"        #XE9F1)
-              ("<~<"        #XE9F2)
-              ("<==>"       #XE9F3)
-              ("<|-"        #XE9F4)
-              ("<<|"        #XE9F5)
-              ("<-<"        #XE9F7)
-              ("<-->"       #XE9F8)
-              ("<<=="       #XE9F9)
-              ("<=="        #XE9FA)
-              ("=<<"        #XEA00)
-              ("=="         #XEA01)
-              ("==="        #XEA02)
-              ("==>"        #XEA03)
-              ("=>"         #XEA04)
-              ("=~"         #XEA05)
-              ("=>>"        #XEA06)
-              ("=/="        #XEA07)
-              ("=~="        #XEA08)
-              ("==>>"       #XEA09)
-              ("≡≡"         #XEA10)
-              ("≡≡≡"        #XEA11)
-              ("≡:≡"        #XEA12)
-              (">-"         #XEA20)
-              (">="         #XEA21)
-              (">>"         #XEA22)
-              (">>-"        #XEA23)
-              (">>="        #XEA24)
-              (">>>"        #XEA25)
-              (">=>"        #XEA26)
-              (">>^"        #XEA27)
-              (">>|"        #XEA28)
-              (">!="        #XEA29)
-              (">->"        #XEA2A)
-              ("??"         #XEA40)
-              ("?~"         #XEA41)
-              ("?="         #XEA42)
-              ("?>"         #XEA43)
-              ("???"        #XEA44)
-              ("?."         #XEA45)
-              ("^="         #XEA48)
-              ("^."         #XEA49)
-              ("^?"         #XEA4A)
-              ("^.."        #XEA4B)
-              ("^<<"        #XEA4C)
-              ("^>>"        #XEA4D)
-              ("^>"         #XEA4E)
-              ("\\\\"       #XEA50)
-              ("\\>"        #XEA51)
-              ("\\/-"       #XEA52)
-              ("@>"         #XEA57)
-              ("|="         #XEA60)
-              ("||"         #XEA61)
-              ("|>"         #XEA62)
-              ("|||"        #XEA63)
-              ("|+|"        #XEA64)
-              ("|->"        #XEA65)
-              ("|-->"       #XEA66)
-              ("|=>"        #XEA67)
-              ("|==>"       #XEA68)
-              ("|>-"        #XEA69)
-              ("|<<"        #XEA6A)
-              ("||>"        #XEA6B)
-              ("|>>"        #XEA6C)
-              ("|-"         #XEA6D)
-              ("||-"        #XEA6E)
-              ("~="         #XEA70)
-              ("~>"         #XEA71)
-              ("~~>"        #XEA72)
-              ("~>>"        #XEA73)
-              ("[["         #XEA80)
-              ("]]"         #XEA81)
-              ("\">"        #XEA90)
-              ("_|_"        #XEA97)
-              )))
 
-  (defun add-pragmatapro-prettify-symbols-alist ()
-    (setq prettify-symbols-alist pragmatapro-prettify-symbols-alist))
-
-  ;; enable prettified symbols on comments
-  (defun setup-compose-predicate ()
-    (setq prettify-symbols-compose-predicate
-          (defun my-prettify-symbols-default-compose-p (start end _match)
-            "Same as `prettify-symbols-default-compose-p', except compose symbols in comments as well."
-            (let* ((syntaxes-beg (if (memq (char-syntax (char-after start)) '(?w ?_))
-                                    '(?w ?_) '(?. ?\\)))
-                  (syntaxes-end (if (memq (char-syntax (char-before end)) '(?w ?_))
-                                    '(?w ?_) '(?. ?\\))))
-              (not (or (memq (char-syntax (or (char-before start) ?\s)) syntaxes-beg)
-                      (memq (char-syntax (or (char-after end) ?\s)) syntaxes-end)
-                      (nth 3 (syntax-ppss))))))))
-
-  ;; main hook fn, just add to text-mode/prog-mode
-  (defun prettify-hook ()
-    (add-pragmatapro-prettify-symbols-alist)
-    (setup-compose-predicate))
-  (global-prettify-symbols-mode 1)
-
+  (load "~/.emacs.d/pragmatapro-prettify-symbols")
   (add-hook 'text-mode-hook 'prettify-hook)
   (add-hook 'prog-mode-hook 'prettify-hook)
+  (global-prettify-symbols-mode +1)
 )
   ;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
+  ;; auto-generate custom variable definitions.
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -619,29 +352,62 @@ you should place your code here."
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#dbdbdb"])
- '(custom-enabled-themes (quote nil))
+ '(custom-enabled-themes (quote (dracula)))
  '(custom-safe-themes
    (quote
-    ("3f3b640d180fdf40c7f77ce729663d3851ff6e9b1807fb17cd7b471998031aa3" "8e04d409b0d9c91d9d12b8d2ac4f5c71c353dea5e73b429c845f96877cc80b37" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" "9c92546512e0ce48c2a8af0f36e8c394b95ac6af5c35dcfe28658a04d37b5bb5" "936f5c46c518f88846361f83d8d31d38523b94005d287305c80d82c78eb461e4" "715f5e71b43cff5194dc0e89cda0aaebab9cb8ed73791ca887d41e794e3dadd6" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "55c2c0d811cdecd311ebe27f82b24a5410d38c1ff6117c91e5ba88031829ee06" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
- '(elcord-display-elapsed nil)
+    ("9c92546512e0ce48c2a8af0f36e8c394b95ac6af5c35dcfe28658a04d37b5bb5" "936f5c46c518f88846361f83d8d31d38523b94005d287305c80d82c78eb461e4" "715f5e71b43cff5194dc0e89cda0aaebab9cb8ed73791ca887d41e794e3dadd6" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "55c2c0d811cdecd311ebe27f82b24a5410d38c1ff6117c91e5ba88031829ee06" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(evil-want-Y-yank-to-eol nil)
+ '(package-selected-packages
+   (quote
+    (proof-general auctex pretty-symbols dracula-theme yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional cython-mode anaconda-mode pythonic intero flycheck hlint-refactor hindent haskell-snippets yasnippet company-ghci company-ghc ghc company haskell-mode cmm-mode spinner evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex smartparens restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-make google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-unimpaired evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-escape goto-chg eval-sexp-fu elisp-slime-nav dumb-jump popup f dash s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enfarce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed async aggressive-indent ace-window ace-link avy)))
+ '(spacemacs-theme-custom-colors (quote ((base . "#dbdbdb") (base-dim . "#dbdbdb")))))
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#dbdbdb"])
+ '(custom-enabled-themes (quote (dracula)))
+ '(custom-safe-themes
+   (quote
+    ("9c92546512e0ce48c2a8af0f36e8c394b95ac6af5c35dcfe28658a04d37b5bb5" "936f5c46c518f88846361f83d8d31d38523b94005d287305c80d82c78eb461e4" "715f5e71b43cff5194dc0e89cda0aaebab9cb8ed73791ca887d41e794e3dadd6" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "55c2c0d811cdecd311ebe27f82b24a5410d38c1ff6117c91e5ba88031829ee06" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(elcord-show-small-icon nil)
  '(elcord-use-major-mode-as-main-icon t)
  '(evil-want-Y-yank-to-eol nil)
- '(global-linum-mode nil)
- '(org-agenda-files nil)
+ '(hl-todo-keyword-faces
+   (quote
+    (("TODO" . "#dc752f")
+     ("NEXT" . "#dc752f")
+     ("THEM" . "#2d9574")
+     ("PROG" . "#4f97d7")
+     ("OKAY" . "#4f97d7")
+     ("DONT" . "#f2241f")
+     ("FAIL" . "#f2241f")
+     ("DONE" . "#86dc2f")
+     ("NOTE" . "#b1951d")
+     ("KLUDGE" . "#b1951d")
+     ("HACK" . "#b1951d")
+     ("TEMP" . "#b1951d")
+     ("FIXME" . "#dc752f")
+     ("XXX+" . "#dc752f")
+     ("\\?\\?\\?+" . "#dc752f"))))
  '(package-selected-packages
    (quote
-    ( dracula-theme web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc coffee-mode yaml-mode mmm-mode markdown-toc markdown-mode gh-md web-mode tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data smeargle orgit magit-gitflow magit-popup gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit git-commit with-editor transient vimrc-mode dactyl-mode spaceline-all-the-icons all-the-icons memoize dashboard page-break-lines fuzzy company-statistics company-cabal company-anaconda auto-yasnippet ac-ispell auto-complete evil-anzu anzu evil proof-general auctex elcord hasklig-mode yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional cython-mode anaconda-mode pythonic intero flycheck hlint-refactor hindent haskell-snippets yasnippet company-ghci company-ghc ghc company haskell-mode cmm-mode spinner evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex smartparens restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum  link-hint ivy-hydra indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-make google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-unimpaired evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-escape goto-chg eval-sexp-fu elisp-slime-nav dumb-jump popup f dash s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enfarce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed async aggressive-indent ace-window ace-link avy)))
- '(spaceline-all-the-icons-clock-always-visible nil)
- '(spaceline-all-the-icons-primary-separator "")
- '(spaceline-all-the-icons-separator-type (quote arrow))
- '(spaceline-all-the-icons-slim-render t)
+    (tern proof-general auctex pretty-symbols dracula-theme yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional cython-mode anaconda-mode pythonic intero flycheck hlint-refactor hindent haskell-snippets yasnippet company-ghci company-ghc ghc company haskell-mode cmm-mode spinner evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex smartparens restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-make google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-unimpaired evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-escape goto-chg eval-sexp-fu elisp-slime-nav dumb-jump popup f dash s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enfarce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed async aggressive-indent ace-window ace-link avy)))
+ '(pdf-view-midnight-colors (quote ("#b2b2b2" . "#292b2e")))
  '(spacemacs-theme-custom-colors (quote ((base . "#dbdbdb") (base-dim . "#dbdbdb")))))
-
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Iosevka Oxide" :foundry "BE5N" :slant normal :weight normal :height 105 :width normal)))))
+ )
+)

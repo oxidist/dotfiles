@@ -7,6 +7,7 @@
 call plug#begin('~/.vim/plugged')
   Plug 'mhinz/vim-startify'
   Plug 'vim-syntastic/syntastic'
+  Plug 'tpope/vim-surround'
   Plug 'Raimondi/delimitMate'
   Plug 'alx741/vim-hindent'
   Plug 'lervag/vimtex'
@@ -21,6 +22,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'srcery-colors/srcery-vim'
   Plug 'dracula/vim', {'as':'dracula'}
+  Plug 'morhetz/gruvbox'
 call plug#end()
 
 
@@ -29,7 +31,10 @@ set termguicolors
 colorscheme dracula
 set background=dark
 set t_Co=256
-let g:dracula_italic=1
+"let g:dracula_italic=1
+
+let g:gruvbox_contrast_light="soft"
+
 set number
 set cursorline
 set noshowmode
