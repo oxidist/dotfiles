@@ -28,12 +28,15 @@ call plug#end()
 
 syntax on
 set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 colorscheme dracula
-set background=dark
 set t_Co=256
-"let g:dracula_italic=1
 
-let g:gruvbox_contrast_light="soft"
+let g:dracula_italic = 0
+let g:dracula_bold = 0
+
+"let g:gruvbox_contrast_light="soft"
 
 set number
 set cursorline

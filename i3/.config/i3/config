@@ -15,10 +15,14 @@ new_window pixel
 
 # i3-gaps
 gaps outer 00
-gaps inner 08
+gaps inner 06
 
+font pango: Source Sans Pro 9
+
+#smart_gaps on
+smart_borders on
 # d̶o̶c̶t̶o̶r̶s̶ windows without borders
-for_window [class="^.*"] border pixel 0
+#for_window [class="^.*"] border pixel 0
 
 #bindsym $mod+Shift+d gaps inner all set 0; gaps outer all set 0
 #bindsym $mod+Shift+s gaps inner all set 8; gaps outer all set 0
@@ -27,7 +31,7 @@ for_window [class="^.*"] border pixel 0
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec st
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -144,19 +148,14 @@ mode "resize"
 }
 bindsym $mod+r mode "resize"
 
-# Defining colors
-set $cyan	#00afd7
-set $silver 	#e4e4e4
-set $elegant	#20212b
-set $white 	#ffffff
-set $damn #332848
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
-# Set some nice colors      border	   background  text	       indicator
-client.focused              $elegant   $elegant    $silver   	 $white
-client.unfocused            $elegant 	 $elegant    $silver     $white
-client.focused_inactive     $elegant 	 $elegant    $silver     $damn
-client.urgent               $damn 	   $cyan	     $silver     $damn
-client.placeholder          $elegant 	 $damn       $silver     $white
+client.background       #F8F8F2
 
 # time tracking
 exec_always --no-startup-id /home/oxide/.local/bin/arbtt-capture &
@@ -164,7 +163,7 @@ exec_always --no-startup-id /home/oxide/.local/bin/arbtt-capture &
 # polybar
 exec_always --no-startup-id . $HOME/.config/polybar/launch.sh &
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale ~/Pictures/nasabig.png
+exec_always --no-startup-id sh feh --bg-scale ~/Pictures/nasabig.png
 
 
 exec --no-startup-id dunst
@@ -181,3 +180,4 @@ exec --no-startup-id i3-msg 'exec firefox; workspace $ws2; exec emacs; workspace
 
 assign [class="Firefox"] $ws1
 assign [class="Emacs"] $ws2
+for_window [class="flameshot"] floating enable

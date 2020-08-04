@@ -26,6 +26,7 @@ man() {
 alias x="ranger"
 alias g="gotop"
 alias w="weechat"
+alias rm="rm -i"
 alias neofetch="neofetch --source=wallpaper --backend=w3m"
 alias zoomer="/home/oxide/Downloads/zoom/opt/zoom/ZoomLauncher & jobs"
 alias svim="sudoedit"

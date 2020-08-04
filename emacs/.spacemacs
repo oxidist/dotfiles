@@ -36,7 +36,7 @@ values."
      markdown
      html
      vimscript
-     rust
+     (rust :variables rust-backend 'racer)
      python
      (haskell :variables haskell-completion-backend 'lsp)
      lsp
@@ -67,7 +67,7 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(vi-tilde-fringe) ;; exec-path-from-shell)
+   dotspacemacs-excluded-packages '(tern vi-tilde-fringe) ;; exec-path-from-shell)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -252,7 +252,7 @@ values."
    ;; If non nil unicode symbols are displayed in the mode line. (default t)
    dotspacemacs-mode-line-unicode-symbols t
    ;; theme
-   dotspacemacs-mode-line-theme 'spacemacs
+   dotspacemacs-mode-line-theme '(spacemacs :separator arrow :separator-scale 1.6)
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
@@ -329,10 +329,9 @@ you should place your code here."
   (golden-ratio-mode +1)
   (global-display-line-numbers-mode)
 
+
   ;; for arbtt
   (setq frame-title-format "%f")
-
-  (setq powerline-default-separator 'arrow)
   (setq prettify-symbols-unprettify-at-point 'right-edge)
 
   (load "~/.emacs.d/pragmatapro-prettify-symbols")
@@ -343,24 +342,6 @@ you should place your code here."
   ;; Do not write anything past this comment. This is where Emacs will
   ;; auto-generate custom variable definitions.
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#dbdbdb"])
- '(custom-enabled-themes (quote (dracula)))
- '(custom-safe-themes
-   (quote
-    ("9c92546512e0ce48c2a8af0f36e8c394b95ac6af5c35dcfe28658a04d37b5bb5" "936f5c46c518f88846361f83d8d31d38523b94005d287305c80d82c78eb461e4" "715f5e71b43cff5194dc0e89cda0aaebab9cb8ed73791ca887d41e794e3dadd6" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "55c2c0d811cdecd311ebe27f82b24a5410d38c1ff6117c91e5ba88031829ee06" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
- '(evil-want-Y-yank-to-eol nil)
- '(package-selected-packages
-   (quote
-    (proof-general auctex pretty-symbols dracula-theme yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional cython-mode anaconda-mode pythonic intero flycheck hlint-refactor hindent haskell-snippets yasnippet company-ghci company-ghc ghc company haskell-mode cmm-mode spinner evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex smartparens restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-make google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-unimpaired evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-escape goto-chg eval-sexp-fu elisp-slime-nav dumb-jump popup f dash s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enfarce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed async aggressive-indent ace-window ace-link avy)))
- '(spacemacs-theme-custom-colors (quote ((base . "#dbdbdb") (base-dim . "#dbdbdb")))))
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
@@ -382,6 +363,7 @@ This function is called at the very end of Spacemacs initialization."
  '(elcord-show-small-icon nil)
  '(elcord-use-major-mode-as-main-icon t)
  '(evil-want-Y-yank-to-eol nil)
+ '(flycheck-pos-tip-mode t)
  '(hl-todo-keyword-faces
    (quote
     (("TODO" . "#dc752f")
