@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'srcery-colors/srcery-vim'
   Plug 'dracula/vim', {'as':'dracula'}
   Plug 'morhetz/gruvbox'
+  Plug 'junegunn/goyo.vim'
 call plug#end()
 
 
@@ -44,6 +45,14 @@ set noshowmode
 set laststatus=2
 " for arbtt
 set title
+
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[1 q"
+
+" optional reset cursor on start:
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[1 q"]"]]"
 
 inoremap jk <ESC>
 let mapleader = " "

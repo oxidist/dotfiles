@@ -15,7 +15,7 @@ new_window pixel
 
 # i3-gaps
 gaps outer 00
-gaps inner 06
+gaps inner 10
 
 font pango: Source Sans Pro 9
 
@@ -163,7 +163,7 @@ exec_always --no-startup-id /home/oxide/.local/bin/arbtt-capture &
 # polybar
 exec_always --no-startup-id . $HOME/.config/polybar/launch.sh &
 # Wallpaper
-exec_always --no-startup-id sh feh --bg-scale ~/Pictures/nasabig.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/fixed_aspect.gif
 
 
 exec --no-startup-id dunst
