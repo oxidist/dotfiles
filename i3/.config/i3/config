@@ -174,8 +174,8 @@ exec_always --no-startup-id /home/oxide/.local/bin/arbtt-capture &
 
 # polybar
 exec_always --no-startup-id . $HOME/.config/polybar/launch.sh &
-# Wallpaper
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/fixed_aspect.gif
+# Wallpaper, colorscheme
+exec_always --no-startup-id wal --backend colorthief -i Pictures/fixed_aspect.gif -o scripts/reload_dunst.sh
 
 
 exec --no-startup-id dunst
