@@ -42,14 +42,6 @@ set laststatus=0
 " for arbtt
 set title
 
-let &t_SI = "\e[5 q"
-let &t_EI = "\e[1 q"
-
-" optional reset cursor on start:
-augroup myCmds
-au!
-autocmd VimEnter * silent !echo -ne "\e[1 q"]"]]"
-
 inoremap jk <ESC>
 let mapleader = " "
 

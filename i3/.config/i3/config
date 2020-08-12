@@ -188,8 +188,8 @@ bindsym Print exec "flameshot gui"
 # for redshift
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
-exec --no-startup-id i3-msg 'exec firefox; workspace $ws2; exec emacs; workspace $ws1'
+exec --no-startup-id i3-msg 'exec firefox; workspace $ws2; exec st -c vim vim; workspace $ws1'
 
 assign [class="Firefox"] $ws1
-assign [class="Emacs"] $ws2
+assign [class="vim"] $ws2
 for_window [class="flameshot"] floating enable
