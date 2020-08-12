@@ -327,8 +327,7 @@ you should place your code here."
   (company-tng-configure-default)
 
   (golden-ratio-mode +1)
-  (global-display-line-numbers-mode)
-
+  (add-hook 'coq-mode-hook 'display-line-numbers-mode)
 
   ;; for arbtt
   (setq frame-title-format "%f")

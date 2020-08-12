@@ -16,33 +16,29 @@ call plug#begin('~/.vim/plugged')
   Plug '907th/vim-auto-save'
   Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
   Plug 'ycm-core/YouCompleteMe'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'itchyny/lightline.vim'
-  Plug 'mengelbrecht/lightline-bufferline'
-  Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'srcery-colors/srcery-vim'
+  "Plug 'sheerun/vim-polyglot'
   Plug 'dracula/vim', {'as':'dracula'}
-  Plug 'morhetz/gruvbox'
   Plug 'junegunn/goyo.vim'
+  Plug 'dylanaraps/wal.vim'
 call plug#end()
 
-
+colorscheme wal
+"set termguicolors
+set background=dark
 syntax on
-set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-colorscheme dracula
 set t_Co=256
 
-let g:dracula_italic = 0
-let g:dracula_bold = 0
-
-"let g:gruvbox_contrast_light="soft"
 
 set number
 set cursorline
-set noshowmode
-set laststatus=2
+
+hi clear CursorLine
+hi CursorLineNr cterm=bold
+
+"set noshowmode
+set laststatus=0
 " for arbtt
 set title
 
@@ -62,43 +58,17 @@ let g:ctrlp_cmd = 'CtrlP'
 
 let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
 
-let g:lightline = {
-      \ 'colorscheme': 'dracula',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'tabline': {
-      \   'left': [ ['buffers'] ],
-      \   'right': [ ['close'] ]
-      \ },
-      \ 'component_expand': {
-      \   'buffers': 'lightline#bufferline#buffers'
-      \ },
-      \ 'component_type': {
-      \   'buffers': 'tabsel'
-      \ },
-      \ 'component': {
-      \   'lineinfo': ' %3l:%-2v',
-      \ },
-      \ 'component_function': {
-      \   'readonly': 'LightlineReadonly',
-      \   'fugitive': 'LightlineFugitive'
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
-set showtabline=2
-let g:lightline#bufferline#filename_modifier = ':t'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
 let g:syntastic_error_symbol = "✕"
 let g:syntastic_warning_symbol = "!"
 let g:syntastic_style_warning_symbol = "!"
 let g:syntastic_style_error_symbol = "✕"
 
-highlight SyntasticErrorSign guifg=#ff5555
-highlight SyntasticWarningSign guifg=#f1fa8c
+highlight SyntasticErrorSign guifg=#ff5555 ctermfg=202
+highlight SyntasticWarningSign guifg=#f1fa8c ctermfg=220
 
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
