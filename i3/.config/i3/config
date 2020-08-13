@@ -74,9 +74,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -148,18 +148,10 @@ mode "resize"
 }
 bindsym $mod+r mode "resize"
 
-# class                 border  bground text    indicator child_border
-#client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-#client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-#client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-#client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-#client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-
-#client.background       #F8F8F2
 
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
-set_from_resource $bg2 i3wm.color1 #f0f0f0
+set_from_resource $bg2 i3wm.color4 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
@@ -172,10 +164,11 @@ client.background       $bg
 # time tracking
 exec_always --no-startup-id /home/oxide/.local/bin/arbtt-capture &
 
+# Wallpaper, colorscheme
+exec_always --no-startup-id feh --bg-fill ~/Pictures/animated_shop.gif
+#exec --no-startup-id wal --backend colorthief -i ~/Pictures/led.jpg -n -o scripts/reload_dunst.sh
 # polybar
 exec_always --no-startup-id . $HOME/.config/polybar/launch.sh &
-# Wallpaper, colorscheme
-exec_always --no-startup-id wal --backend colorthief -i Pictures/fixed_aspect.gif -o scripts/reload_dunst.sh
 
 
 exec --no-startup-id dunst

@@ -6,7 +6,7 @@
 
 call plug#begin('~/.vim/plugged')
   Plug 'mhinz/vim-startify'
-  Plug 'vim-syntastic/syntastic'
+""  Plug 'vim-syntastic/syntastic'
   Plug 'tpope/vim-surround'
   Plug 'Raimondi/delimitMate'
   Plug 'alx741/vim-hindent'
@@ -15,11 +15,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
   Plug '907th/vim-auto-save'
   Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-  Plug 'ycm-core/YouCompleteMe'
-  "Plug 'sheerun/vim-polyglot'
-  Plug 'dracula/vim', {'as':'dracula'}
+  "Plug 'ycm-core/YouCompleteMe'
+  Plug 'sheerun/vim-polyglot'
+  "Plug 'dracula/vim', {'as':'dracula'}
   Plug 'junegunn/goyo.vim'
-  Plug 'dylanaraps/wal.vim'
+  Plug 'OfficialOxide/wal.vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
+  Plug 'dense-analysis/ale'
 call plug#end()
 
 colorscheme wal
@@ -28,47 +30,61 @@ set background=dark
 syntax on
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-set t_Co=256
+"set t_Co=256
 
+inoremap jk <ESC>
+let mapleader = " "
 
+set nobackup
+set nowritebackup
+set noswapfile " get rid of swapfiles everywhere
+set dir=/tmp
 set number
 set cursorline
 
 hi clear CursorLine
 hi CursorLineNr cterm=bold
 
-"set noshowmode
-set laststatus=0
+set laststatus=2
 " for arbtt
 set title
 
-inoremap jk <ESC>
-let mapleader = " "
+"more characters will be sent to the screen for redrawing
+set ttyfast
+"time waited for key press(es) to complete. It makes for a faster key response
+set ttimeout
+set ttimeoutlen=50
+"make backspace behave properly in insert mode
+set backspace=indent,eol,start
+"display incomplete commands
+set showcmd
+"a better menu in command mode
+set wildmenu
+set wildmode=longest:full,full
+"hide buffers instead of closing them even if they contain unwritten changes
+set hidden
+"disable soft wrap for lines
+set nowrap
+"incremental search
+set incsearch
+"highlight search
+set nohlsearch
+"searches are case insensitive unless they contain at least one capital letter
+set ignorecase
+set smartcase
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 
-let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_error_symbol = "✕"
-let g:syntastic_warning_symbol = "!"
-let g:syntastic_style_warning_symbol = "!"
-let g:syntastic_style_error_symbol = "✕"
-
-highlight SyntasticErrorSign guifg=#ff5555 ctermfg=202
-highlight SyntasticWarningSign guifg=#f1fa8c ctermfg=220
-
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_enable_highlighting = 1
-
-let g:syntastic_haskell_checkers=['hlint']
+set statusline = 
+set statusline +=%#warningmsg#
+set statusline +=%*
+set statusline +=\ %f                                    " Full path to file
+set statusline +=\ %1*%m%0*                              " modified flag
+set statusline +=\ %h                                    " [help]
+set statusline +=%r                                      " read only flag
+set statusline +=%w                                      " preview window flag
+set statusline +=%=
+set statusline +=%{&filetype}
+set statusline +=\ \ \ %l:%c                       " Line, column-virtual column"
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -88,6 +104,8 @@ set softtabstop=2   " Sets the number of columns for a TAB.
 set expandtab       " Expand TABs to spaces.
 filetype plugin indent on
 
+nnoremap \\ :noh<return>
+
 nmap <leader>T :enew<cr>
 nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
@@ -101,6 +119,31 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
+let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
+
+"let g:syntastic_error_symbol = "🞩"
+"let g:syntastic_warning_symbol = "!"
+"let g:syntastic_style_warning_symbol = "!"
+"let g:syntastic_style_error_symbol = "🞩"
+
+"highlight SyntasticErrorSign guifg=#ff5555 ctermfg=202
+"highlight SyntasticWarningSign guifg=#f1fa8c ctermfg=220
+
+let g:ale_sign_error = '×'
+let g:ale_sign_warning = '!'
+
+highlight ALEErrorSign guifg=#ff5555 ctermfg=202
+highlight ALEWarningSign guifg=#f1fa8c ctermfg=220
+
+let g:ale_linters_explicit            = 1
+let g:ale_lint_on_text_changed        = 'never'
+let g:ale_lint_on_enter               = 1
+let g:ale_lint_on_save                = 1
+let g:ale_fix_on_save                 = 0
+
+let g:ale_linters = {
+\   'markdown':      ['proselint'],
+\}
 
 let g:vim_markdown_folding_disabled = 1
 
