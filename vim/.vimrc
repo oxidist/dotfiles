@@ -58,10 +58,6 @@ set showcmd
 "a better menu in command mode
 set wildmenu
 set wildmode=longest:full,full
-"hide buffers instead of closing them even if they contain unwritten changes
-"set hidden
-"disable soft wrap for lines
-set nowrap
 "incremental search
 set incsearch
 "highlight search
@@ -70,8 +66,8 @@ set hlsearch
 set ignorecase
 set smartcase
 
-
 set laststatus=2
+
 set statusline = 
 set statusline +=%#warningmsg#
 set statusline +=%*
@@ -133,7 +129,6 @@ let g:ale_fix_on_save                 = 0
 
 let g:ale_linters = {
 \   'markdown':      ['proselint'],
-\   'latex':         ['proselint']
 \}
 
 let g:vim_markdown_folding_disabled = 1

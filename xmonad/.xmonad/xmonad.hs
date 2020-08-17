@@ -7,6 +7,7 @@
 import XMonad
 import XMonad.Hooks.ManageDocks (docks, avoidStruts, manageDocks)
 import XMonad.Hooks.EwmhDesktops (ewmh, fullscreenEventHook)
+import XMonad.Hooks.InsertPosition (insertPosition, Focus(Newer), Position(Below))
 import XMonad.Layout.Spacing (spacingRaw, Border(Border))
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Util.EZConfig (additionalKeys)
@@ -35,7 +36,7 @@ main :: IO()
 main = xmonad . ewmh $ docks def
       { layoutHook = avoidStruts . smartBorders $ myLayoutHook
       , handleEventHook = handleEventHook def <+> fullscreenEventHook
-      , manageHook = myManageHook <+> manageHook def
+      , manageHook = foldl (<+>) mempty [insertPosition Below Newer, myManageHook, manageHook def]
       , modMask= mod4Mask -- Use Super instead of Alt
       , terminal = myTerm
       , borderWidth = 2
