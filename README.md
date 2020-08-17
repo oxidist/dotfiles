@@ -14,10 +14,10 @@ Most of the due credit goes to the people from whom I copied from and modified t
 
 ## Screenshots (may be out-of-date)
 
-![](screen.png)
+![Floating windows running vim and weechat](screen.png)
 
 ### LaTeX workflow
-![](texing.png)
+![Editing a LaTeX file.](texing.png)
 
 ### Clean
-![](clean.png)
+![Only the bar and wallpaper are shown.](clean.png)
