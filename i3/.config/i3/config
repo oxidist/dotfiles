@@ -21,7 +21,7 @@ font pango: Source Sans Pro 9
 
 #smart_gaps on
 smart_borders on
-# d̶o̶c̶t̶o̶r̶s̶ windows without borders
+# windows without borders
 #for_window [class="^.*"] border pixel 0
 
 #bindsym $mod+Shift+d gaps inner all set 0; gaps outer all set 0
@@ -39,9 +39,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Tab exec $HOME/scripts/rofi_surfraw
 # Google
-bindsym $mod+Shift+x exec surfraw google $(xclip -o)
-bindsym $mod+Shift+w exec surfraw wikipedia $(xclip -o)
-bindsym $mod+Shift+s exec surfraw scholar $(xclip -o)
+bindsym $mod+x exec surfraw google $(xclip -o)
+bindsym $mod+w exec surfraw wikipedia $(xclip -o)
+bindsym $mod+s exec surfraw scholar $(xclip -o)
 bindsym $mod+Shift+d exec surfraw jisho $(xclip -o)
 
 bindsym $mod+l exec $HOME/scripts/i3lock.sh
@@ -149,16 +149,16 @@ mode "resize"
 bindsym $mod+r mode "resize"
 
 
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-set_from_resource $bg2 i3wm.color4 #f0f0f0
+set_from_resource $fg color7 #f0f0f0
+set_from_resource $bg color3 #f0f0f0
+set $altbg #f0f0f0
 
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg2    $bg2    $fg  $bg       $bg
-client.unfocused        $bg2    $bg2    $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+# class                 border     backgr.    text indicator child_border
+client.focused          $bg        $bg        $fg  $bg       $bg
+client.focused_inactive $altbg     $altbg     $fg  $bg       $bg
+client.unfocused        $altbg     $altbg     $fg  $bg       $bg
+client.urgent           $bg        $bg        $fg  $bg       $bg
+client.placeholder      $altbg     $altbg     $fg  $bg       $bg
 
 client.background       $bg
 # time tracking
@@ -166,7 +166,7 @@ exec_always --no-startup-id /home/oxide/.local/bin/arbtt-capture &
 
 # Wallpaper, colorscheme
 exec_always --no-startup-id feh --bg-fill ~/Pictures/animated_shop.gif
-#exec --no-startup-id wal --backend colorthief -i ~/Pictures/led.jpg -n -o scripts/reload_dunst.sh
+exec --no-startup-id wal -i ~/Pictures/led.jpg -n -o scripts/reload_dunst.sh
 # polybar
 exec_always --no-startup-id . $HOME/.config/polybar/launch.sh &
 

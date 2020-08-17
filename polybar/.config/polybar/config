@@ -16,7 +16,7 @@ foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color8:#222}
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
-alert = ${xrdb:color3:#222}
+alert = ${xrdb:color5:#222}
 
 [bar/top]
 width = 100%
@@ -42,33 +42,29 @@ font-2 = PragmataProLiga:size=11:antialia=true;2
 font-1 = MaterialIcons:size=8:antialia=false:weight=bold;1
 font-0 = IosevkaOxide:size=8:weight:bold:antialia=true;0
 
-modules-left = i3
+modules-left = ewmh
 modules-center = date weather
 modules-right = info-redshift-temp network pavolume powermenu
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+#scroll-up = i3wm-wsnext
+#scroll-down = i3wm-wsprev
 
 
-[module/i3]
-type = internal/i3
-label-active-font = 2
-pin-workspaces = true
-strip-wsnumbers = true
-index-sort = true
-enable-scroll = false
+[module/ewmh]
+type = internal/xworkspaces
 
-format = <label-state>
-format-padding-right = 2
+label-occupied-foreground = ${colors.foreground-alt}
+label-occupied-padding = 1
 
-label-unfocused-foreground = ${colors.foreground-alt}
-label-unfocused-padding = 1
-
-label-focused-foreground = ${colors.foreground}
-label-focused-padding = 1
+label-active = %name%
+label-active-foreground = ${colors.foreground}
+label-active-padding= 1
 
 label-urgent-foreground = ${colors.alert} 
 label-urgent-padding = 1
+
+label-empty-foreground = ${colors.background}
+label-empty-padding = 1
 
 ws-icon-0 = 1;1
 ws-icon-1 = 1;2
@@ -120,46 +116,46 @@ label-open = 
 
 label-close = cancel
 
-label-close-background = #20212b
-label-close-foreground = #f8f8f2
+label-close-background = ${colors.background}
+label-close-foreground = ${colors.foreground}
 label-open-padding-left = 2
 label-open-padding-right = 3
 label-close-padding = 3
 
 menu-0-0 = lock
 menu-0-0-exec = ~/scripts/i3lock.sh
-menu-0-0-background = #20212b
+menu-0-0-background = ${colors.background}
 menu-0-0-foreground = #50fa7b
 menu-0-0-padding-right = 3
 
 menu-0-1 = reboot
 menu-0-1-exec = menu-open-1
-menu-0-1-background = #20212b
+menu-0-1-background = ${colors.background}
 menu-0-1-foreground = #50fa7b
 menu-0-1-padding-right = 3
 
 menu-0-2 = power off
 menu-0-2-exec = menu-open-2
-menu-0-2-background = #20212b
+menu-0-2-background = ${colors.background}
 menu-0-2-foreground = #50fa7b
 menu-0-2-padding-right = 3
 
 menu-0-3 = sleep
 menu-0-3-exec = ~/scripts/sleep.sh
-menu-0-3-background = #20212b
+menu-0-3-background = ${colors.background}
 menu-0-3-foreground = #50fa7b
 menu-0-3-padding-right = 3
 
 
 menu-1-0 = reboot?
 menu-1-0-exec = reboot
-menu-1-0-background = #20212b
+menu-1-0-background = ${colors.background}
 menu-1-0-foreground = #50fa7b
 menu-1-0-padding-right = 3
 
 menu-2-0 = power off?
 menu-2-0-exec = poweroff
-menu-2-0-background = #20212b
+menu-2-0-background = ${colors.background}
 menu-2-0-foreground = #50fa7b
 menu-2-0-padding-right = 3
 

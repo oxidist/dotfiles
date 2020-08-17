@@ -6,7 +6,6 @@
 
 call plug#begin('~/.vim/plugged')
   Plug 'mhinz/vim-startify'
-""  Plug 'vim-syntastic/syntastic'
   Plug 'tpope/vim-surround'
   Plug 'Raimondi/delimitMate'
   Plug 'alx741/vim-hindent'
@@ -15,9 +14,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
   Plug '907th/vim-auto-save'
   Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
-  "Plug 'ycm-core/YouCompleteMe'
   Plug 'sheerun/vim-polyglot'
-  "Plug 'dracula/vim', {'as':'dracula'}
+  Plug 'dracula/vim', {'as':'dracula'}
   Plug 'junegunn/goyo.vim'
   Plug 'OfficialOxide/wal.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
@@ -32,6 +30,9 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "set t_Co=256
 
+let g:dracula_italic = 0
+let g:dracula_bold = 1
+
 inoremap jk <ESC>
 let mapleader = " "
 
@@ -39,16 +40,12 @@ set nobackup
 set nowritebackup
 set noswapfile " get rid of swapfiles everywhere
 set dir=/tmp
-set number
+set relativenumber
 set cursorline
 
-hi clear CursorLine
-hi CursorLineNr cterm=bold
-
-set laststatus=2
+set ambiwidth=double
 " for arbtt
 set title
-
 "more characters will be sent to the screen for redrawing
 set ttyfast
 "time waited for key press(es) to complete. It makes for a faster key response
@@ -62,18 +59,19 @@ set showcmd
 set wildmenu
 set wildmode=longest:full,full
 "hide buffers instead of closing them even if they contain unwritten changes
-set hidden
+"set hidden
 "disable soft wrap for lines
 set nowrap
 "incremental search
 set incsearch
 "highlight search
-set nohlsearch
+set hlsearch
 "searches are case insensitive unless they contain at least one capital letter
 set ignorecase
 set smartcase
 
 
+set laststatus=2
 set statusline = 
 set statusline +=%#warningmsg#
 set statusline +=%*
@@ -119,16 +117,8 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
-
-"let g:syntastic_error_symbol = "🞩"
-"let g:syntastic_warning_symbol = "!"
-"let g:syntastic_style_warning_symbol = "!"
-"let g:syntastic_style_error_symbol = "🞩"
-
-"highlight SyntasticErrorSign guifg=#ff5555 ctermfg=202
-"highlight SyntasticWarningSign guifg=#f1fa8c ctermfg=220
-
+let g:startify_custom_header = '' "startify#pad(startify#fortune#boxed())'
+"let g:startify_fortune_use_unicode = 1
 let g:ale_sign_error = '×'
 let g:ale_sign_warning = '!'
 
@@ -143,6 +133,7 @@ let g:ale_fix_on_save                 = 0
 
 let g:ale_linters = {
 \   'markdown':      ['proselint'],
+\   'latex':         ['proselint']
 \}
 
 let g:vim_markdown_folding_disabled = 1

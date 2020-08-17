@@ -69,4 +69,11 @@
   67: ('07/08/20 22:55:33', 'L29Ah', 'irc.freenode.#haskell', 'https://dpaste.com/9JMJRWRU4', 'L29Ah\thttps://dpaste.com/9JMJRWRU4'),
   68: ('07/08/20 22:55:34', 'L29Ah', 'irc.freenode.#haskell', 'https://dpaste.com/AULCHARF2', 'L29Ah\thttps://dpaste.com/AULCHARF2'),
   69: ('07/08/20 23:05:27', 'hackage', 'irc.freenode.#haskell', 'https://hackage.haskell.org/package/zeolite-lang-0.8.0.0', '⚡\thackage zeolite-lang 0.8.0.0 - Zeolite is a statically-typed, general-purpose programming language.  https://hackage.haskell.org/package/zeolite-lang-0.8.0.0 (ta0kira)'),
+  70: ('16/08/20 00:19:04', 'dminuoso', 'irc.freenode.#haskell', 'https://santi75.files.wordpress.com/2008/07/deferentes-epiciclos-y-adaptaciones.pdf', 'dminuoso\tReferring to https://santi75.files.wordpress.com/2008/07/deferentes-epiciclos-y-adaptaciones.pdf of course'),
+  71: ('16/08/20 00:21:28', 'cosarara', 'irc.rizon.#rice', 'https://github.com/yshui/picom/wiki/Vsync-Lag-Explained', '@cosarara\tbochku, wakamiya, rbh https://github.com/yshui/picom/wiki/Vsync-Lag-Explained'),
+  72: ('16/08/20 00:23:28', 'galambo', 'irc.freenode.#lesswrong', 'https://www.nature.com/articles/s41573-020-0067-7', 'galambo\thttps://www.nature.com/articles/s41573-020-0067-7'),
+  73: ('16/08/20 00:26:42', 'monochrom', 'irc.freenode.#haskell', 'https://stackoverflow.com/questions/18809986/undefined-reference-to-strnlen-s-strncpy-s-strncat-s/18810075', 'monochrom\tI am wondering if https://stackoverflow.com/questions/18809986/undefined-reference-to-strnlen-s-strncpy-s-strncat-s/18810075 is relevant'),
+  74: ('16/08/20 00:33:29', 'hackage', 'irc.freenode.#haskell', 'https://hackage.haskell.org/package/functor-combinators-0.3.4.2', '⚡\thackage functor-combinators 0.3.4.2 - Tools for functor combinator-based program design  https://hackage.haskell.org/package/functor-combinators-0.3.4.2 (jle)'),
+  75: ('16/08/20 00:34:31', 'gwern', 'irc.freenode.#lesswrong', 'https://twitter.com/StarTrekAI/status/1294708938928058368', '@gwern\thttps://twitter.com/StarTrekAI/status/1294708938928058368'),
+  76: ('16/08/20 00:41:20', 'two2theheadPC0', 'irc.freenode.#lesswrong', 'https://predictionbook.com/predictions/200536', 'two2theheadPC0\tkuudes, s0ph1a feep : https://predictionbook.com/predictions/200536'),
 }
