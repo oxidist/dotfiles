@@ -15,9 +15,8 @@ import XMonad.Util.SpawnOnce (spawnOnce)
 import XMonad.Actions.Search (google, scholar, wikipedia, selectSearch, promptSearch)
 import XMonad.Prompt (greenXPConfig, XPConfig (font, bgColor, fgColor))
 import Colors
---baseConfig = desktopConfig
+
 m = mod4Mask
-myTerm = "st"
 
 myManageHook = composeAll [ className =? "flameshot" --> doFloat
                           ]
@@ -38,7 +37,7 @@ main = xmonad . ewmh $ docks def
       , handleEventHook = handleEventHook def <+> fullscreenEventHook
       , manageHook = foldl (<+>) mempty [insertPosition Below Newer, myManageHook, manageHook def]
       , modMask= mod4Mask -- Use Super instead of Alt
-      , terminal = myTerm
+      , terminal = "st"
       , borderWidth = 2
       , normalBorderColor  = color0
       , focusedBorderColor = color12
