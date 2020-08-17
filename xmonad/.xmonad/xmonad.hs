@@ -15,7 +15,7 @@ import XMonad.Actions.Search (google, scholar, wikipedia, selectSearch, promptSe
 import XMonad.Prompt (greenXPConfig, XPConfig (font, bgColor, fgColor))
 import Colors
 --baseConfig = desktopConfig
-m = modMask
+m = mod4Mask
 myTerm = "st"
 
 myManageHook = composeAll [ className =? "flameshot" --> doFloat
