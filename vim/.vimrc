@@ -15,11 +15,12 @@ call plug#begin('~/.vim/plugged')
   Plug '907th/vim-auto-save'
   Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
   Plug 'sheerun/vim-polyglot'
-  Plug 'dracula/vim', {'as':'dracula'}
-  Plug 'junegunn/goyo.vim'
   Plug 'OfficialOxide/wal.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
   Plug 'dense-analysis/ale'
+  Plug 'junegunn/fzf.vim'
+  Plug 'BurntSushi/ripgrep'
+  Plug 'ihsanturk/neuron.vim'
 call plug#end()
 
 colorscheme wal
@@ -28,21 +29,25 @@ set background=dark
 syntax on
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"set t_Co=256
-
-let g:dracula_italic = 0
-let g:dracula_bold = 1
+set t_Co=256
 
 inoremap jk <ESC>
 let mapleader = " "
+
+
+" apply previous command on whatever lines are selected
+vnoremap . :norm.<CR>
 
 set nobackup
 set nowritebackup
 set noswapfile " get rid of swapfiles everywhere
 set dir=/tmp
+set number
 set relativenumber
 set cursorline
 
+set hidden
+" unicode ellipsis (…)
 set ambiwidth=double
 " for arbtt
 set title
@@ -50,7 +55,7 @@ set title
 set ttyfast
 "time waited for key press(es) to complete. It makes for a faster key response
 set ttimeout
-set ttimeoutlen=50
+set ttimeoutlen=10
 "make backspace behave properly in insert mode
 set backspace=indent,eol,start
 "display incomplete commands
@@ -71,6 +76,7 @@ set laststatus=2
 set statusline = 
 set statusline +=%#warningmsg#
 set statusline +=%*
+set statusline +=[%{winnr()}]
 set statusline +=\ %f                                    " Full path to file
 set statusline +=\ %1*%m%0*                              " modified flag
 set statusline +=\ %h                                    " [help]
@@ -106,12 +112,15 @@ nmap <leader>h :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+" window management
+nnoremap <leader>w <C-w>
+
+" https://stackoverflow.com/a/6404246/
+let i = 1
+while i <= 9
+    execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
+    let i = i + 1
+endwhile
 
 let g:startify_custom_header = '' "startify#pad(startify#fortune#boxed())'
 "let g:startify_fortune_use_unicode = 1
@@ -130,6 +139,8 @@ let g:ale_fix_on_save                 = 0
 let g:ale_linters = {
 \   'markdown':      ['proselint'],
 \}
+
+let g:CocDisable=1
 
 let g:vim_markdown_folding_disabled = 1
 
