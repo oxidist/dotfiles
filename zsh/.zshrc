@@ -31,7 +31,7 @@ alias neofetch="neofetch --source=wallpaper --backend=w3m"
 alias zoomer="/home/oxide/Downloads/zoom/opt/zoom/ZoomLauncher & jobs"
 alias svim="sudoedit"
 alias t="todo.sh"
-alias serve="export PATH:$PATH:/home/oxide/.gem/ruby/2.7.0/bin & script/bootstrap & bundle exec jekyll serve"
+alias serve="script/bootstrap & bundle exec jekyll serve"
 # Set name of the theme to load.
 
 ZSH_THEME="lambda-gitster"

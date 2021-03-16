@@ -16,11 +16,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'neovimhaskell/haskell-vim', {'for': 'haskell'}
   Plug 'sheerun/vim-polyglot'
   Plug 'OfficialOxide/wal.vim'
+  Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
   Plug 'dense-analysis/ale'
   Plug 'junegunn/fzf.vim'
   Plug 'BurntSushi/ripgrep'
-  Plug 'ihsanturk/neuron.vim'
+  Plug 'fiatjaf/neuron.vim'
 call plug#end()
 
 colorscheme wal
@@ -140,11 +141,13 @@ let g:ale_linters = {
 \   'markdown':      ['proselint'],
 \}
 
-let g:CocDisable=1
+"let g:CocDisable=1
 
 let g:vim_markdown_folding_disabled = 1
 
 let g:polyglot_disabled = ['latex']
+
+"" \   '-synctex=1',
 
 let g:tex_flavor='xelatex'
 let g:vimtex_view_method='zathura'
@@ -155,7 +158,6 @@ let g:vimtex_compiler_latexmk = {
     \   '-shell-escape',
     \   '--xelatex',
     \   '-file-line-error',
-    \   '-synctex=1',
     \   '-interaction=nonstopmode',
     \ ],
     \}

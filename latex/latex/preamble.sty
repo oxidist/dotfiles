@@ -1,17 +1,24 @@
 \usepackage[x11names, svgnames, dvipsnames]{xcolor}
-\usepackage{amsmath,amsthm,amssymb}
+\usepackage{amsmath, amssymb, amsthm}
 \usepackage{graphicx}
-\usepackage[]{hyperref}
 \usepackage{mathrsfs}
 \usepackage[shortlabels]{enumitem}
 \usepackage{mathtools}
 \newcommand{\vocab}[1]{\textit{#1}}
-\usepackage{fontspec}
+\usepackage[]{fontspec}
 \usepackage{microtype}
 \usepackage{tikz-cd}
-\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage[]{quiver}
 \usetikzlibrary{arrows, arrows.meta}
-\tikzcdset{every label=, arrow style=tikz, diagrams={>={Stealth[round,length=4pt,width=4.95pt,inset=2.6pt]}}}
+\tikzcdset{ arrows={line width=0.42pt}, arrow style=tikz, diagrams={>={Stealth[round,length=3.5pt,width=3.75pt,inset=1.8pt]}},line width=2pt}
+
+\usepackage[]{hyperref}
+\hypersetup{colorlinks, % Don't put a box around links
+breaklinks,             % Allow line breaks inside links
+linkcolor=DodgerBlue3!80!black,        % Cross-references to theorems etc
+urlcolor=black}         % Web addresses
+
 
 \newfontfamily\sscfont{Minion Pro}[SmallCapsFeatures={LetterSpace=14, WordSpace=2}]
 %%% Sections
@@ -25,12 +32,12 @@
   {\scshape\upshape\thesubsection\enskip}
 
 %%% Title
-\addtokomafont{subtitle}{\Large}
-\setkomafont{title}{\scshape\large\rmfamily}
+\addtokomafont{subtitle}{\scshape\normalsize}
+\setkomafont{title}{\normalfont\rmfamily\mdseries}
 \setkomafont{author}{\large}
 \setkomafont{date}{\normalsize}
-\setkomafont{section}{\sscfont\scshape\mdseries\Large\MakeLowercase}
-\setkomafont{subsection}{\mdseries\itshape\large\rmfamily}
+\setkomafont{section}{\sscfont\scshape\mdseries\large\MakeLowercase}
+\setkomafont{subsection}{\mdseries\itshape\normalsize\rmfamily}
 %%% Page setup
 \usepackage[headsepline]{scrlayer-scrpage}
 \renewcommand{\headfont}{}
@@ -43,74 +50,59 @@
 \ihead{\footnotesize\@title}
 \cfoot{\pagemark}
 
+\makeatletter
+\patchcmd{\@maketitle}{\titlefont\huge}{\titlefont\normalsize}{}{}
+\makeatother
+
 \usepackage{thmtools}
 
 % Theorems
 \declaretheoremstyle[
-  headfont=\bfseries\color{MidnightBlue},
-  spaceabove=12pt,
+  headfont=\bfseries,
+  spaceabove=3pt,
   spacebelow=2pt,
   ]{thmpurbox}
-
-% Corollaries
-\declaretheoremstyle[
-	headfont=\bfseries\color{DodgerBlue},
-  spaceabove=12pt,
-  spacebelow=2pt,
-]{thmbluebox}
-
-% Examples
-\declaretheoremstyle[
-  headfont=\bfseries\color{Brown},
-  spaceabove=12pt,
-  spacebelow=2pt,
-  ]{thmredbox}
-
-% Definitions
-\declaretheoremstyle[
-  headfont=\bfseries\color{Emerald}, %{ForestGreen!70!black},
-	bodyfont=\normalfont,
-	spaceabove=10pt,
-	spacebelow=1pt,
-]{thmgreenbox}
 
 % Remarks
 \declaretheoremstyle[
 	headfont=\bfseries,
 	bodyfont=\normalfont\small,
-	spaceabove=8pt,
+	spaceabove=3pt,
 	spacebelow=0pt,
 ]{thmblackbox}
 
 % numbered environments
 \declaretheorem[style=thmpurbox,name=Theorem,numberwithin=section]{theorem}
-\declaretheorem[style=thmgreenbox,name=Definition,sibling=theorem]{definition}
+\declaretheorem[style=thmpurbox,name=Definition,sibling=theorem]{definition}
 \declaretheorem[style=thmpurbox,name=Lemma,sibling=theorem]{lemma}
 \declaretheorem[style=thmpurbox,name=Proposition,sibling=theorem]{proposition}
-\declaretheorem[style=thmbluebox,name=Corollary,sibling=theorem]{corollary}
-\declaretheorem[style=thmgreenbox,name=Algorithm,sibling=theorem]{algorithm}
+\declaretheorem[style=thmpurbox,name=Corollary,sibling=theorem]{corollary}
+\declaretheorem[style=thmpurbox,name=Algorithm,sibling=theorem]{algorithm}
 \declaretheorem[style=thmpurbox,name=Claim,sibling=theorem]{claim}
-\declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
-\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
-\declaretheorem[style=thmblackbox,name=Exercise]{exercise}
-\declaretheorem[style=thmgreenbox,name=Problem,sibling=exercise]{problem}
+\declaretheorem[style=thmpurbox,name=Example,sibling=theorem]{example}
 \declaretheorem[style=thmpurbox,name=Question,sibling=theorem]{ques}
 
+\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
+\declaretheorem[style=thmblackbox,name=Exercise]{exercise}
+\declaretheorem[style=thmpurbox,name=Problem,sibling=exercise]{problem}
 
 % unnumbered envs
-\declaretheorem[style=thmgreenbox,name=Definition,numbered=no]{definition*}
+\declaretheorem[style=thmpurbox,name=Definition,numbered=no]{definition*}
 \declaretheorem[style=thmpurbox,name=Theorem,numbered=no]{theorem*}
 \declaretheorem[style=thmpurbox,name=Lemma,numbered=no]{lemma*}
 \declaretheorem[style=thmpurbox,name=Proposition,numbered=no]{proposition*}
-\declaretheorem[style=thmbluebox,name=Corollary,numbered=no]{corollary*}
-\declaretheorem[style=thmgreenbox,name=Algorithm,numbered=no]{algorithm*}
+\declaretheorem[style=thmpurbox,name=Corollary,numbered=no]{corollary*}
+\declaretheorem[style=thmpurbox,name=Algorithm,numbered=no]{algorithm*}
 \declaretheorem[style=thmpurbox,name=Claim,numbered=no]{claim*}
-\declaretheorem[style=thmredbox,name=Example,numbered=no]{example*}
-\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
-\declaretheorem[style=thmgreenbox,name=Exercise, numbered=no]{exercise*}
-\declaretheorem[style=thmgreenbox,name=Problem,numbered=no]{problem*}
+\declaretheorem[style=thmpurbox,name=Example,numbered=no]{example*}
+\declaretheorem[style=thmpurbox,name=Exercise, numbered=no]{exercise*}
+\declaretheorem[style=thmpurbox,name=Problem,numbered=no]{problem*}
 \declaretheorem[style=thmpurbox,name=Question, numbered=no]{ques*}
 
+\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
 
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem*{conjecture*}{Conjecture}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}

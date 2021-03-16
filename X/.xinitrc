@@ -39,5 +39,6 @@ xsetroot -cursor_name left_ptr
 feh --bg-fill Pictures/animated_shop.gif &
 wal --backend colorthief -i Pictures/led.jpg -n -o scripts/reload_dunst.sh &
 $HOME/.local/bin/arbtt-capture &
+export GTK_IM_MODULE=xim
 
 exec xmonad
