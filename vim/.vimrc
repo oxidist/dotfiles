@@ -1,3 +1,5 @@
+let g:polyglot_disabled = ['latex.plugin', 'markdown.plugin', 'haskell']
+
 ""          _
 ""   _   __(_)___ ___
 ""  | | / / / __ `__ \
@@ -22,7 +24,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'BurntSushi/ripgrep'
   Plug 'fiatjaf/neuron.vim'
+  Plug 'whonore/Coqtail'
+  Plug 'ap/vim-css-color'
+  Plug 'lervag/wiki.vim'
+  Plug 'samgriesemer/vim-roam'
+  Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
+
 
 colorscheme wal
 "set termguicolors
@@ -34,6 +42,10 @@ set t_Co=256
 
 inoremap jk <ESC>
 let mapleader = " "
+
+" up and down row-wise, not line-wise
+"nmap j gj
+"nmap k gk
 
 
 " apply previous command on whatever lines are selected
@@ -49,7 +61,7 @@ set cursorline
 
 set hidden
 " unicode ellipsis (…)
-set ambiwidth=double
+"set ambiwidth=double
 " for arbtt
 set title
 "more characters will be sent to the screen for redrawing
@@ -71,6 +83,8 @@ set hlsearch
 "searches are case insensitive unless they contain at least one capital letter
 set ignorecase
 set smartcase
+" pasting
+set pastetoggle=<F2>
 
 set laststatus=2
 
@@ -84,9 +98,14 @@ set statusline +=\ %h                                    " [help]
 set statusline +=%r                                      " read only flag
 set statusline +=%w                                      " preview window flag
 set statusline +=%=
-set statusline +=%{&filetype}
-set statusline +=\ \ \ %l:%c                       " Line, column-virtual column"
+set statusline +=\ %l,%c                       " Line, column-virtual column"
+set statusline +=\ \ %{&filetype}
 
+"set statusline=─
+set fillchars=stl:─     " fill active window's statusline with -
+set fillchars+=stlnc:─
+" better vertical split line 
+set fillchars+=vert:│
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
     " Use filetype detection and file-based automatic indenting.
@@ -123,8 +142,8 @@ while i <= 9
     let i = i + 1
 endwhile
 
-let g:startify_custom_header = '' "startify#pad(startify#fortune#boxed())'
-"let g:startify_fortune_use_unicode = 1
+let g:startify_custom_header = 'startify#pad(startify#fortune#boxed())'
+let g:startify_fortune_use_unicode = 1
 let g:ale_sign_error = '×'
 let g:ale_sign_warning = '!'
 
@@ -141,11 +160,9 @@ let g:ale_linters = {
 \   'markdown':      ['proselint'],
 \}
 
-"let g:CocDisable=1
 
 let g:vim_markdown_folding_disabled = 1
 
-let g:polyglot_disabled = ['latex']
 
 "" \   '-synctex=1',
 
@@ -190,3 +207,7 @@ let g:UltiSnipsListSnippets="<c-e>"
 " and close the selection list, same as other IDEs.
 " CONFLICT with some plugins like tpope/Endwise
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+if executable('rg')
+    let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+  endif

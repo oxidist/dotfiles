@@ -44,3 +44,4 @@ fi
 plugins=(git fzf)
 source $ZSH/oh-my-zsh.sh
 
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"

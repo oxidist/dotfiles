@@ -1,9 +1,9 @@
 \usepackage[x11names, svgnames, dvipsnames]{xcolor}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{graphicx}
+%\usepackage{mathtools}
 \usepackage{mathrsfs}
 \usepackage[shortlabels]{enumitem}
-\usepackage{mathtools}
 \newcommand{\vocab}[1]{\textit{#1}}
 \usepackage[]{fontspec}
 \usepackage{microtype}
@@ -13,7 +13,12 @@
 \usetikzlibrary{arrows, arrows.meta}
 \tikzcdset{ arrows={line width=0.42pt}, arrow style=tikz, diagrams={>={Stealth[round,length=3.5pt,width=3.75pt,inset=1.8pt]}},line width=2pt}
 
+
+
+%Don't allow libertinus-otf to change script font
 \usepackage[]{hyperref}
+
+
 \hypersetup{colorlinks, % Don't put a box around links
 breaklinks,             % Allow line breaks inside links
 linkcolor=DodgerBlue3!80!black,        % Cross-references to theorems etc
@@ -102,7 +107,31 @@ urlcolor=black}         % Web addresses
 \declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
 
 \newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem*{conjecture*}{Conjecture}
+%\newtheorem*{conjecture*}{Conjecture}
 
+\def\<#1>{\mathop{\mathrm{#1}}}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Spec}{Spec} % spectrum
+\newcommand{\km}{\mathfrak m}
+\newcommand{\kp}{\mathfrak p}
+\newcommand{\kq}{\mathfrak q}
+\newcommand{\bA}{\mathbb{A}}
+
+\everymath{\displaystyle}
+
+
+\usepackage{unicode-math}
+
+\setmainfont{Minion Pro}
+\setsansfont{Linux Biolinum O}
+% ss08 is for slanted integral symbol
+\setmathfont[RawFeature = +ss08]{Libertinus Math}
+\setmathfont[version = bold, RawFeature = {embolden = 3, +ss08}]{Libertinus Math}
+
+\setmathfont[range = { bb, up, it, \mathbin, \mathord, \mathrel}]{Minion Math}[SizeFeatures = {{Size =-6.01,  Font = MinionMath-Tiny},{Size =  6.01-8.41,  Font = MinionMath-Capt},{Size =  8.41-13.01, Font = MinionMath-Regular},{Size = 13.01-19.91, Font = MinionMath-Subh},{Size = 19.91-,Font = MinionMath-Disp}}]
+
+% normal script fonts
+\DeclareSymbolFont{rsfs}{U}{rsfs}{m}{n}
+\DeclareSymbolFontAlphabet{\mathscr}{rsfs}

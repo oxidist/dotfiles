@@ -7,7 +7,8 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "monospace:size=11.2:antialias=true:autohint=false";
-static char *font2[] = { "JoyPixels:size=12:antialias=true:autohint=true" };
+//static char *font = "Input Mono:size=10:antialias=true:autohint=false";
+static char *font2[] =  {"OpenMoji:size=12:antialias=true:autohint=true"};
 static int borderpx = 2;
 
 /*

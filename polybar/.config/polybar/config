@@ -113,38 +113,38 @@ label-close-padding = 3
 menu-0-0 = lock
 menu-0-0-exec = ~/scripts/i3lock.sh
 menu-0-0-background = ${colors.background}
-menu-0-0-foreground = #50fa7b
+menu-0-0-foreground = ${xrdb:color3:#50fa7b}
 menu-0-0-padding-right = 3
 
 menu-0-1 = reboot
 menu-0-1-exec = menu-open-1
 menu-0-1-background = ${colors.background}
-menu-0-1-foreground = #50fa7b
+menu-0-1-foreground = ${xrdb:color3:#50fa7b}
 menu-0-1-padding-right = 3
 
 menu-0-2 = power off
 menu-0-2-exec = menu-open-2
 menu-0-2-background = ${colors.background}
-menu-0-2-foreground = #50fa7b
+menu-0-2-foreground = ${xrdb:color3:#50fa7b}
 menu-0-2-padding-right = 3
 
 menu-0-3 = sleep
 menu-0-3-exec = ~/scripts/sleep.sh
 menu-0-3-background = ${colors.background}
-menu-0-3-foreground = #50fa7b
+menu-0-3-foreground = ${xrdb:color3:#50fa7b}
 menu-0-3-padding-right = 3
 
 
 menu-1-0 = reboot?
 menu-1-0-exec = reboot
 menu-1-0-background = ${colors.background}
-menu-1-0-foreground = #50fa7b
+menu-1-0-foreground = ${xrdb:color3:#50fa7b}
 menu-1-0-padding-right = 3
 
 menu-2-0 = power off?
 menu-2-0-exec = poweroff
 menu-2-0-background = ${colors.background}
-menu-2-0-foreground = #50fa7b
+menu-2-0-foreground = ${xrdb:color3:#50fa7b}
 menu-2-0-padding-right = 3
 
 

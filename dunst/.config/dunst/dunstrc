@@ -6,7 +6,7 @@
 
 
 [global]
-    font = "PragmataPro Liga, OpenMoji 8"
+    font = "Inter, PragmataPro Liga, OpenMoji 8"
     markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes

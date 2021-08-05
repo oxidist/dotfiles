@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+rm /tmp/screen.png
 icon="$HOME/scripts/lock.png"
 tmpbg='/tmp/screen.png'
 
