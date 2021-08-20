@@ -1,0 +1,2 @@
+$pdflatex="xelatex %O %S";
+
