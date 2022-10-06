@@ -1,0 +1,256 @@
+2021-08-14 14:28:12		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-14 14:32:37		fifo: pipe closed
+2021-08-19 13:10:53		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-19 13:33:45		fifo: pipe closed
+2021-08-20 15:19:40		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-20 15:20:26		Option changed: irc.server.rizon.autoconnect = off  (default if null: off)
+2021-08-20 15:20:29		Options saved to sec.conf
+2021-08-20 15:20:29		Options saved to weechat.conf
+2021-08-20 15:20:29		Options saved to plugins.conf
+2021-08-20 15:20:29		Options saved to charset.conf
+2021-08-20 15:20:29		Options saved to logger.conf
+2021-08-20 15:20:29		Options saved to exec.conf
+2021-08-20 15:20:29		Options saved to trigger.conf
+2021-08-20 15:20:29		Options saved to alias.conf
+2021-08-20 15:20:29		Options saved to buflist.conf
+2021-08-20 15:20:29		Options saved to fifo.conf
+2021-08-20 15:20:29		Options saved to xfer.conf
+2021-08-20 15:20:29		Options saved to irc.conf
+2021-08-20 15:20:29		Options saved to relay.conf
+2021-08-20 15:20:29		Options saved to guile.conf
+2021-08-20 15:20:29		Options saved to perl.conf
+2021-08-20 15:20:29		Options saved to python.conf
+2021-08-20 15:20:29		Options saved to script.conf
+2021-08-20 15:20:29		Options saved to fset.conf
+2021-08-20 15:26:49		fifo: pipe closed
+2021-08-20 15:28:09		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-20 15:31:01		fifo: pipe closed
+2021-08-20 15:31:24		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-20 15:35:02		fifo: pipe closed
+2021-08-20 15:35:50		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-20 16:01:59		fifo: pipe closed
+2021-08-20 16:10:49		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-20 17:00:36		fifo: pipe closed
+2021-08-20 22:16:54		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-20 22:23:36		fifo: pipe closed
+2021-08-20 22:47:20		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-21 01:05:11		fifo: pipe closed
+2021-08-21 03:09:15		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-21 03:46:39		fifo: pipe closed
+2021-08-21 18:38:54		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-22 00:54:21		fifo: pipe closed
+2021-08-22 20:36:28		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-23 13:54:15		fifo: pipe closed
+2021-08-24 22:23:49		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-24 22:25:56		fifo: pipe closed
+2021-08-25 00:17:53		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-25 01:35:53		fifo: pipe closed
+2021-08-25 17:45:21		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-26 01:50:38		fifo: pipe closed
+2021-08-26 02:03:41		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-26 02:03:58		fifo: pipe closed
+2021-08-26 22:56:59		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-27 04:02:58		fifo: pipe closed
+2021-08-27 14:54:13		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-27 16:07:57		fifo: pipe closed
+2021-08-27 17:26:58		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-28 16:17:19		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-28 19:06:47		fifo: pipe closed
+2021-08-28 19:23:56		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-28 19:41:15		fifo: pipe closed
+2021-08-28 20:00:08		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-29 02:42:46		fifo: pipe closed
+2021-08-29 04:00:55		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-29 18:04:57		fifo: pipe closed
+2021-08-29 18:05:15		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-29 18:17:16		fifo: pipe closed
+2021-08-29 20:13:22		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-29 20:59:58		fifo: pipe closed
+2021-08-29 23:12:07		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-30 08:24:21		fifo: pipe closed
+2021-08-31 03:51:16		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-08-31 10:20:50		fifo: pipe closed
+2021-09-01 09:36:26		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-01 09:55:49		fifo: pipe closed
+2021-09-01 09:55:51		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-01 12:00:22		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-01 13:24:53		fifo: pipe closed
+2021-09-01 15:19:47		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-02 06:17:14		fifo: pipe closed
+2021-09-02 10:05:04		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-02 10:20:33		fifo: pipe closed
+2021-09-05 17:36:14		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-05 22:04:30		fifo: pipe closed
+2021-09-06 08:38:38		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-06 15:05:43		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-06 15:37:28		fifo: pipe closed
+2021-09-06 17:23:45		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-06 22:08:07		fifo: pipe closed
+2021-09-07 18:43:20		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-08 00:26:44		fifo: pipe closed
+2021-09-08 09:21:48		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-08 13:38:11		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-08 23:13:42		fifo: pipe closed
+2021-09-09 10:53:37		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-09 14:50:03		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-10 01:08:35		fifo: pipe closed
+2021-09-10 11:41:40		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-10 12:05:34		fifo: pipe closed
+2021-09-10 16:49:44		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-11 00:28:44		fifo: pipe closed
+2021-09-11 11:05:36		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-11 12:00:20		fifo: pipe closed
+2021-09-12 12:41:23		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-12 13:18:00		fifo: pipe closed
+2021-09-16 17:37:00		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-16 19:38:36		fifo: pipe closed
+2021-09-17 13:45:26		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-18 00:53:11		fifo: pipe closed
+2021-09-18 13:11:42		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-19 02:04:29		fifo: pipe closed
+2021-09-19 13:30:56		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-20 01:50:29		fifo: pipe closed
+2021-09-20 11:41:03		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-21 00:20:30		fifo: pipe closed
+2021-09-21 15:59:55		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-22 00:30:03		fifo: pipe closed
+2021-09-22 16:29:14		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-23 00:16:51		fifo: pipe closed
+2021-09-23 11:17:24		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, script, trigger, xfer
+2021-09-24 01:27:55		fifo: pipe closed
+2021-09-24 10:30:01		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-09-25 00:45:56		fifo: pipe closed
+2021-09-25 13:15:52		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-09-26 00:41:29		fifo: pipe closed
+2021-09-26 12:29:19		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-09-27 01:36:58		fifo: pipe closed
+2021-09-28 14:37:56		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-09-29 01:55:27		fifo: pipe closed
+2021-09-29 10:12:16		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-09-30 02:49:36		fifo: pipe closed
+2021-10-03 15:38:52		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-10-04 05:00:01		fifo: pipe closed
+2021-10-04 19:14:47		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-10-05 04:21:37		fifo: pipe closed
+2021-10-06 15:05:26		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-10-07 01:17:28		fifo: pipe closed
+2021-10-07 15:54:11		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-10-09 04:12:42		fifo: pipe closed
+2021-10-14 13:05:05		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-10-17 15:59:21		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-10-18 00:54:22		fifo: pipe closed
+2021-10-24 01:02:42		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-10-24 01:28:06		fifo: pipe closed
+2021-10-26 19:19:59		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-10-26 22:14:28		fifo: pipe closed
+2021-10-27 15:53:42		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-10-28 01:39:20		fifo: pipe closed
+2021-10-29 17:20:51		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-10-30 00:00:02		fifo: pipe closed
+2021-11-01 15:06:11		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-11-02 01:25:06		fifo: pipe closed
+2021-11-12 14:13:52		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-11-12 23:20:32		fifo: pipe closed
+2021-11-20 22:07:45		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-11-21 02:28:19		fifo: pipe closed
+2021-11-23 23:17:14		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-11-24 02:47:23		fifo: pipe closed
+2021-11-24 16:46:04		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-11-25 00:16:18		fifo: pipe closed
+2021-11-27 23:17:52		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2021-11-28 02:29:03		fifo: pipe closed
+2022-03-25 13:50:52		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-03-25 13:50:58	⚠	irc: command "join" must be executed on connected irc server
+2022-03-25 20:17:32		fifo: pipe closed
+2022-04-14 20:21:00		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-15 05:36:46		fifo: pipe closed
+2022-04-15 16:54:22		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-15 20:16:18		fifo: pipe closed
+2022-04-15 23:59:31		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-16 19:18:21		fifo: pipe closed
+2022-04-17 05:59:27		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-18 06:13:25		fifo: pipe closed
+2022-04-19 06:33:15	⚠	Warning: /home/oxide/.weechat/relay.conf, line 33: unknown option for section "network": compression_level = 6
+2022-04-19 06:33:15		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-19 18:09:31		fifo: pipe closed
+2022-04-19 18:45:36		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-19 20:10:37	⚠	Too few arguments for command "/msg" (help on command: /help msg)
+2022-04-20 22:33:31		fifo: pipe closed
+2022-04-21 01:45:37		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-21 07:47:29		fifo: pipe closed
+2022-04-21 07:47:39		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-21 08:07:55		fifo: pipe closed
+2022-04-21 08:08:36		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-21 08:16:50		fifo: pipe closed
+2022-04-21 08:16:53		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-21 08:18:02		fifo: pipe closed
+2022-04-21 08:18:32		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-21 08:20:03		fifo: pipe closed
+2022-04-21 08:20:18		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-21 08:26:54		fifo: pipe closed
+2022-04-21 08:31:25		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-21 08:35:03		fifo: pipe closed
+2022-04-21 08:35:14		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-21 09:28:29		fifo: pipe closed
+2022-04-21 09:28:41		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-21 09:34:10		fifo: pipe closed
+2022-04-21 09:34:18		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-21 09:34:22	⚠	irc: command "query" must be executed on irc buffer (server, channel or private)
+2022-04-22 23:49:07		fifo: pipe closed
+2022-04-23 06:01:48		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-23 13:32:37		fifo: pipe closed
+2022-04-23 13:32:43		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-24 09:04:57		fifo: pipe closed
+2022-04-24 09:05:40		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-25 06:43:25		fifo: pipe closed
+2022-04-26 07:29:58		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-26 07:30:59		fifo: pipe closed
+2022-04-26 07:47:25		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+                                       2022-04-27 18:07:27		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-28 00:16:50		fifo: pipe closed
+2022-04-28 06:53:52		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-28 09:23:13		fifo: pipe closed
+2022-04-28 12:11:58		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-29 00:27:01		fifo: pipe closed
+2022-04-29 08:24:00		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-04-30 01:06:27		fifo: pipe closed
+2022-04-30 15:59:30		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-05-01 01:54:27		fifo: pipe closed
+2022-05-01 11:08:32		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-05-02 01:45:38		fifo: pipe closed
+2022-05-02 17:56:34		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-05-03 01:12:14		fifo: pipe closed
+2022-05-03 17:54:08		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-05-04 03:18:41		fifo: pipe closed
+2022-05-06 22:11:19		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-05-07 01:08:42		fifo: pipe closed
+2022-05-07 21:02:35		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-05-08 02:03:32		fifo: pipe closed
+2022-05-08 15:54:23		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-05-08 23:51:35		fifo: pipe closed
+2022-05-09 15:04:55		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-05-10 00:52:09		fifo: pipe closed
+2022-05-31 00:22:40		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-05-31 02:41:53		fifo: pipe closed
+2022-06-12 08:49:40		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-06-13 00:42:30		fifo: pipe closed
+2022-06-14 05:15:59		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-06-14 06:53:40		fifo: pipe closed
+2022-06-18 14:17:01		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-06-18 22:05:27		fifo: pipe closed
+2022-06-21 10:44:37		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-06-21 11:19:13		fifo: pipe closed
+2022-08-30 03:35:57		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-08-30 03:47:07		fifo: pipe closed
+2022-08-30 05:29:25		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-08-30 06:47:06		fifo: pipe closed
+2022-08-30 19:34:06		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-08-30 19:46:37		fifo: pipe closed
+2022-08-30 19:59:35		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-08-30 20:34:18		fifo: pipe closed
+2022-08-31 04:30:53		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-08-31 04:31:02	⚠	irc: command "join" must be executed on connected irc server
+2022-09-02 03:30:53		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-09-02 07:00:43		fifo: pipe closed
+2022-09-06 18:52:52		Plugins loaded: alias, buflist, charset, exec, fifo, fset, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, typing, xfer
+2022-09-06 18:53:33		fifo: pipe closed

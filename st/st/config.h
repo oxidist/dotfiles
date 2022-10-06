@@ -1,4 +1,4 @@
-#include "/home/oxide/.cache/wal/colors-wal-st.h"
+// #include "/home/oxide/.cache/wal/colors-wal-st.h"
 /* See LICENSE file for copyright and license details. */
 
 /*
@@ -6,8 +6,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "monospace:size=11.2:antialias=true:autohint=false";
-//static char *font = "Input Mono:size=10:antialias=true:autohint=false";
+//static char *font = "PragmataProLiga:size=11.5:antialias=true:autohint=false";
+static char *font = "Input Mono:size=10:antialias=true:autohint=false";
 static char *font2[] =  {"OpenMoji:size=12:antialias=true:autohint=true"};
 static int borderpx = 2;
 
@@ -81,7 +81,7 @@ const int boxdraw = 1;
 const int boxdraw_bold = 1;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
-const int boxdraw_braille = 1;
+const int boxdraw_braille = 0;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -112,16 +112,39 @@ unsigned int tabspaces = 8;
 /* bg opacity */
 float alpha = 1;
 
-
+static const char *colorname[] = {
+"#000000",
+"#303030",
+"#353535",
+"#4A4A4A",
+"#787878",
+"#e0e0d1",
+"#EEFFFF",
+"#FFFFFF",
+"#F07178",
+"#F78C6C",
+"#FDF200",
+"#13CA91",
+"#79ffe1",
+"#7898FB",
+"#ff3299",
+"#FF5370",
+	[255] = 0,
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#add8e6", /* 256 -> cursor */
+	"#555555", /* 257 -> rev cursor*/
+	"#282828", /* 258 -> bg */
+	"#ebdbb2", /* 259 -> fg */
+};
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-//unsigned int defaultfg = 259;
-//unsigned int defaultbg = 258;
-//unsigned int defaultcs = 256;
-//unsigned int defaultrcs = 257;
+unsigned int defaultfg = 259;
+unsigned int defaultbg = 258;
+unsigned int defaultcs = 256;
+unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor
@@ -174,9 +197,9 @@ ResourcePref resources[] = {
 		{ "color13",      STRING,  &colorname[13] },
 		{ "color14",      STRING,  &colorname[14] },
 		{ "color15",      STRING,  &colorname[15] },
-		{ "background",   STRING,  &colorname[256] },
+		{ "background",   STRING,  &colorname[258] },
 		{ "foreground",   STRING,  &colorname[259] },
-		{ "cursorColor",  STRING,  &colorname[258] },
+		{ "cursorColor",  STRING,  &colorname[256] },
 		{ "termname",     STRING,  &termname },
 		{ "shell",        STRING,  &shell },
 		{ "blinktimeout", INTEGER, &blinktimeout },

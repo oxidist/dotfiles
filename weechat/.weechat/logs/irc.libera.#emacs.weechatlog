@@ -1,0 +1,228 @@
+2022-09-02 03:31:28	→	oxide has joined #emacs
+2022-09-02 03:31:28	ℹ	Topic for #emacs is ""In spacemacs, no one can hear you scream." | pgtk merged to master | Current stable is 28.1 | Emacs questions take priority over chit-chat | pastebin: https://bpa.st/+emacs | No Public Logging, racism, sexism, xenophobia, botwanking, or other asshattery."
+2022-09-02 03:31:28	ℹ	Topic set by Peerin (~Thunderbi@106.114.104.221) on Sat, 13 Aug 2022 18:32:21
+2022-09-02 03:31:29	ℹ	Channel #emacs: 779 nicks (0 ops, 2 voices, 777 normals)
+2022-09-02 03:31:30	ℹ	Channel created on Wed, 19 May 2021 19:13:11
+2022-09-02 03:31:31	←	Vintal has quit (Read error: Connection reset by peer)
+2022-09-02 03:31:35	←	hexadecagram_ has quit (Max SendQ exceeded)
+2022-09-02 03:31:40	→	erik has joined #emacs
+2022-09-02 03:32:00	→	synx has joined #emacs
+2022-09-02 03:32:04	→	vifon has joined #emacs
+2022-09-02 03:32:05	←	Donatzsky has quit (Quit: WeeChat 3.6)
+2022-09-02 03:32:19	→	x88x88x has joined #emacs
+2022-09-02 03:32:26	←	gnuhack has left #emacs (ERC 5.4.1 (IRC client for GNU Emacs 29.0.50))
+2022-09-02 03:32:31	←	inversed has quit (Ping timeout: 252 seconds)
+2022-09-02 03:32:36	→	Stromeko has joined #emacs
+2022-09-02 03:32:42	ℹ	jimeh_ is now known as jimeh
+2022-09-02 03:33:18	→	TheCatBehemoth has joined #emacs
+2022-09-02 03:33:48	ℹ	benny_ is now known as benny
+2022-09-02 03:33:55	←	julie_pilgrim has quit (Remote host closed the connection)
+2022-09-02 03:34:00	→	inversed has joined #emacs
+2022-09-02 03:35:11	→	timmur has joined #emacs
+2022-09-02 03:35:54	→	FennecCode has joined #emacs
+2022-09-02 03:35:55	→	MysteriousSilver has joined #emacs
+2022-09-02 03:36:57	timmur	Need help my regex is failing super hard :( How do I capture "lambda" in this string with regex:-  <span lang="ab">lambda</span>
+2022-09-02 03:38:27	ℹ	pono_ is now known as pono
+2022-09-02 03:39:13	→	ddevault has joined #emacs
+2022-09-02 03:39:20	→	Lambda_86 has joined #emacs
+2022-09-02 03:39:27	→	cvandusen has joined #emacs
+2022-09-02 03:39:42	→	wose has joined #emacs
+2022-09-02 03:39:46	→	x10 has joined #emacs
+2022-09-02 03:39:49	→	caoliver has joined #emacs
+2022-09-02 03:39:51	→	leah2 has joined #emacs
+2022-09-02 03:40:13	→	CAT_S has joined #emacs
+2022-09-02 03:40:29	bpalmer	what regex do you currently have? Do you have to deal with nested elements within the span?
+2022-09-02 03:40:57	parsnip	this works: (string-match "lambda" "<span lang=\"ab\">lambda</span>")
+2022-09-02 03:41:10	→	cbmuser_ has joined #emacs
+2022-09-02 03:41:31	parsnip	i guess the question is missing some details
+2022-09-02 03:41:48	timmur	i tried ("(<span lang=\\(.*?/\\)</span>" ) and few other variations but keep hittng the wall
+2022-09-02 03:41:58	→	hexadecagram has joined #emacs
+2022-09-02 03:42:38	parsnip	maybe you can use an elisp parser
+2022-09-02 03:43:17	parsnip	https://www.google.com/search?client=firefox-b-1-d&q=elisp+xml
+2022-09-02 03:43:57	parsnip	bpalmer: is it better to use a parsing library, rather than writing regexp?
+2022-09-02 03:44:22	bpalmer	I mean, it depends how complicated the structure is.
+2022-09-02 03:44:37	bpalmer	For the general case, html cannot be parsed with regular expressions.
+2022-09-02 03:45:24	bpalmer	if it's literally replacing a single document so that, e.g., things that are in lang="ab" get replaced with a fixed glossary ...
+2022-09-02 03:45:54	timmur	structure is fairly simple. I have a html string which I would like to trim to get the text in between <span lang= to </span> tags.
+2022-09-02 03:46:09	→	Guest4212 has joined #emacs
+2022-09-02 03:46:37	→	jab has joined #emacs
+2022-09-02 03:46:43	timmur	i.e. don't have to worry about nested structures
+2022-09-02 03:47:55	←	xiews has quit (Read error: Connection reset by peer)
+2022-09-02 03:49:00	←	arescorpio has quit (Quit: Leaving.)
+2022-09-02 03:49:05	timmur	I'm playing with this library: https://github.com/abo-abo/define-word/blob/master/define-word.el
+2022-09-02 03:49:43	←	Athas_ has quit (Quit: ZNC 1.8.2 - https://znc.in)
+2022-09-02 03:49:52	→	Athas has joined #emacs
+2022-09-02 03:50:02	bpalmer	timmur: (let ((s "<span lang=\"ab\">lambda</span>")) (when (string-match "<span lang=\"\\([^\"]*\\)\">\\([^<]*\\)</span>" s) (list (match-string 1 s) (match-string 2 s))))
+2022-09-02 03:50:06	bpalmer	maybe that's what you want.
+2022-09-02 03:50:57	→	tdbtwlt^^ has joined #emacs
+2022-09-02 03:51:28	→	xiews has joined #emacs
+2022-09-02 03:52:39	timmur	@bpalmer sweet. that does it. Thanks a ton!
+2022-09-02 03:53:02	bpalmer	note the limitations to what's allowed in each
+2022-09-02 03:53:08	←	cognemo has quit (Quit: ZNC 1.8.2 - https://znc.in)
+2022-09-02 03:53:23	→	cognemo has joined #emacs
+2022-09-02 03:53:30	bpalmer	it also doesn't generalize to '' (which is allowed as a quotation in html); or unquoted attributes (which are also allowed in html, although not xhtml)
+2022-09-02 03:53:36	←	tdbtwlt^ has quit (Ping timeout: 268 seconds)
+2022-09-02 03:54:20	timmur	i'm not passing a list yet. going through a list of items in html with those tags. hopefully I won't have to deal with edge cases.
+2022-09-02 03:59:17	←	jx0 has quit (Ping timeout: 252 seconds)
+2022-09-02 03:59:26	←	_bladez_ has quit (Ping timeout: 252 seconds)
+2022-09-02 04:00:20	→	bremner has joined #emacs
+2022-09-02 04:00:49	→	frmg has joined #emacs
+2022-09-02 04:01:18	e1f	https://knowyourmeme.com/editorials/insights/where-do-memes-come-from-the-top-platforms-from-2010-2022
+2022-09-02 04:01:33	e1f	very disappointed that #emacs doesn't make the list
+2022-09-02 04:02:19	←	PuercoPop has quit (Remote host closed the connection)
+2022-09-02 04:02:57	bpalmer	they probably don't appreciate xpm memes the way they should.
+2022-09-02 04:03:39	technomancy`	kids these days!
+2022-09-02 04:04:58	ℹ	technomancy` is now known as technomancy
+2022-09-02 04:06:15	←	jth has quit (Ping timeout: 252 seconds)
+2022-09-02 04:07:06	←	bossatossa has quit (Ping timeout: 268 seconds)
+2022-09-02 04:08:26	→	_bladez_ has joined #emacs
+2022-09-02 04:10:05	←	pmy_ has quit (Remote host closed the connection)
+2022-09-02 04:10:36	→	pmy_ has joined #emacs
+2022-09-02 04:16:21	←	CosmosAtlas has quit (Ping timeout: 268 seconds)
+2022-09-02 04:18:03	←	AdamHorden has quit (Ping timeout: 248 seconds)
+2022-09-02 04:20:31	→	AdamHorden has joined #emacs
+2022-09-02 04:20:44	→	CosmosAtlas has joined #emacs
+2022-09-02 04:21:22	→	eddof13 has joined #emacs
+2022-09-02 04:21:47	←	noa has left #emacs (they're coming for me)
+2022-09-02 04:25:35	→	aspic has joined #emacs
+2022-09-02 04:28:31	←	aspic has quit (Read error: No route to host)
+2022-09-02 04:30:49	←	tdbtwlt^^ has quit (Ping timeout: 252 seconds)
+2022-09-02 04:31:07	→	korg815 has joined #emacs
+2022-09-02 04:32:21	←	ix has quit (Quit: WeeChat 3.5)
+2022-09-02 04:32:48	←	AdamHorden has quit (Ping timeout: 244 seconds)
+2022-09-02 04:33:19	→	tdbtwlt^ has joined #emacs
+2022-09-02 04:33:24	→	ix has joined #emacs
+2022-09-02 04:34:53	→	AdamHorden has joined #emacs
+2022-09-02 04:37:00	→	bitmapper has joined #emacs
+2022-09-02 04:37:53	←	eddof13 has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2022-09-02 04:38:09	→	ft has joined #emacs
+2022-09-02 04:38:31	←	CosmosAtlas has quit (Ping timeout: 252 seconds)
+2022-09-02 04:40:24	→	jth has joined #emacs
+2022-09-02 04:40:50	←	TheCatBehemoth has quit (Quit: WeeChat 3.6)
+2022-09-02 04:41:32	→	eddof13 has joined #emacs
+2022-09-02 04:41:58	←	galcerte has quit (Ping timeout: 240 seconds)
+2022-09-02 04:41:58	←	eddof13 has quit (Client Quit)
+2022-09-02 04:42:41	→	eddof13 has joined #emacs
+2022-09-02 04:44:26	→	kts has joined #emacs
+2022-09-02 04:44:37	→	Vintal has joined #emacs
+2022-09-02 04:45:01	←	eddof13 has quit (Client Quit)
+2022-09-02 04:45:06	←	ix has quit (Ping timeout: 264 seconds)
+2022-09-02 04:46:57	←	random-nick has quit (Ping timeout: 252 seconds)
+2022-09-02 04:47:51	bpalmer	Hmm. Lenovo is offering glasses that put a full screen in front of your eyes.
+2022-09-02 04:48:34	bpalmer	"You aren’t getting any VR or AR experiences with these types of glasses, ... and the cable keeps them tethered to whatever your source is. Instead, it’s designed for you to stay put as if you were watching an actual TV or monitor, but the effect makes it feel like a huge theater screen."
+2022-09-02 04:49:51	←	timmur has quit (Ping timeout: 244 seconds)
+2022-09-02 04:49:59	homerj	be interesting to watch movies and the like
+2022-09-02 04:50:46	bpalmer	Yep. Movies, or being able to look at confidential data in public ... they show a graphic of somebody using the glasses with a phone source
+2022-09-02 04:50:58	←	smach has quit ()
+2022-09-02 04:51:40	homerj	that may do well, if they can keep the cost down
+2022-09-02 04:52:26	homerj	on a plane, it doesn't matter if it's connected by a cable
+2022-09-02 04:53:21	bpalmer	I have never managed to be productive on a plane, but after seeing a few too many horror stories about people using massive laptops that are then smashed when the person in front leans the seat down ...
+2022-09-02 04:54:01	homerj	that two inches the seat moves
+2022-09-02 04:54:36	→	lisbeths has joined #emacs
+2022-09-02 04:54:44	←	AdamHorden has quit (Ping timeout: 268 seconds)
+2022-09-02 04:55:00	homerj	I'm still waiting for airlines do you like Mr. T from the A-Team
+2022-09-02 04:55:07	homerj	just knock you out, put you in a box until you land
+2022-09-02 04:55:49	bpalmer	That's my traditional approach to flying: go in exhausted so I can sleep in my seat until it lands. The downside is that it means dealing with airports when exhausted, or when exhausted and groggy.
+2022-09-02 04:59:52	homerj	I'd like to say I'm one of those people
+2022-09-02 05:00:15	homerj	I'm a "let's fiddle with the infotainment system....is this somehow going to cost me $100"
+2022-09-02 05:00:26	→	eddof13 has joined #emacs
+2022-09-02 05:00:38	→	AdamHorden has joined #emacs
+2022-09-02 05:00:45	homerj	watch 20 minutes of a movie on my phone, then stare at the map for another 30 minutes
+2022-09-02 05:01:09	←	eddof13 has quit (Client Quit)
+2022-09-02 05:01:14	homerj	some planning out of my escape route if we crash
+2022-09-02 05:01:22	←	hartmannathan has quit (Quit: Leaving)
+2022-09-02 05:02:08	homerj	havent' seen a copy of Sky Mall in ages
+2022-09-02 05:02:13	homerj	that was good to kill a few minutes
+2022-09-02 05:02:55	bpalmer	I think Sky Mall went bankrupt
+2022-09-02 05:05:42	homerj	I'll talk to someone if they talk to me first, I'm not being that person that starts conversations on an airplane
+2022-09-02 05:07:25	←	jth has quit (Ping timeout: 244 seconds)
+2022-09-02 05:08:05	→	herjazz has joined #emacs
+2022-09-02 05:08:18	←	pmy_ has quit (Ping timeout: 268 seconds)
+2022-09-02 05:08:18	bpalmer	of course, I'm still avoiding air travel
+2022-09-02 05:08:44	→	pmy_ has joined #emacs
+2022-09-02 05:08:54	bremner	I prefer to think of it as avoiding my family
+2022-09-02 05:11:16	bpalmer	judybot: the true secret that frequent fliers know is
+2022-09-02 05:11:17	+judybot	bpalmer: the rest and restoration that comes from a vacation. A visit offers a chance to heal, unwind and rejuvenate your body, mind and soul.
+2022-09-02 05:13:18	←	toto has quit (Ping timeout: 240 seconds)
+2022-09-02 05:13:21	bremner	rudybot: what would Greta do?
+2022-09-02 05:13:21	rudybot	bremner: ''Gainsborough Noir! Those fruited hams, Portman and Price, have a high old time playing cat and mouse in the first third of Crabtrees arch drawing-room murder melo. Both femme fatale Greta Gynt and dark smoothie Maxwell Reed (who would, a few years later, become Mr. Joan Collins) have fabulously high hair (in fact, Gynts architectonic hair-dos are some of the greatest in 1940s film, anywhere). Satin dressing gowns and headboards
+2022-09-02 05:16:26	→	timmur has joined #emacs
+2022-09-02 05:17:42	←	Bung has quit (Remote host closed the connection)
+2022-09-02 05:18:01	→	Bung has joined #emacs
+2022-09-02 05:18:12	←	tdbtwlt^ has quit (Remote host closed the connection)
+2022-09-02 05:20:38	←	timmur has quit (Ping timeout: 240 seconds)
+2022-09-02 05:22:50	parsnip	are practical jokes practical?
+2022-09-02 05:23:15	→	kaisyu has joined #emacs
+2022-09-02 05:23:24	←	pinoaffe has quit (Quit: Bridge terminating on SIGTERM)
+2022-09-02 05:24:46	→	pinoaffe has joined #emacs
+2022-09-02 05:24:52	←	avocadoist has quit (Remote host closed the connection)
+2022-09-02 05:25:44	→	genieliu_ has joined #emacs
+2022-09-02 05:26:51	←	carbonfiber has quit (Quit: Connection closed for inactivity)
+2022-09-02 05:26:55	→	CosmosAtlas has joined #emacs
+2022-09-02 05:27:56	←	genieliu has quit (Ping timeout: 255 seconds)
+2022-09-02 05:33:30	←	erik has quit (Killed (NickServ (GHOST command used by erik_!~erik@2601:443:4100:8:a89d:745b:7be4:fe5d)))
+2022-09-02 05:34:04	→	timmur has joined #emacs
+2022-09-02 05:34:21	→	erik` has joined #emacs
+2022-09-02 05:34:56	→	catern has joined #emacs
+2022-09-02 05:36:21	←	kts has quit (Ping timeout: 244 seconds)
+2022-09-02 05:37:57	→	cqi has joined #emacs
+2022-09-02 05:38:56	←	timmur has quit (Ping timeout: 244 seconds)
+2022-09-02 05:40:28	→	Xenguy has joined #emacs
+2022-09-02 05:43:55	←	woland has quit (Ping timeout: 268 seconds)
+2022-09-02 05:44:05	←	Vintal has quit (Read error: Connection reset by peer)
+2022-09-02 05:45:17	←	josegpt has quit (Remote host closed the connection)
+2022-09-02 05:45:32	→	woland has joined #emacs
+2022-09-02 05:46:34	→	nate4 has joined #emacs
+2022-09-02 05:49:59	→	oshor has joined #emacs
+2022-09-02 05:52:42	→	timmur has joined #emacs
+2022-09-02 05:53:33	ℹ	novasenco is now known as nova
+2022-09-02 05:56:57	→	ix has joined #emacs
+2022-09-02 05:56:58	←	timmur has quit (Ping timeout: 240 seconds)
+2022-09-02 05:57:11	←	waleee has quit (Ping timeout: 255 seconds)
+2022-09-02 05:58:11	←	AstroGho` has quit (Quit: ERC 5.4 (IRC client for GNU Emacs 28.1))
+2022-09-02 05:59:11	←	bobdobbs has quit (Remote host closed the connection)
+2022-09-02 06:01:42	→	timmur has joined #emacs
+2022-09-02 06:02:53	→	monkey_ has joined #emacs
+2022-09-02 06:03:49	←	OokaLoup has quit (Quit: Konversation terminated!)
+2022-09-02 06:07:21	←	timmur has quit (Ping timeout: 244 seconds)
+2022-09-02 06:10:48	←	frmg has quit (Quit: Abandonando - Leaving)
+2022-09-02 06:11:04	→	bobdobbs has joined #emacs
+2022-09-02 06:15:38	←	ur5us has quit (Ping timeout: 255 seconds)
+2022-09-02 06:15:41	←	zoe has quit (Ping timeout: 252 seconds)
+2022-09-02 06:20:15	epony	Who is John Practice??  https://en.wikipedia.org/wiki/John_Practice#Plot
+2022-09-02 06:20:22	→	timmur has joined #emacs
+2022-09-02 06:20:47	←	_bladez_ has quit (Ping timeout: 252 seconds)
+2022-09-02 06:21:35	→	juno__ has joined #emacs
+2022-09-02 06:22:03	←	oshor has quit (Remote host closed the connection)
+2022-09-02 06:22:55	markofcorn	When I start mu4e emacs prompts me to create <maildir>/sent (and drafts, trash, etc) despite having several contexts set up such that <maildir>/<context1>/sent. I understand that the values of (mu4e-sent-folder) and (user-mail-address) are default before the contexts are loaded. I don't remember having this issue a couple years ago the last time I tried this
+2022-09-02 06:25:18	←	timmur has quit (Ping timeout: 264 seconds)
+2022-09-02 06:25:41	←	jayalane` has quit (Remote host closed the connection)
+2022-09-02 06:25:49	→	jayalane` has joined #emacs
+2022-09-02 06:26:28	←	cvandusen has quit (Ping timeout: 244 seconds)
+2022-09-02 06:29:40	→	[itchyjunk] has joined #emacs
+2022-09-02 06:31:47	→	jth has joined #emacs
+2022-09-02 06:33:04	→	_bladez_ has joined #emacs
+2022-09-02 06:33:20	←	akk has quit (Quit: +++)
+2022-09-02 06:34:40	←	monkey_ has quit (Remote host closed the connection)
+2022-09-02 06:36:33	→	timmur has joined #emacs
+2022-09-02 06:37:52	→	monkey_ has joined #emacs
+2022-09-02 06:38:15	←	monkey_ has quit (Remote host closed the connection)
+2022-09-02 06:38:35	→	monkey_ has joined #emacs
+2022-09-02 06:40:50	←	schiggn has quit (Ping timeout: 255 seconds)
+2022-09-02 06:40:59	←	timmur has quit (Ping timeout: 248 seconds)
+2022-09-02 06:41:56	→	schiggn has joined #emacs
+2022-09-02 06:44:58	←	reprazent has quit (Ping timeout: 268 seconds)
+2022-09-02 06:45:33	←	skapata has quit (Remote host closed the connection)
+2022-09-02 06:45:44	→	reprazent has joined #emacs
+2022-09-02 06:46:47	→	skapata has joined #emacs
+2022-09-02 06:46:51	←	plastico has quit (Quit: WeeChat 3.6)
+2022-09-02 06:49:04	→	hirez has joined #emacs
+2022-09-02 06:49:18	←	nate4 has quit (Ping timeout: 264 seconds)
+2022-09-02 06:52:05	←	hirez- has quit (Ping timeout: 255 seconds)
+2022-09-02 06:54:54	→	timmur has joined #emacs
+2022-09-02 06:57:23	→	Desertcoffee has joined #emacs
+2022-09-02 06:59:18	←	Xenguy has quit (Quit: Leaving)
+2022-09-02 06:59:32	←	timmur has quit (Ping timeout: 244 seconds)
+2022-09-02 06:59:53	→	ur5us has joined #emacs
+2022-09-02 07:00:26	←	davidkrauser has quit (Quit: Leaving)
+2022-09-02 07:00:43	ℹ	irc: disconnected from server

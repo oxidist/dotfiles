@@ -7,55 +7,58 @@
 
 [global]
     font = "Inter, PragmataPro Liga, OpenMoji 8"
-    markup = yes
     format = "<b>%s</b>\n%b"
+    markup = full
     sort = yes
     indicate_hidden = yes
     alignment = left
-    bounce_freq = 0
+    #bounce_freq = 0
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
-    geometry = "190x10-3+55"
+    width = 230
+    height = 30
+    offset= 3x55
     transparency = 0
     idle_threshold = 120
     monitor = 0
     follow = mouse
     sticky_history = yes
-    line_height = 1.1
+    line_height = 1
     separator_height = 2
     padding = 8
     horizontal_padding = 8
     separator_color = auto
-    startup_notification = false
+    #startup_notification = false
     # https://github.com/knopwob/dunst/issues/26#issuecomment-36159395
     max_icon_size = 32
     icon_position = off
-    icon_folders = ~/Arc-OSX-Icons/src/Arc-OSX-D/actions/16/
+    #icon_folders = ~/Arc-OSX-Icons/src/Arc-OSX-D/actions/16/
     browser = /usr/bin/firefox
-[frame]
-    width = 2
-    color = "#44475a"
+    frame_width = 2
+    frame_color="#44475a"
+    background="#282a36"
+    foreground="#f8f8f2"
 
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    history = ctrl+grave
-    context = ctrl+shift+period
+#[shortcuts]
+    #close = ctrl+space
+    #close_all = ctrl+shift+space
+    #history = ctrl+grave
+    #context = ctrl+shift+period
 
 [urgency_low]
-    background = "#282a36"
-    foreground = "#f8f8f2"
+    background="#282a36"
+    foreground="#f8f8f2"
     timeout = 5
 
 [urgency_normal]
-    background = "#282a36"
-    foreground = "#f8f8f2"
+    background="#282a36"
+    foreground="#f8f8f2"
     timeout = 20
 
 [urgency_critical]
-    background = "#282a36"
-    foreground = "#f8f8f2"
+    background="#282a36"
+    foreground="#f8f8f2"
     timeout = 0
 
 [play_sound]

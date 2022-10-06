@@ -1,3 +1,6 @@
 configuration {
-    theme: "~/.cache/wal/colors-rofi-dark";
+    modi: "window,drun";
+    font: "Iosevka SS15 Medium 12";
 }
+
+// @theme "wal";

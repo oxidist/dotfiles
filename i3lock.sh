@@ -1,0 +1,1 @@
+scripts/scripts/i3lock.sh

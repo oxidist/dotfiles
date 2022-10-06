@@ -1,0 +1,207 @@
+2021-08-14 14:28:12	ℹ	irc: connecting to server irc.rizon.net/6697 (SSL)...
+2021-08-14 14:28:13	ℹ	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2021-08-14 14:28:13	ℹ	gnutls: receiving 3 certificates
+2021-08-14 14:28:13	ℹ	 - certificate[1] info:
+2021-08-14 14:28:13	ℹ	   - subject `CN=irc.rizon.net', issuer `CN=R3,O=Let's Encrypt,C=US', serial 0x04b5d709753c360d94f5731f9fdadd60c910, RSA key 4096 bits, signed using RSA-SHA256, activated `2021-06-23 20:06:54 UTC', expires `2021-09-21 20:06:53 UTC', pin-sha256="TlaFsbCT3AbqemolAjZfLucGHZtntvAQzW3FmYF/FyU="
+2021-08-14 14:28:13	ℹ	 - certificate[2] info:
+2021-08-14 14:28:13	ℹ	   - subject `CN=R3,O=Let's Encrypt,C=US', issuer `CN=ISRG Root X1,O=Internet Security Research Group,C=US', serial 0x00912b084acf0c18a753f6d62e25a75f5a, RSA key 2048 bits, signed using RSA-SHA256, activated `2020-09-04 00:00:00 UTC', expires `2025-09-15 16:00:00 UTC', pin-sha256="jQJTbIh0grw0/1TkHSumWb+Fs0Ggogr621gT3PvPKG0="
+2021-08-14 14:28:13	ℹ	 - certificate[3] info:
+2021-08-14 14:28:13	ℹ	   - subject `CN=ISRG Root X1,O=Internet Security Research Group,C=US', issuer `CN=DST Root CA X3,O=Digital Signature Trust Co.', serial 0x4001772137d4e942b8ee76aa3c640ab7, RSA key 4096 bits, signed using RSA-SHA256, activated `2021-01-20 19:14:03 UTC', expires `2024-09-30 18:14:03 UTC', pin-sha256="C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+2021-08-14 14:28:13	ℹ	gnutls: peer's certificate is trusted
+2021-08-14 14:28:13	ℹ	irc: connected to irc.rizon.net/6697 (52.193.79.145)
+2021-08-14 14:28:13	ℹ	irc.losslessone.com: *** Looking up your hostname...
+2021-08-14 14:28:13	ℹ	irc.losslessone.com: *** Checking Ident
+2021-08-14 14:28:14	ℹ	irc.losslessone.com: *** Couldn't look up your hostname
+2021-08-14 14:28:14	ℹ	irc.losslessone.com: *** No Ident response
+2021-08-14 14:28:14	ℹ	irc: client capability, server supports: invite-notify multi-prefix userhost-in-names chghost sasl away-notify
+2021-08-14 14:28:14	ℹ	irc: client capability, requesting: sasl
+2021-08-14 14:28:15	ℹ	irc: client capability, enabled: sasl
+2021-08-14 14:28:16	ℹ	You are now logged in as oxide. (oxide!lambda@61.0.151.5)
+2021-08-14 14:28:16	ℹ	SASL authentication successful
+2021-08-14 14:28:16	ℹ	irc.losslessone.com: *** Connected securely via TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384-256
+2021-08-14 14:28:16	ℹ	irc.losslessone.com: *** Your host is masked (96362045.822879A.33F882EF.IP)
+2021-08-14 14:28:16	ℹ	Welcome to the Rizon Internet Relay Chat Network oxide
+2021-08-14 14:28:16	ℹ	Your host is irc.losslessone.com, running version plexus-4(hybrid-8.1.20)
+2021-08-14 14:28:16	ℹ	This server was created Mar 26 2021 at 01:44:16
+2021-08-14 14:28:16	ℹ	irc.losslessone.com plexus-4(hybrid-8.1.20) CDGNRSUWagilopqrswxyz BCIMNORSabcehiklmnopqstvz Iabehkloqv
+2021-08-14 14:28:16	ℹ	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=180 MODES=4 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ EXCEPTS=e INVEX=I NICKLEN=30 NETWORK=Rizon MAXLIST=beI:250 MAXTARGETS=4 :are supported by this server
+2021-08-14 14:28:16	ℹ	CHANTYPES=# CHANLIMIT=#:250 CHANNELLEN=50 TOPICLEN=390 CHANMODES=beI,k,l,BCMNORScimnpstz NAMESX UHNAMES KNOCK WATCH=60 AWAYLEN=180 ELIST=CMNTU SAFELIST :are supported by this server
+2021-08-14 14:28:16	ℹ	There are 31 users and 10555 invisible on 17 servers
+2021-08-14 14:28:16	ℹ	46 :IRC Operators online
+2021-08-14 14:28:16	ℹ	3 :unknown connection(s)
+2021-08-14 14:28:16	ℹ	8909 :channels formed
+2021-08-14 14:28:16	ℹ	I have 10586 clients and 17 servers
+2021-08-14 14:28:16	ℹ	Current local users: 10586  Max: 13402
+2021-08-14 14:28:16	ℹ	Current global users: 10586  Max: 13402
+2021-08-14 14:28:16	ℹ	- irc.losslessone.com Message of the Day -
+2021-08-14 14:28:16	ℹ	-          oo                            
+2021-08-14 14:28:16	ℹ	-
+2021-08-14 14:28:16	ℹ	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2021-08-14 14:28:16	ℹ	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2021-08-14 14:28:16	ℹ	- 88       88  .Y8P    88.  .88 88    88 
+2021-08-14 14:28:16	ℹ	- dP       dP d888888P `88888P' dP    dP
+2021-08-14 14:28:16	ℹ	-
+2021-08-14 14:28:16	ℹ	- Rizon Chat Network -- http://rizon.net
+2021-08-14 14:28:16	ℹ	-
+2021-08-14 14:28:16	ℹ	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2021-08-14 14:28:16	ℹ	-
+2021-08-14 14:28:16	ℹ	- Rules:
+2021-08-14 14:28:17	ℹ	- o No spamming or flooding
+2021-08-14 14:28:17	ℹ	- o No clones or malicious bots
+2021-08-14 14:28:17	ℹ	- o No takeovers
+2021-08-14 14:28:17	ℹ	- o No distribution of child pornography
+2021-08-14 14:28:17	ℹ	- o Clients must respond to VERSION requests
+2021-08-14 14:28:17	ℹ	- o Rizon staff may disconnect clients for any or no reason
+2021-08-14 14:28:17	ℹ	-
+2021-08-14 14:28:17	ℹ	- First steps:
+2021-08-14 14:28:17	ℹ	- o To register your nick: /msg NickServ HELP
+2021-08-14 14:28:17	ℹ	- o To register your channel: /msg ChanServ HELP
+2021-08-14 14:28:17	ℹ	- o To get a vHost: /msg HostServ HELP REQUEST
+2021-08-14 14:28:17	ℹ	- o For other help with Rizon: /join #help
+2021-08-14 14:28:17	ℹ	-
+2021-08-14 14:28:17	ℹ	- Usage of this network is a privilege, not a right. Rizon is a
+2021-08-14 14:28:17	ℹ	- transit provider, therefore no person or entity involved with
+2021-08-14 14:28:17	ℹ	- *.rizon.net or irc.losslessone.com takes any responsibility for
+2021-08-14 14:28:17	ℹ	- users' actions. Absolutely no warranty is expressed or implied.
+2021-08-14 14:28:17	ℹ	End of /MOTD command.
+2021-08-14 14:28:17	ℹ	User mode [+Six] by oxide
+2021-08-14 14:28:17	ℹ	CTCP requested by py-ctcp: VERSION (blocked)
+2021-08-14 14:28:17	ℹ	User mode [+r] by oxide
+2021-08-19 13:10:53	ℹ	irc: connecting to server irc.rizon.net/6697 (SSL)...
+2021-08-19 13:10:54	ℹ	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2021-08-19 13:10:54	ℹ	gnutls: receiving 3 certificates
+2021-08-19 13:10:54	ℹ	 - certificate[1] info:
+2021-08-19 13:10:54	ℹ	   - subject `CN=irc.rizon.net', issuer `CN=R3,O=Let's Encrypt,C=US', serial 0x04b5d709753c360d94f5731f9fdadd60c910, RSA key 4096 bits, signed using RSA-SHA256, activated `2021-06-23 20:06:54 UTC', expires `2021-09-21 20:06:53 UTC', pin-sha256="TlaFsbCT3AbqemolAjZfLucGHZtntvAQzW3FmYF/FyU="
+2021-08-19 13:10:54	ℹ	 - certificate[2] info:
+2021-08-19 13:10:54	ℹ	   - subject `CN=R3,O=Let's Encrypt,C=US', issuer `CN=ISRG Root X1,O=Internet Security Research Group,C=US', serial 0x00912b084acf0c18a753f6d62e25a75f5a, RSA key 2048 bits, signed using RSA-SHA256, activated `2020-09-04 00:00:00 UTC', expires `2025-09-15 16:00:00 UTC', pin-sha256="jQJTbIh0grw0/1TkHSumWb+Fs0Ggogr621gT3PvPKG0="
+2021-08-19 13:10:54	ℹ	 - certificate[3] info:
+2021-08-19 13:10:54	ℹ	   - subject `CN=ISRG Root X1,O=Internet Security Research Group,C=US', issuer `CN=DST Root CA X3,O=Digital Signature Trust Co.', serial 0x4001772137d4e942b8ee76aa3c640ab7, RSA key 4096 bits, signed using RSA-SHA256, activated `2021-01-20 19:14:03 UTC', expires `2024-09-30 18:14:03 UTC', pin-sha256="C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+2021-08-19 13:10:54	ℹ	gnutls: peer's certificate is trusted
+2021-08-19 13:10:54	ℹ	irc: connected to irc.rizon.net/6697 (52.193.79.145)
+2021-08-19 13:10:54	ℹ	irc.losslessone.com: *** Looking up your hostname...
+2021-08-19 13:10:54	ℹ	irc.losslessone.com: *** Checking Ident
+2021-08-19 13:10:54	ℹ	irc.losslessone.com: *** Couldn't look up your hostname
+2021-08-19 13:10:54	ℹ	irc.losslessone.com: *** No Ident response
+2021-08-19 13:10:54	ℹ	irc: client capability, server supports: invite-notify multi-prefix userhost-in-names chghost sasl away-notify
+2021-08-19 13:10:54	ℹ	irc: client capability, requesting: sasl
+2021-08-19 13:10:55	ℹ	irc: client capability, enabled: sasl
+2021-08-19 13:10:56	ℹ	You are now logged in as oxide. (oxide!lambda@59.94.122.203)
+2021-08-19 13:10:56	ℹ	SASL authentication successful
+2021-08-19 13:10:56	ℹ	irc.losslessone.com: *** Connected securely via TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384-256
+2021-08-19 13:10:56	ℹ	irc.losslessone.com: *** Your host is masked (4889128F.1FC22AB8.AC74BEC8.IP)
+2021-08-19 13:10:56	ℹ	Welcome to the Rizon Internet Relay Chat Network oxide
+2021-08-19 13:10:56	ℹ	Your host is irc.losslessone.com, running version plexus-4(hybrid-8.1.20)
+2021-08-19 13:10:56	ℹ	This server was created Mar 26 2021 at 01:44:16
+2021-08-19 13:10:56	ℹ	irc.losslessone.com plexus-4(hybrid-8.1.20) CDGNRSUWagilopqrswxyz BCIMNORSabcehiklmnopqstvz Iabehkloqv
+2021-08-19 13:10:56	ℹ	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=180 MODES=4 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ EXCEPTS=e INVEX=I NICKLEN=30 NETWORK=Rizon MAXLIST=beI:250 MAXTARGETS=4 :are supported by this server
+2021-08-19 13:10:56	ℹ	CHANTYPES=# CHANLIMIT=#:250 CHANNELLEN=50 TOPICLEN=390 CHANMODES=beI,k,l,BCMNORScimnpstz NAMESX UHNAMES KNOCK WATCH=60 AWAYLEN=180 ELIST=CMNTU SAFELIST :are supported by this server
+2021-08-19 13:10:56	ℹ	There are 33 users and 10373 invisible on 17 servers
+2021-08-19 13:10:56	ℹ	46 :IRC Operators online
+2021-08-19 13:10:56	ℹ	2 :unknown connection(s)
+2021-08-19 13:10:56	ℹ	8666 :channels formed
+2021-08-19 13:10:56	ℹ	I have 10406 clients and 17 servers
+2021-08-19 13:10:56	ℹ	Current local users: 10406  Max: 13402
+2021-08-19 13:10:56	ℹ	Current global users: 10406  Max: 13402
+2021-08-19 13:10:56	ℹ	- irc.losslessone.com Message of the Day -
+2021-08-19 13:10:56	ℹ	-          oo                            
+2021-08-19 13:10:56	ℹ	-
+2021-08-19 13:10:56	ℹ	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2021-08-19 13:10:56	ℹ	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2021-08-19 13:10:56	ℹ	- 88       88  .Y8P    88.  .88 88    88 
+2021-08-19 13:10:56	ℹ	- dP       dP d888888P `88888P' dP    dP
+2021-08-19 13:10:56	ℹ	-
+2021-08-19 13:10:56	ℹ	- Rizon Chat Network -- http://rizon.net
+2021-08-19 13:10:57	ℹ	-
+2021-08-19 13:10:57	ℹ	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2021-08-19 13:10:57	ℹ	-
+2021-08-19 13:10:57	ℹ	- Rules:
+2021-08-19 13:10:57	ℹ	- o No spamming or flooding
+2021-08-19 13:10:57	ℹ	- o No clones or malicious bots
+2021-08-19 13:10:57	ℹ	- o No takeovers
+2021-08-19 13:10:57	ℹ	- o No distribution of child pornography
+2021-08-19 13:10:57	ℹ	- o Clients must respond to VERSION requests
+2021-08-19 13:10:57	ℹ	- o Rizon staff may disconnect clients for any or no reason
+2021-08-19 13:10:57	ℹ	-
+2021-08-19 13:10:57	ℹ	- First steps:
+2021-08-19 13:10:57	ℹ	- o To register your nick: /msg NickServ HELP
+2021-08-19 13:10:57	ℹ	- o To register your channel: /msg ChanServ HELP
+2021-08-19 13:10:57	ℹ	- o To get a vHost: /msg HostServ HELP REQUEST
+2021-08-19 13:10:57	ℹ	- o For other help with Rizon: /join #help
+2021-08-19 13:10:57	ℹ	-
+2021-08-19 13:10:57	ℹ	- Usage of this network is a privilege, not a right. Rizon is a
+2021-08-19 13:10:57	ℹ	- transit provider, therefore no person or entity involved with
+2021-08-19 13:10:57	ℹ	- *.rizon.net or irc.losslessone.com takes any responsibility for
+2021-08-19 13:10:57	ℹ	- users' actions. Absolutely no warranty is expressed or implied.
+2021-08-19 13:10:57	ℹ	End of /MOTD command.
+2021-08-19 13:10:57	ℹ	User mode [+Six] by oxide
+2021-08-19 13:10:57	ℹ	CTCP requested by py-ctcp: VERSION (blocked)
+2021-08-19 13:10:57	ℹ	User mode [+r] by oxide
+2021-08-20 15:19:40	ℹ	irc: connecting to server irc.rizon.net/6697 (SSL)...
+2021-08-20 15:19:41	ℹ	gnutls: connected using 2048-bit Diffie-Hellman shared secret exchange
+2021-08-20 15:19:41	ℹ	gnutls: receiving 3 certificates
+2021-08-20 15:19:41	ℹ	 - certificate[1] info:
+2021-08-20 15:19:41	ℹ	   - subject `CN=irc.rizon.net', issuer `CN=R3,O=Let's Encrypt,C=US', serial 0x04b5d709753c360d94f5731f9fdadd60c910, RSA key 4096 bits, signed using RSA-SHA256, activated `2021-06-23 20:06:54 UTC', expires `2021-09-21 20:06:53 UTC', pin-sha256="TlaFsbCT3AbqemolAjZfLucGHZtntvAQzW3FmYF/FyU="
+2021-08-20 15:19:41	ℹ	 - certificate[2] info:
+2021-08-20 15:19:41	ℹ	   - subject `CN=R3,O=Let's Encrypt,C=US', issuer `CN=ISRG Root X1,O=Internet Security Research Group,C=US', serial 0x00912b084acf0c18a753f6d62e25a75f5a, RSA key 2048 bits, signed using RSA-SHA256, activated `2020-09-04 00:00:00 UTC', expires `2025-09-15 16:00:00 UTC', pin-sha256="jQJTbIh0grw0/1TkHSumWb+Fs0Ggogr621gT3PvPKG0="
+2021-08-20 15:19:41	ℹ	 - certificate[3] info:
+2021-08-20 15:19:41	ℹ	   - subject `CN=ISRG Root X1,O=Internet Security Research Group,C=US', issuer `CN=DST Root CA X3,O=Digital Signature Trust Co.', serial 0x4001772137d4e942b8ee76aa3c640ab7, RSA key 4096 bits, signed using RSA-SHA256, activated `2021-01-20 19:14:03 UTC', expires `2024-09-30 18:14:03 UTC', pin-sha256="C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="
+2021-08-20 15:19:41	ℹ	gnutls: peer's certificate is trusted
+2021-08-20 15:19:41	ℹ	irc: connected to irc.rizon.net/6697 (52.193.79.145)
+2021-08-20 15:19:41	ℹ	irc.losslessone.com: *** Looking up your hostname...
+2021-08-20 15:19:41	ℹ	irc.losslessone.com: *** Checking Ident
+2021-08-20 15:19:42	ℹ	irc.losslessone.com: *** Couldn't look up your hostname
+2021-08-20 15:19:42	ℹ	irc.losslessone.com: *** No Ident response
+2021-08-20 15:19:42	ℹ	irc: client capability, server supports: invite-notify multi-prefix userhost-in-names chghost sasl away-notify
+2021-08-20 15:19:42	ℹ	irc: client capability, requesting: sasl
+2021-08-20 15:19:42	ℹ	irc: client capability, enabled: sasl
+2021-08-20 15:19:43	ℹ	You are now logged in as oxide. (oxide!lambda@59.94.122.151)
+2021-08-20 15:19:43	ℹ	SASL authentication successful
+2021-08-20 15:19:44	ℹ	irc.losslessone.com: *** Connected securely via TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384-256
+2021-08-20 15:19:44	ℹ	irc.losslessone.com: *** Your host is masked (102AE3EC.1FC22AB8.AC74BEC8.IP)
+2021-08-20 15:19:44	ℹ	Welcome to the Rizon Internet Relay Chat Network oxide
+2021-08-20 15:19:44	ℹ	Your host is irc.losslessone.com, running version plexus-4(hybrid-8.1.20)
+2021-08-20 15:19:44	ℹ	This server was created Mar 26 2021 at 01:44:16
+2021-08-20 15:19:44	ℹ	irc.losslessone.com plexus-4(hybrid-8.1.20) CDGNRSUWagilopqrswxyz BCIMNORSabcehiklmnopqstvz Iabehkloqv
+2021-08-20 15:19:44	ℹ	CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=180 MODES=4 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ EXCEPTS=e INVEX=I NICKLEN=30 NETWORK=Rizon MAXLIST=beI:250 MAXTARGETS=4 :are supported by this server
+2021-08-20 15:19:44	ℹ	CHANTYPES=# CHANLIMIT=#:250 CHANNELLEN=50 TOPICLEN=390 CHANMODES=beI,k,l,BCMNORScimnpstz NAMESX UHNAMES KNOCK WATCH=60 AWAYLEN=180 ELIST=CMNTU SAFELIST :are supported by this server
+2021-08-20 15:19:44	ℹ	There are 33 users and 10498 invisible on 17 servers
+2021-08-20 15:19:44	ℹ	46 :IRC Operators online
+2021-08-20 15:19:44	ℹ	2 :unknown connection(s)
+2021-08-20 15:19:44	ℹ	8661 :channels formed
+2021-08-20 15:19:44	ℹ	I have 10531 clients and 17 servers
+2021-08-20 15:19:44	ℹ	Current local users: 10531  Max: 13402
+2021-08-20 15:19:44	ℹ	Current global users: 10531  Max: 13402
+2021-08-20 15:19:44	ℹ	- irc.losslessone.com Message of the Day -
+2021-08-20 15:19:44	ℹ	-          oo                            
+2021-08-20 15:19:44	ℹ	-
+2021-08-20 15:19:44	ℹ	- 88d888b. dP d888888b .d8888b. 88d888b. 
+2021-08-20 15:19:44	ℹ	- 88'  `88 88    .d8P' 88'  `88 88'  `88 
+2021-08-20 15:19:44	ℹ	- 88       88  .Y8P    88.  .88 88    88 
+2021-08-20 15:19:44	ℹ	- dP       dP d888888P `88888P' dP    dP
+2021-08-20 15:19:44	ℹ	-
+2021-08-20 15:19:44	ℹ	- Rizon Chat Network -- http://rizon.net
+2021-08-20 15:19:44	ℹ	-
+2021-08-20 15:19:44	ℹ	- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+2021-08-20 15:19:44	ℹ	-
+2021-08-20 15:19:44	ℹ	- Rules:
+2021-08-20 15:19:44	ℹ	- o No spamming or flooding
+2021-08-20 15:19:44	ℹ	- o No clones or malicious bots
+2021-08-20 15:19:44	ℹ	- o No takeovers
+2021-08-20 15:19:44	ℹ	- o No distribution of child pornography
+2021-08-20 15:19:44	ℹ	- o Clients must respond to VERSION requests
+2021-08-20 15:19:44	ℹ	- o Rizon staff may disconnect clients for any or no reason
+2021-08-20 15:19:44	ℹ	-
+2021-08-20 15:19:44	ℹ	- First steps:
+2021-08-20 15:19:44	ℹ	- o To register your nick: /msg NickServ HELP
+2021-08-20 15:19:44	ℹ	- o To register your channel: /msg ChanServ HELP
+2021-08-20 15:19:44	ℹ	- o To get a vHost: /msg HostServ HELP REQUEST
+2021-08-20 15:19:44	ℹ	- o For other help with Rizon: /join #help
+2021-08-20 15:19:44	ℹ	-
+2021-08-20 15:19:44	ℹ	- Usage of this network is a privilege, not a right. Rizon is a
+2021-08-20 15:19:44	ℹ	- transit provider, therefore no person or entity involved with
+2021-08-20 15:19:44	ℹ	- *.rizon.net or irc.losslessone.com takes any responsibility for
+2021-08-20 15:19:44	ℹ	- users' actions. Absolutely no warranty is expressed or implied.
+2021-08-20 15:19:44	ℹ	End of /MOTD command.
+2021-08-20 15:19:44	ℹ	User mode [+Six] by oxide
+2021-08-20 15:19:44	ℹ	CTCP requested by py-ctcp: VERSION (blocked)
+2021-08-20 15:19:44	ℹ	User mode [+r] by oxide

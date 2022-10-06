@@ -19,9 +19,9 @@ secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color5:#222}
 
 [bar/top]
-width = 100%
-height = 22
-offset-x = 0
+width = 60%
+height = 35
+offset-x = 20%
 offset-y = 0
 bottom = false
 spacing = 0
@@ -38,13 +38,13 @@ foreground = ${colors.foreground}
 
 #fixed-center = true
 
-font-2 = PragmataProLiga:size=11:antialia=true;2
-font-1 = MaterialIcons:size=8:antialia=false:weight=bold;1
-font-0 = IosevkaOxide:size=8:weight:bold:antialia=true;0
+font-2 = SFCompactDisplay:size=14:weight:medium:antialia=true;2
+font-1 = PragmataProLiga:size=15:antialia=true;1
+font-0 = InputMono:size=11:weight:medium:antialia=true;0
 
 modules-left = ewmh
-modules-center = date weather
-modules-right = info-redshift-temp network pavolume powermenu
+modules-center = date
+modules-right = network pulseaudio backlight battery powermenu
 
 scroll-up = ewmh-wsnext
 scroll-down = ewmh-wsprev
@@ -71,15 +71,62 @@ type = internal/date
 interval = 1
 
 date = %a %d %b,
-time = %H:%M
+time = "%I:%M %{F#808080}%p"
 
 date-alt = %A, %d %B %Y
-time-alt = %H:%M:%S
+time-alt = "%I:%M:%S %{F#808080}%p"
+
 
 format = <label>
 format-padding = 2
 
 label = %date% %time%
+label-font = 3
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <label-volume>
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels%
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels%
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+; Right and Middle click
+click-right = pavucontrol
 
 [module/pavolume]
 type = custom/script
@@ -87,8 +134,8 @@ type = custom/script
 interval = 1
 
 format-padding = 2
-label-active = %token%
-label-active-font = 2
+label-active =%token%
+label-active-font = 1
 
 
 exec = ~/scripts/pavolume.sh
@@ -100,7 +147,7 @@ scroll-down = ~/scripts/pavolume.sh --down
 [module/powermenu]
 type = custom/menu
 
-label-open = 
+label-open = ⏻
 
 label-close = cancel
 
@@ -110,25 +157,25 @@ label-open-padding-left = 2
 label-open-padding-right = 3
 label-close-padding = 3
 
-menu-0-0 = lock
+menu-0-0 = 🔒
 menu-0-0-exec = ~/scripts/i3lock.sh
 menu-0-0-background = ${colors.background}
 menu-0-0-foreground = ${xrdb:color3:#50fa7b}
 menu-0-0-padding-right = 3
 
-menu-0-1 = reboot
+menu-0-1 = ↺
 menu-0-1-exec = menu-open-1
 menu-0-1-background = ${colors.background}
 menu-0-1-foreground = ${xrdb:color3:#50fa7b}
 menu-0-1-padding-right = 3
 
-menu-0-2 = power off
+menu-0-2 = ⏻
 menu-0-2-exec = menu-open-2
 menu-0-2-background = ${colors.background}
 menu-0-2-foreground = ${xrdb:color3:#50fa7b}
 menu-0-2-padding-right = 3
 
-menu-0-3 = sleep
+menu-0-3 = ⏾
 menu-0-3-exec = ~/scripts/sleep.sh
 menu-0-3-background = ${colors.background}
 menu-0-3-foreground = ${xrdb:color3:#50fa7b}
@@ -155,13 +202,13 @@ interval = 120
 
 format-padding = 2
 
-exec = ~/scripts/weather.py
+exec = "curl -s http://wttr.in/?format=%t"
 
 
 [module/network]
 type = internal/network
 
-interface = enp2s0
+interface = wlp3s0
 
 format-connected = <label-connected>
 format-connected-padding = 1
@@ -179,3 +226,108 @@ format-padding = 2
 type = custom/script
 exec = ~/scripts/info-redshift-temp.sh
 interval=5
+
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = ADP1
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <label-charging>
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-full = <label-full>
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = ↑ %percentage%%
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage%%
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+label-full = 
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+
+format = <label>
+format-padding = 2
+
+label= %percentage%%
+
+enable-scroll = true

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 osd='no'
-inc='5'
+inc='2'
 capvol='no'
 maxvol='200'
 tmpfile='/tmp/pasink.tmp'

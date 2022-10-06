@@ -33,12 +33,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
+
+emacs --daemon &
 # cursor
 xsetroot -cursor_name left_ptr
 
-feh --bg-fill Pictures/greatness.png &
-wal --backend colorthief -i Pictures/shryne.gif -n -o scripts/reload_dunst.sh &
+feh --bg-fill Pictures/climb.jpeg &
+# wal --backend colorthief -i Pictures/shryne.gif -n -o scripts/reload_dunst.sh &
+xrdb -load .Xresources
 $HOME/.local/bin/arbtt-capture &
 export GTK_IM_MODULE=xim
 
-exec xmonad
+exec $HOME/.local/share/xmonad/xmonad-x86_64-linux

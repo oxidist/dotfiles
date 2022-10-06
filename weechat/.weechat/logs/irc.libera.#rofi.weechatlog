@@ -1,0 +1,12 @@
+2022-08-31 04:31:37	→	oxide has joined #rofi
+2022-08-31 04:31:37	ℹ	Topic for #rofi is "Rofi! | https://github.com/DaveDavenport/rofi/"
+2022-08-31 04:31:37	ℹ	Topic set by qball2 (~qball@user/qball) on Sat, 20 Aug 2022 19:12:41
+2022-08-31 04:31:37	ℹ	Channel #rofi: 34 nicks (0 ops, 0 voices, 34 normals)
+2022-08-31 04:31:39	ℹ	Channel created on Wed, 19 May 2021 19:56:05
+2022-08-31 04:31:43	oxide	hi
+2022-08-31 04:33:07	oxide	i tried to make a theme file referencing Xresources variables but when i try to use it, rofi gives the following error:
+2022-08-31 04:33:55	oxide	"syntax error, unexpected "property close (';')" "
+2022-08-31 04:34:09	oxide	this is the line it refers to:
+2022-08-31 04:34:12	oxide	    active-background: ${base0C}; 
+2022-08-31 04:44:17	←	andril has quit (Ping timeout: 255 seconds)
+2022-08-31 08:05:43	←	arkurious has quit (Quit: Leaving)

@@ -1,5 +1,4 @@
 let g:polyglot_disabled = ['latex.plugin', 'markdown.plugin', 'haskell']
-
 ""          _
 ""   _   __(_)___ ___
 ""  | | / / / __ `__ \
@@ -9,8 +8,8 @@ let g:polyglot_disabled = ['latex.plugin', 'markdown.plugin', 'haskell']
 call plug#begin('~/.vim/plugged')
   Plug 'mhinz/vim-startify'
   Plug 'tpope/vim-surround'
-  Plug 'Raimondi/delimitMate'
-  Plug 'alx741/vim-hindent'
+  "Plug 'Raimondi/delimitMate'
+  "Plug 'alx741/vim-hindent'
   Plug 'lervag/vimtex'
   Plug 'SirVer/UltiSnips'
   Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
@@ -22,6 +21,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install()}}
   Plug 'dense-analysis/ale'
   Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
   Plug 'BurntSushi/ripgrep'
   Plug 'fiatjaf/neuron.vim'
   Plug 'whonore/Coqtail'
@@ -29,10 +30,12 @@ call plug#begin('~/.vim/plugged')
   Plug 'lervag/wiki.vim'
   Plug 'samgriesemer/vim-roam'
   Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'skdfj/rein.vim'
+	Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
-colorscheme wal
+colorscheme rein
 "set termguicolors
 set background=dark
 syntax on
@@ -40,7 +43,8 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set t_Co=256
 
-inoremap jk <ESC>
+inoremap jk <Esc>
+imap <C-BS> <C-W>
 let mapleader = " "
 
 " up and down row-wise, not line-wise
@@ -53,7 +57,8 @@ vnoremap . :norm.<CR>
 
 set nobackup
 set nowritebackup
-set noswapfile " get rid of swapfiles everywhere
+set noswapfile
+" get rid of swapfiles everywhere
 set dir=/tmp
 set number
 set relativenumber
@@ -92,17 +97,24 @@ set statusline =
 set statusline +=%#warningmsg#
 set statusline +=%*
 set statusline +=[%{winnr()}]
-set statusline +=\ %f                                    " Full path to file
-set statusline +=\ %1*%m%0*                              " modified flag
-set statusline +=\ %h                                    " [help]
-set statusline +=%r                                      " read only flag
-set statusline +=%w                                      " preview window flag
+set statusline +=\ %f
+" Full path to file
+set statusline +=\ %1*%m%0*
+" modified flag
+set statusline +=\ %h
+" [help]
+set statusline +=%r
+" read only flag
+set statusline +=%w
+" preview window flag
 set statusline +=%=
-set statusline +=\ %l,%c                       " Line, column-virtual column"
+set statusline +=\ %l,%c
+" Line, column-virtual column"
 set statusline +=\ \ %{&filetype}
 
 "set statusline=─
-set fillchars=stl:─     " fill active window's statusline with -
+set fillchars=stl:─     
+" fill active window's statusline with -
 set fillchars+=stlnc:─
 " better vertical split line 
 set fillchars+=vert:│
@@ -115,13 +127,17 @@ if has("autocmd")
 endif
 
 " For everything else, use a tab width of 4 space chars.
-set tabstop=2      " The width of a TAB is set to 4.
+set tabstop=2
+" The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
                     " a width of 4.
-set shiftwidth=2    " Indents will have a width of 4.
-set softtabstop=2   " Sets the number of columns for a TAB.
-set expandtab       " Expand TABs to spaces.
+set shiftwidth=2
+" Indents will have a width of 4.
+set softtabstop=2
+" Sets the number of columns for a TAB.
+set expandtab
+" Expand TABs to spaces.
 filetype plugin indent on
 
 nnoremap \\ :noh<return>
@@ -201,6 +217,8 @@ function! g:UltiSnips_Complete()
 endfunction
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+
+let g:syntastic_auto_jump = 0
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-e>"
 " this mapping Enter key to <C-y> to chose the current highlight item
@@ -210,4 +228,40 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 if executable('rg')
     let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
-  endif
+endif
+
+set viminfo='100,n$HOME/.vim/files/info/viminfo'
+
+
+function! ScrollOffToggle()
+    if(&scrolloff != 999)
+        norm! zz
+        set scrolloff=999
+    else
+        set scrolloff=3
+    endif
+    echo &scrolloff
+endfunc
+
+" Color for out of focus sections with limelight
+let g:limelight_conceal_ctermfg = 'gray'
+
+" Regex for limelight to include % demarcations
+let g:limelight_bop = '\(^\s*$\n\|^\s*%$\n\)\zs'
+let g:limelight_eop = '\ze\(^$\|^\s*%$\)'
+
+" hi pri
+let g:limelight_priority = -1
+
+" Goyo 1 + textwidth
+let g:goyo_width = 68
+
+"let delimitMate_expand_cr = 2
+"let delimitMate_jump_expansion = 1
+
+" Preformatting and window styling for comfy latex typing.
+noremap <silent> <F2> <esc><esc>:Goyo<CR>
+noremap <silent> <F3> <esc><esc>:call ScrollOffToggle()<CR>:Limelight!!<CR>
+noremap <silent> <F5> <esc><esc>gg49O<esc>G49o<esc>50%<cr>
+
+set viminfo='100,n$HOME/.vim/files/info/viminfo'

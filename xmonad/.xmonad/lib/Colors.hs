@@ -1,1 +1,0 @@
-/home/oxide/.cache/wal/colors.hs

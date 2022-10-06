@@ -6,10 +6,10 @@ if [ "$(pgrep -x redshift)" ]; then
     if [ -z "$temp" ]; then
         echo "%{F#65737E} #"
     elif [ "$temp" -ge 5000 ]; then
-        echo "%{F#8FA1B3}${temp}K"
+        echo "%{F#8FA1B3}⬤"
     elif [ "$temp" -ge 4000 ]; then
-        echo "%{F#EBCB8B}${temp}K"
+        echo "%{F#EBCB8B}⬤"
     else
-        echo "%{F#CF7063}${temp}K"
+        echo "%{F#CF7063}⬤"
     fi
 fi
